@@ -1,0 +1,42 @@
+1|Vehicules|1
+42|Voitures|1
+2|Motos|1
+3|Caravaning|1
+4|Utilitaires|1
+5|Nautisme|1
+6|Equipement Auto|1
+7|Equipement Moto|1
+8|Equipement Caravaning|1
+9|Equipement Nautisme|1
+10|Multimedia|10
+11|Informatique|10
+12|Consoles & jeux vidéo|10
+13|Image & Son|10
+14|Téléphone|10
+15|Loisirs|15
+16|DVD/Films|15
+17|CD/Musique|15
+18|Livres|15
+19|Animaux|15
+20|Vélos|15
+21|Sports & Hobbies|15
+22|Instruments de musique|15
+23|Collection|15
+24|Jeux & Jouets|15
+25|Vins & Gastronomie|15
+26|Maison|26
+27|Ameublement|26
+28|Electroménager|26
+29|Arts de la table|26
+30|Décoration|26
+31|Linge de maison|26
+32|Bricolage|26
+33|Jardinage|26
+34|Vêtements|26
+35|Chaussures|26
+36|Accesoires & Bagagerie|26
+37|Montres & Bijoux|26
+38|Equipement bébé|26
+39|Vétements bébé|26
+40|Autres|40
+41|Autres|40

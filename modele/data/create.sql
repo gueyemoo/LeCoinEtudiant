@@ -4,7 +4,7 @@ CREATE TABLE client (
   nom TEXT,
   prenom TEXT,
   email TEXT UNIQUE,
-  pass TEXT,
+  motdepasse TEXT,
   numero TEXT,
   emailVerifie INTEGER,
   CONSTRAINT name_unique UNIQUE (email)

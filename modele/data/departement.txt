@@ -1,0 +1,101 @@
+1|01|Auvergne-Rhône-Alpes|Ain
+2|02|Hauts-de-France|Aisne
+3|03|Auvergne-Rhône-Alpes|Allier
+4|04|Provence-Alpes-Côte d'Azur|Alpes-de-Haute-Provence
+5|05|Provence-Alpes-Côte d'Azur|Hautes-Alpes
+6|06|Provence-Alpes-Côte d'Azur|Alpes-Maritimes
+7|07|Auvergne-Rhône-Alpes|Ardèche
+8|08|Grand Est|Ardennes
+9|09|Occitanie|Ariège
+10|10|Grand Est|Aube
+11|11|Occitanie|Aude
+12|12|Occitanie|Aveyron
+13|13|Provence-Alpes-Côte d'Azur|Bouches-du-Rhône
+14|14|Normandie|Calvados
+15|15|Auvergne-Rhône-Alpes|Cantal
+16|16|Nouvelle-Aquitaine|Charente
+17|17|Nouvelle-Aquitaine|Charente-Maritime
+18|18|Centre-Val de Loire	|Cher
+19|19|Nouvelle-Aquitaine|Corrèze
+20|2a|Corse|Corse-du-sud
+21|2b|Corse|Haute-corse
+22|21|Bourgogne-Franche-Comté|Côte-d'or
+23|22|Bretagne|Côtes-d'armor
+24|23|Nouvelle-Aquitaine|Creuse
+25|24|Nouvelle-Aquitaine|Dordogne
+26|25|Bourgogne-Franche-Comté|Doubs
+27|26|Auvergne-Rhône-Alpes|Drôme
+28|27|Normandie|Eure
+29|28|Centre-Val de Loire|Eure-et-Loir
+30|29|Bretagne|Finistère
+31|30|Occitanie|Gard
+32|31|Occitanie|Haute-Garonne
+33|32|Occitanie|Gers
+34|33|Nouvelle-Aquitaine|Gironde
+35|34|Occitanie|Hérault
+36|35|Bretagne|Ile-et-Vilaine
+37|36|Centre-Val de Loire	|Indre
+38|37|Centre-Val de Loire	|Indre-et-Loire
+39|38|Auvergne-Rhône-Alpes|Isère
+40|39|Bourgogne-Franche-Comté|Jura
+41|40|Nouvelle-Aquitaine|Landes
+42|41|Centre-Val de Loire|Loir-et-Cher
+43|42|Auvergne-Rhône-Alpes|Loire
+44|43|Auvergne-Rhône-Alpes|Haute-Loire
+45|44|Pays de la Loire|Loire-Atlantique
+46|45|Centre-Val de Loire|Loiret
+47|46|Occitanie|Lot
+48|47|Nouvelle-Aquitaine|Lot-et-Garonne
+49|48|Occitanie|Lozère
+50|49|Pays de la Loire|Maine-et-Loire
+51|50|Normandie|Manche
+52|51|Grand Est|Marne
+53|52|Grand Est|Haute-Marne
+54|53|Pays de la Loire|Mayenne
+55|54|Grand Est|Meurthe-et-Moselle
+56|55|Grand Est|Meuse
+57|56|Bretagne|Morbihan
+58|57|Grand Est|Moselle
+59|58|Bourgogne-Franche-Comté|Nièvre
+60|59|Hauts-de-France|Nord
+61|60|Hauts-de-France|Oise
+62|61|Normandie|Orne
+63|62|Hauts-de-France|Pas-de-Calais
+64|63|Auvergne-Rhône-Alpes|Puy-de-Dôme
+65|64|Nouvelle-Aquitaine|Pyrénées-Atlantiques
+66|65|Occitanie|Hautes-Pyrénées
+67|66|Occitanie|Pyrénées-Orientales
+68|67|Grand Est|Bas-Rhin
+69|68|Grand Est|Haut-Rhin
+70|69|Auvergne-Rhône-Alpes|Rhône
+71|70|Bourgogne-Franche-Comté|Haute-Saône
+72|71|Bourgogne-Franche-Comté|Saône-et-Loire
+73|72|Pays de la Loire|Sarthe
+74|73|Auvergne-Rhône-Alpes|Savoie
+75|74|Auvergne-Rhône-Alpes|Haute-Savoie
+76|75|Île-de-France|Paris
+77|76|Normandie|Seine-Maritime
+78|77|Île-de-France|Seine-et-Marne
+79|78|Île-de-France|Yvelines
+80|79|Nouvelle-Aquitaine|Deux-Sèvres
+81|80|Hauts-de-France|Somme
+82|81|Occitanie|Tarn
+83|82|Occitanie|Tarn-et-Garonne
+84|83|Provence-Alpes-Côte d'Azur|Var
+85|84|Provence-Alpes-Côte d'Azur|Vaucluse
+86|85|Pays de la Loire|Vendée
+87|86|Nouvelle-Aquitaine|Vienne
+88|87|Nouvelle-Aquitaine|Haute-Vienne
+89|88|Grand Est|Vosges
+90|89|Bourgogne-Franche-Comté|Yonne
+91|90|Bourgogne-Franche-Comté|Territoire de Belfort
+92|91|Île-de-France|Essonne
+93|92|Île-de-France|Hauts-de-Seine
+94|93|Île-de-France|Seine-Saint-Denis
+95|94|Île-de-France|Val-de-Marne
+96|95|Île-de-France|Val-d'oise
+97|976|Mayotte|Mayotte
+98|971|Guadeloupe|Guadeloupe
+99|973|Guyane|Guyane
+100|972|Martinique|Martinique
+101|974|La Réunion|Réunion
