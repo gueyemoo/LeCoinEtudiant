@@ -7,9 +7,6 @@
 * faire un diagramme de GANTT (planifier le developpement)
 * faire les maquettes du siteweb
 * Conception base de donnée (yes)
-
-<span style="color: green"> C'est fait </span>
-
 * faire un diagramme de cas d'utilisation
 
 # Developpement
@@ -24,3 +21,10 @@ supprimer ses annonces
 * Voir ses annonces quand Connecter
 * Modifier ses informations de compte personnels
 * Modifier une annonces
+
+```diff
+- text in red
++ text in green
+! text in orange
+# text in gray
+```
