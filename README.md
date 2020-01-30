@@ -7,6 +7,9 @@
 * faire un diagramme de GANTT (planifier le developpement)
 * faire les maquettes du siteweb
 * Conception base de donnée (yes)
+
+<span style="color: green"> C'est fait </span>
+
 * faire un diagramme de cas d'utilisation
 
 # Developpement
