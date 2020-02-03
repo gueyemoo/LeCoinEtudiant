@@ -21,12 +21,14 @@ CREATE TABLE categorie(
 DROP TABLE if exists annonce;
 
 CREATE TABLE annonce (
-	idAnnonce INTEGER PRIMARY KEY,
+	id INTEGER PRIMARY KEY,
   idClient INTEGER,
   categorie INTEGER,
 	titre TEXT,
   contenu TEXT,
   prix REAL,
+  marque TEXT,
+  taille TEXT,
   departement TEXT,
   dateHeure INTEGER,
 	photo1 TEXT,
@@ -36,12 +38,21 @@ CREATE TABLE annonce (
   FOREIGN KEY(categorie) REFERENCES categorie(id)
 );
 
+DROP TABLE if exists favoris;
 
+CREATE TABLE favoris (
+  idClient INTEGER,
+  idAnnonce INTEGER,
+
+  PRIMARY KEY(idClient,idAnnonce),
+  FOREIGN KEY(idClient) REFERENCES client(id),
+  FOREIGN KEY(idAnnonce) REFERENCES annonce(id)
+);
 
 DROP TABLE if exists departement;
 
 CREATE TABLE departement (
-  departement_id INTEGER PRIMARY KEY,
+  id INTEGER PRIMARY KEY,
   departement_code TEXT,
   region_nom TEXT,
   departement_nom TEXT,
@@ -56,10 +67,10 @@ CREATE TABLE admin(
 );
 
 
-.separator |
-.import categorie.txt categorie
-.import departement.txt departement
-.import annonces.txt	annonce
-.import clients.txt client
+-- .separator |
+-- .import categorie.txt categorie
+-- .import departement.txt departement
+-- .import annonces.txt	annonce
+-- .import clients.txt client
 
 -- INSERT INTO admin VALUES(1);
