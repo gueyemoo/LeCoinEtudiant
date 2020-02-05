@@ -1,0 +1,36 @@
+/* /////////////////////////////////////   LOADING ///////////////////////////////////////////////////// */
+.loader {
+    position: fixed;
+    z-index: 999;      /* pour que ce soit devant tout */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    display: flex; /* pour centrer le loading */
+    justify-content: center;
+    align-items: center;
+}
+
+.loader > img {
+
+}
+
+.loader.hidden {
+    animation: fadeOut 2s;
+    animation-fill-mode: forwards; /*pour maintenir les propriétés du keyframes*/
+}
+
+
+@keyframes fadeOut {
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+/* /////////////////////////////////////////////////////////////////////////////////////////////// */
+
+.coverflow-slider img {
+  height: 350px;
+  width: 350px;
+}

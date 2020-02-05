@@ -16,7 +16,7 @@
 
       <!-- /////////////////////// -->
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Vetements</a>
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Vehicules</a>
 
         <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
           <a class="dropdown-item" href="#">Action</a>
@@ -28,7 +28,7 @@
       <!-- //////////// -->
 
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Accessoires</a>
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Multimedia</a>
         <!-- /////////////////////// -->
         <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
           <a class="dropdown-item" href="#"> Lorem ipsum dolor.</a>
@@ -39,7 +39,7 @@
         <!-- ////////////////////// -->
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Mobilier</a>
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Loisirs</a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
           <a class="dropdown-item" href="#"> Lorem ipsum dolor.</a>
           <a class="dropdown-item" href="#">Lorem ipsum dolor.</a>
@@ -48,76 +48,90 @@
         </div>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown4" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Multimédia</a>
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown4" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Maison</a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown4">
-          <a class="dropdown-item" href="#">Informatique</a>
-          <a class="dropdown-item" href="#">Consoles & jeux vidéo</a>
-          <a class="dropdown-item" href="#">Image & Son</a>
-          <a class="dropdown-item" href="#">Téléphone</a>
-        </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Divers</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">About</a>
-      </li>
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="text" placeholder="Rechercher">
-      <button class="btn btn-secondary my-2 my-sm-0" type="submit">Rechercher</button>
-    </form>
-  </div>
-</nav>
+          <a class="dropdown-item" href="#">Lorem ipsum dolor.</a>
+          <a class="dropdown-item" href="#">Lorem ipsum dolor.</a>
+          <a class="dropdown-item" href="#">Lorem ipsum dolor.<a>
+            <a class="dropdown-item" href="#">Lorem ipsum dolor.</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown4" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Mode</a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown4">
+            <a class="dropdown-item" href="#">Lorem ipsum dolor.</a>
+            <a class="dropdown-item" href="#">Lorem ipsum dolor.</a>
+            <a class="dropdown-item" href="#">Lorem ipsum dolor.<a>
+              <a class="dropdown-item" href="#">Lorem ipsum dolor.</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown4" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Services</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown4">
+              <a class="dropdown-item" href="#">Lorem ipsum dolor.</a>
+              <a class="dropdown-item" href="#">Lorem ipsum dolor.</a>
+              <a class="dropdown-item" href="#">Lorem ipsum dolor.<a>
+                <a class="dropdown-item" href="#">Lorem ipsum dolor.</a>
+              </div>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Autres</a>
+              </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+              <input class="form-control mr-sm-2" type="text" placeholder="Rechercher">
+              <button class="btn btn-secondary my-2 my-sm-0" type="submit">Rechercher</button>
+            </form>
+          </div>
+        </nav>
 
-<style media="screen">
-.navbar .nav-item:not(:last-child) {
-  margin-right: 35px;
-}
+        <style media="screen">
+        .navbar .nav-item:not(:last-child) {
+          margin-right: 35px;
+        }
 
-.dropdown-toggle::after {
-  transition: transform 0.15s linear;
-}
+        .dropdown-toggle::after {
+          transition: transform 0.15s linear;
+        }
 
-.show.dropdown .dropdown-toggle::after {
-  transform: translateY(3px);
-}
+        .show.dropdown .dropdown-toggle::after {
+          transform: translateY(3px);
+        }
 
-.dropdown-menu {
-  margin-top: 0;
-}
+        .dropdown-menu {
+          margin-top: 0;
+        }
 
-.dropdown-item:hover {
-  background-color: #444;
-  color: #FFF;
-  background-image: none;
-}
-</style>
+        .dropdown-item:hover {
+          background-color: #444;
+          color: #FFF;
+          background-image: none;
+        }
+        </style>
 
-<script type="text/javascript">
-const $dropdown = $(".dropdown");
-const $dropdownToggle = $(".dropdown-toggle");
-const $dropdownMenu = $(".dropdown-menu");
-const showClass = "show";
+        <script type="text/javascript">
+        const $dropdown = $(".dropdown");
+        const $dropdownToggle = $(".dropdown-toggle");
+        const $dropdownMenu = $(".dropdown-menu");
+        const showClass = "show";
 
-$(window).on("load resize", function() {
-  if (this.matchMedia("(min-width: 768px)").matches) {
-    $dropdown.hover(
-      function() {
-        const $this = $(this);
-        $this.addClass(showClass);
-        $this.find($dropdownToggle).attr("aria-expanded", "true");
-        $this.find($dropdownMenu).addClass(showClass);
-      },
-      function() {
-        const $this = $(this);
-        $this.removeClass(showClass);
-        $this.find($dropdownToggle).attr("aria-expanded", "false");
-        $this.find($dropdownMenu).removeClass(showClass);
-      }
-    );
-  } else {
-    $dropdown.off("mouseenter mouseleave");
-  }
-});
-</script>
+        $(window).on("load resize", function() {
+          if (this.matchMedia("(min-width: 768px)").matches) {
+            $dropdown.hover(
+              function() {
+                const $this = $(this);
+                $this.addClass(showClass);
+                $this.find($dropdownToggle).attr("aria-expanded", "true");
+                $this.find($dropdownMenu).addClass(showClass);
+              },
+              function() {
+                const $this = $(this);
+                $this.removeClass(showClass);
+                $this.find($dropdownToggle).attr("aria-expanded", "false");
+                $this.find($dropdownMenu).removeClass(showClass);
+              }
+            );
+          } else {
+            $dropdown.off("mouseenter mouseleave");
+          }
+        });
+        </script>
