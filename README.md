@@ -5,12 +5,21 @@
 # Conception
 
 * faire un diagramme de GANTT (planifier le developpement)
+```diff
+# En Cours
+```
 * faire les maquettes du siteweb
+```diff
+! Possible evolution
+```
 * Conception base de donnée (yes)
 ```diff
 + C'est fait
 ```
 * faire un diagramme de cas d'utilisation
+```diff
++ C'est fait
+```
 
 # Developpement
 * Systeme utilisateur client, créer un compter
