@@ -44,7 +44,7 @@
 /* @group Flipster Previous & Next Buttons */
 .flipster__button {
   position: absolute;
-  top: 50%;
+  top: 28%;
   display: block;
   -webkit-appearance: none;
      -moz-appearance: none;
@@ -147,7 +147,8 @@
   right: 0;
   margin-top: -1px;
   padding: 0.5em;
-  background: #4e4441;
+  background: #000;
+  /* 4e4441 */
   z-index: 1;
 }
 .flipster__nav__child .flipster__nav__link {
