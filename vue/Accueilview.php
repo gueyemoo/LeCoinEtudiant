@@ -209,7 +209,7 @@
           </div>
         </li>
 
-        <li data-flip-tit="Autres">
+        <li data-flip-title="Autres">
           <div class="img-box adv-img adv-img-half-content" data-anima="fade-left" data-trigger="hover">
             <a href="#" class="img-box anima-scale-up anima">
               <img src="../modele/img/text14.gif">
