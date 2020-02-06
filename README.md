@@ -4,9 +4,14 @@
 
 # Conception
 
+* Analyse de l'existant
+```diff
+-A commencer
+```
+
 * faire un diagramme de GANTT (planifier le developpement)
 ```diff
-# En Cours
+# C'est fait
 ```
 * faire les maquettes du siteweb
 ```diff
