@@ -84,6 +84,8 @@
           </div>
         </nav>
 
+        <a id="button_back_to_top"></a>
+
         <style media="screen">
         .navbar .nav-item:not(:last-child) {
           margin-right: 35px;
@@ -135,3 +137,64 @@
           }
         });
         </script>
+
+        <!-- /////////////////////////////////BUTTON BACK TO TOP //////////////////////////////////// -->
+
+        <style media="screen">
+        #button_back_to_top {
+          display: inline-block;
+          background-color: #222;
+          width: 50px;
+          height: 50px;
+          text-align: center;
+          border-radius: 4px;
+          position: fixed;
+          bottom: 30px;
+          right: 30px;
+          transition: background-color .3s,
+          opacity .5s, visibility .5s;
+          opacity: 0;
+          visibility: hidden;
+          z-index: 1000;
+        }
+        #button_back_to_top::after {
+          /* content: "\f148"; */
+          content: url("../modele/img/top.png");
+
+          font-family: FontAwesome;
+          font-weight: normal;
+          font-style: normal;
+          font-size: 2em;
+          line-height: 50px;
+          color: #fff;
+        }
+        #button_back_to_top:hover {
+          cursor: pointer;
+          background-color: #333;
+        }
+        #button_back_to_top:active {
+          background-color: #555;
+        }
+        #button_back_to_top.show {
+          opacity: 1;
+          visibility: visible;
+        }
+        </style>
+
+        <script type="text/javascript">
+        var btn = $('#button_back_to_top');
+
+        $(window).scroll(function() {
+          if ($(window).scrollTop() > 300) {
+            btn.addClass('show');
+          } else {
+            btn.removeClass('show');
+          }
+        });
+
+        btn.on('click', function(e) {
+          e.preventDefault();
+          $('html, body').animate({scrollTop:0}, '300');
+        });
+        </script>
+        <!-- /////////////////////////////////BUTTON BACK TO TOP //////////////////////////////////// -->

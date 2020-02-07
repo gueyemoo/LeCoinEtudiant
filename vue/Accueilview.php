@@ -299,7 +299,9 @@
       touch: true,
     });
     </script>
-
   </article>
+
+    <?php include('footer.php') ?>
+
 </body>
 </html>
