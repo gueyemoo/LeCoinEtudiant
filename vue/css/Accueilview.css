@@ -38,3 +38,7 @@
 #formulaire form{
   border: 2px solid black;
 }
+
+html body{
+  background-color: #DDDDDD;
+}

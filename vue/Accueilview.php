@@ -18,7 +18,7 @@
     <img src="../modele/img/loading.gif" alt="Loading..."  />
   </div>
 
-  <article id="carousel" class="jumbotron vertical-center" style="background:transparent; padding-top:0;">
+  <article id="carousel" class="jumbotron vertical-center" style="background:#DDDDDD; padding-top:0;">
 
     <h2 class="text-center" style="margin:1em 0"><p><img src="../modele/img/title.gif" alt="Les Dernieres Annonces"> </p></h2>
 
