@@ -226,55 +226,7 @@
       </ul>
     </div>
 
-<article id="formulaire" class="row d-flex justify-content-center">
-    <form style="max-width:50%" class="col-md-6" >
-      <h1 class="text-center">INSCRIPTION</h1>
-      <div class="form-row">
-        <div class="form-group col-md-6">
-          <label for="inputEmail4">Email</label>
-          <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
-        </div>
-        <div class="form-group col-md-6">
-          <label for="inputPassword4">Password</label>
-          <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="inputAddress">Address</label>
-        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-      </div>
-      <div class="form-group">
-        <label for="inputAddress2">Address 2</label>
-        <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-      </div>
-      <div class="form-row">
-        <div class="form-group col-md-6">
-          <label for="inputCity">City</label>
-          <input type="text" class="form-control" id="inputCity">
-        </div>
-        <div class="form-group col-md-4">
-          <label for="inputState">State</label>
-          <select id="inputState" class="form-control">
-            <option selected>Choose...</option>
-            <option>...</option>
-          </select>
-        </div>
-        <div class="form-group col-md-2">
-          <label for="inputZip">Zip</label>
-          <input type="text" class="form-control" id="inputZip">
-        </div>
-      </div>
-      <div class="form-group">
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" id="gridCheck">
-          <label class="form-check-label" for="gridCheck">
-            Check me out
-          </label>
-        </div>
-      </div>
-      <button type="submit" class="btn btn-primary">Sign in</button>
-    </form>
-  </article>
+
 
 
     <script type="text/javascript">
@@ -299,6 +251,35 @@
       touch: true,
     });
     </script>
+  </article>
+
+  <article class="">
+    <div class="container">
+  <form id="contact" class="text-center" action="" method="post">
+    <h3>Inscription</h3>
+    <h4>Inscris toi et commence à déposer t'es annonces !</h4>
+    <fieldset>
+      <input placeholder="Prenom" type="text" tabindex="1" required>
+    </fieldset>
+    <fieldset>
+      <input placeholder="Nom" type="text" tabindex="2" required>
+    </fieldset>
+    <fieldset>
+      <input placeholder="Email" type="email" tabindex="3" required>
+    </fieldset>
+    <fieldset>
+      <input placeholder="mot de passe" type="password" tabindex="4" required>
+    </fieldset>
+    <fieldset>
+      <input placeholder="confirmer votre mot de passe" type="password" tabindex="5" required>
+    </fieldset>
+    <fieldset>
+      <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+    </fieldset>
+  </form>
+
+
+</div>
   </article>
 
     <?php include('footer.php') ?>

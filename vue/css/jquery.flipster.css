@@ -44,7 +44,7 @@
 /* @group Flipster Previous & Next Buttons */
 .flipster__button {
   position: absolute;
-  top: 28%;
+  top: 50%;
   display: block;
   -webkit-appearance: none;
      -moz-appearance: none;
