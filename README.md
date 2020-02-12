@@ -39,6 +39,12 @@ supprimer ses annonces
 * Modifier ses informations de compte personnels
 * Modifier une annonces
 
+# Idees
+* Ajout d'une partie commentaire sous les annonces
+* Créer un systeme de nombre de personnes conviées
+* Créer une sous catégorie "autre" pour les sports
+et faire une recherche type ctrl+F dedans
+
 ```diff
 - text in red
 + text in green
