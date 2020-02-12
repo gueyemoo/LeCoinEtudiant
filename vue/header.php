@@ -11,12 +11,12 @@
   <div class="collapse navbar-collapse" id="navbarColor02">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Se Connecter <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="#contact">Se Connecter <span class="sr-only">(current)</span></a>
       </li>
 
       <!-- /////////////////////// -->
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Vehicules</a>
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sportif</a>
 
         <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
           <a class="dropdown-item" href="#">Action</a>
@@ -28,7 +28,7 @@
       <!-- //////////// -->
 
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Multimedia</a>
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Festif</a>
         <!-- /////////////////////// -->
         <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
           <a class="dropdown-item" href="#"> Lorem ipsum dolor.</a>
@@ -39,7 +39,7 @@
         <!-- ////////////////////// -->
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Loisirs</a>
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Educatif</a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
           <a class="dropdown-item" href="#"> Lorem ipsum dolor.</a>
           <a class="dropdown-item" href="#">Lorem ipsum dolor.</a>
@@ -47,32 +47,6 @@
           <a class="dropdown-item" href="#">Lorem ipsum dolor.</a>
         </div>
       </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown4" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Maison</a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown4">
-          <a class="dropdown-item" href="#">Lorem ipsum dolor.</a>
-          <a class="dropdown-item" href="#">Lorem ipsum dolor.</a>
-          <a class="dropdown-item" href="#">Lorem ipsum dolor.<a>
-            <a class="dropdown-item" href="#">Lorem ipsum dolor.</a>
-          </div>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown4" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Mode</a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown4">
-            <a class="dropdown-item" href="#">Lorem ipsum dolor.</a>
-            <a class="dropdown-item" href="#">Lorem ipsum dolor.</a>
-            <a class="dropdown-item" href="#">Lorem ipsum dolor.<a>
-              <a class="dropdown-item" href="#">Lorem ipsum dolor.</a>
-            </div>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown4" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Services</a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown4">
-              <a class="dropdown-item" href="#">Lorem ipsum dolor.</a>
-              <a class="dropdown-item" href="#">Lorem ipsum dolor.</a>
-              <a class="dropdown-item" href="#">Lorem ipsum dolor.<a>
-                <a class="dropdown-item" href="#">Lorem ipsum dolor.</a>
-              </div>
               <li class="nav-item">
                 <a class="nav-link" href="#">Autres</a>
               </li>
