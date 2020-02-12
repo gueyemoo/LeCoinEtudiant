@@ -5,7 +5,6 @@ CREATE TABLE client (
   prenom TEXT,
   email TEXT UNIQUE,
   motdepasse TEXT,
-  numero TEXT,
   emailVerifie INTEGER,
   CONSTRAINT name_unique UNIQUE (email)
 );
@@ -15,7 +14,8 @@ DROP TABLE if exists categorie;
 CREATE TABLE categorie(
   id INTEGER PRIMARY KEY,
   nom TEXT,
-  idpere INTEGER
+  idpere INTEGER,
+  idTitreGlobal INTEGER
 );
 
 DROP TABLE if exists annonce;
@@ -26,10 +26,11 @@ CREATE TABLE annonce (
   categorie INTEGER,
 	titre TEXT,
   contenu TEXT,
-  prix REAL,
-  marque TEXT,
-  taille TEXT,
+  adresse TEXT,
+  nbParticipant INTEGER,
+  nbInteresse INTEGER,
   departement TEXT,
+  datePrevu INTEGER,
   dateHeure INTEGER,
 	photo1 TEXT,
   photo2 TEXT,

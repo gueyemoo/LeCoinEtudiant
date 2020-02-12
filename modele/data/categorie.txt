@@ -1,6 +1,3 @@
-id elem| elem | id fils | id père
-
-
 1|Athlétisme|1|83
 2|Marche|1|83
 3|Marathon|1|83
@@ -22,7 +19,6 @@ id elem| elem | id fils | id père
 19|Triathlon(a ajouter)|1|83
 20|Pentathlon (a ajouter)|1|83
 21|Biathlon|1|83
-
 22|Sports collectifs|22|83
 23|Baseball|22|83
 24|Basket-ball|22|83
@@ -44,12 +40,10 @@ id elem| elem | id fils | id père
 40|Ultimate Frisbee|22|83
 41|Volley-ball|22|83
 42|Water polo|22|83
-
 43|Cyclisme|43|83
 44|BMX|43|83
 45|Cyclisme sur piste|43|83
 46|V.T.T|43|83
-
 47|Sports de cible|47|83
 48|Balle au prisonnier|47|83
 49|Billards|47|83
@@ -59,11 +53,9 @@ id elem| elem | id fils | id père
 53|Golf|47|83
 54|Pétanque|47|83
 55|Tir à l'arc|47|83
-
 56|Sports de glisse(title)|56|83
 57|Snowboard|56|83
 58|Ski|56|83
-
 59|Sports nautiques(title)|59|83
 60|Aviron|59|83
 61|Kanoë-kayak|59|83
@@ -74,23 +66,18 @@ id elem| elem | id fils | id père
 66|Surf|59|83
 67|Voile|59|83
 68|Water polo|59|83
-
 69|Sports de combat|69|83
 70|Arts martiaux|69|83
 71|Boxe|69|83
 72|Lutte|69|83
-
 73|Autres|73|83
 74|Gymnastique|73|83
-
 75|Sports de raquette(title)|75|83
 76|Badminton|75|83
 77|Tennis|75|83
 78|Tennis de table|75|83
-
 79|Sports aériens(title)|79|83
 80|Cerf-volant|79|83
 81|Parachutisme|79|83
 82|Parapente|79|83
-
 83|Sports|83|83
