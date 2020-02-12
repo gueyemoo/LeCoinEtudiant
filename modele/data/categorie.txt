@@ -1,91 +1,96 @@
-1|Athlétisme|1
-2|Marche|1
-3|Marathon|1
-4|Course de fond|1
-5|Demi-fond|1
-6|Course d'obstacles|1
-7|Sprint|1
-8|Course de relais|1
-9|Lancer du disque|1
-10|Lancer du javelot|1
-11|Lancer du marteau|1
-12|Lancer du poids|1
-13|Saut en longueur|1
-14|Saut en hauteur|1
-15|Saut à la perche|1
-16|Triple saut|1
-17|Décathlon|1
-18|Heptathlon|1
-Triathlon(a ajouter)
-Pentathlon (a ajouter)
-Biathlon
+id elem| elem | id fils | id père
 
-19|Sports collectifs|19
-20|Baseball|19
-21|Basket-ball|19
-22|Beach Volley|19
-23|Beach Soccer|19
-24|Cricket|19
-25|Curling|19
-26|Floorball|19
-27|Football|19
-28|Football américain|19
-29|Futsal|19
-30|Handball|19
-31|Hockey|19
-32|Netball|19
-33|Paintball|19
-34|Rugby|19
-35|Slamball|19
-36|Softball|19
-37|Ultimate Frisbee|19
-38|Volley-ball|19
-39|Water polo|19
 
-40|Cyclisme|40
-41|BMX|40
-42|Cyclisme sur piste|40
-43|V.T.T|40
+1|Athlétisme|1|83
+2|Marche|1|83
+3|Marathon|1|83
+4|Course de fond|1|83
+5|Demi-fond|1|83
+6|Course d'obstacles|1|83
+7|Sprint|1|83
+8|Course de relais|1|83
+9|Lancer du disque|1|83
+10|Lancer du javelot|1|83
+11|Lancer du marteau|1|83
+12|Lancer du poids|1|83
+13|Saut en longueur|1|83
+14|Saut en hauteur|1|83
+15|Saut à la perche|1|83
+16|Triple saut|1|83
+17|Décathlon|1|83
+18|Heptathlon|1|83
+19|Triathlon(a ajouter)|1|83
+20|Pentathlon (a ajouter)|1|83
+21|Biathlon|1|83
 
-44|Sports de cible|44
-45|Balle au prisonnier|44
-46|Billards|44
-47|Boomerang|44
-48|Bowling|44
-49|Fléchettes|44
-50|Golf|44
-51|Pétanque|44
-52|Tir à l'arc|44
+22|Sports collectifs|22|83
+23|Baseball|22|83
+24|Basket-ball|22|83
+25|Beach Volley|22|83
+26|Beach Soccer|22|83
+27|Cricket|22|83
+28|Curling|22|83
+29|Floorball|22|83
+30|Football|22|83
+31|Football américain|22|83
+32|Futsal|22|83
+33|Handball|22|83
+34|Hockey|22|83
+35|Netball|22|83
+36|Paintball|22|83
+37|Rugby|22|83
+38|Slamball|22|83
+39|Softball|22|83
+40|Ultimate Frisbee|22|83
+41|Volley-ball|22|83
+42|Water polo|22|83
 
-Sports de glisse(title)
-Snowboard
-Ski
+43|Cyclisme|43|83
+44|BMX|43|83
+45|Cyclisme sur piste|43|83
+46|V.T.T|43|83
 
-Sports nautiques(title)
-Aviron
-Canoë-kayak
-Natation
-Pêche sportive
-Plongée sous-marine
-Rugby subaquatique
-Surf
-Voile
-Water polo
+47|Sports de cible|47|83
+48|Balle au prisonnier|47|83
+49|Billards|47|83
+50|Boomerang|47|83
+51|Bowling|47|83
+52|Fléchettes|47|83
+53|Golf|47|83
+54|Pétanque|47|83
+55|Tir à l'arc|47|83
 
-Sports de combat
-Arts martiaux
-Boxe
-Lutte
+56|Sports de glisse(title)|56|83
+57|Snowboard|56|83
+58|Ski|56|83
 
-Autres
-Gymnastique
+59|Sports nautiques(title)|59|83
+60|Aviron|59|83
+61|Kanoë-kayak|59|83
+62|Natation|59|83
+63|Pêche sportive|59|83
+64|Plongée sous-marine|59|83
+65|Rugby subaquatique|59|83
+66|Surf|59|83
+67|Voile|59|83
+68|Water polo|59|83
 
-Sports de raquette(title)
-Badminton
-Tennis
-Tennis de table
+69|Sports de combat|69|83
+70|Arts martiaux|69|83
+71|Boxe|69|83
+72|Lutte|69|83
 
-Sports aériens(title)
-Cerf-volant
-Parachutisme
-Parapente
+73|Autres|73|83
+74|Gymnastique|73|83
+
+75|Sports de raquette(title)|75|83
+76|Badminton|75|83
+77|Tennis|75|83
+78|Tennis de table|75|83
+
+79|Sports aériens(title)|79|83
+80|Cerf-volant|79|83
+81|Parachutisme|79|83
+82|Parapente|79|83
+
+83|Sports|83|83
