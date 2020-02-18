@@ -54,7 +54,7 @@ class DAO
       $max= $reponseDeRequete->fetch()[0];
       $idClient= intval($max)+1;
       //hash du pass pour le stockage
-      // $pass=hash("sha256",$pass);
+      $pass=hash("sha256",$pass);
 
       //insertion du client dans la base
       $requeteSQL = "INSERT INTO client VALUES ($idClient,'$nom','$prenom','$email','$pass',0)";
