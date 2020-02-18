@@ -3,7 +3,7 @@
 include_once("../modele/DAO.class.php");
 
 
-if((count($_POST)==5 &&$_POST["nom"] && $_POST["prenom"] && $_POST["tel"] && $_POST["mail"] && $_POST["pass"] && $_POST["pass2"])){
+if((count($_POST)==6 &&$_POST["nom"] && $_POST["prenom"] && $_POST["mail"] && $_POST["pass"] && $_POST["pass2"])){
 //   On verifie que les deux mots de passes sont bien les meme   //
         if($_POST["pass"] === $_POST["pass2"]){
           //construction du Client
@@ -25,5 +25,7 @@ if((count($_POST)==5 &&$_POST["nom"] && $_POST["prenom"] && $_POST["tel"] && $_P
 else {
   include('../vue/Accueilview.php');
   var_dump($_POST["nom"]);
+  var_dump($_POST);
+  var_dump(count($_POST));
 }
 ?>

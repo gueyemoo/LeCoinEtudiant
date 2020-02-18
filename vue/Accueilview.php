@@ -259,28 +259,30 @@
     <h3>Inscription</h3>
     <h4>Inscris toi et commence à déposer t'es annonces !</h4>
     <fieldset>
-      <input placeholder="Prenom" id="prenom" value="<?=$_POST['prenom']??"" ?>" type="text" tabindex="1" required>
+      <input placeholder="Prenom" id="prenom" value="<?=$_POST['prenom']??"" ?>" name="prenom" type="text" tabindex="1" required>
     </fieldset>
     <fieldset>
-      <input placeholder="Nom"  id="nom" value="<?=$_POST['nom']??"" ?>" type="text" tabindex="2" required>
+      <input placeholder="Nom"  id="nom" value="<?=$_POST['nom']??"" ?>" name="nom" type="text" tabindex="2" required>
     </fieldset>
     <fieldset>
-      <input placeholder="Email"  id="email" value="<?=$_POST['email']??"" ?>" type="email" tabindex="3" required>
+      <input placeholder="Email"  id="mail" value="<?=$_POST['mail']??"" ?>" name="mail" type="email" tabindex="3" required>
     </fieldset>
     <fieldset>
-      <input placeholder="mot de passe" id="pass" type="password" tabindex="4" required>
+      <input placeholder="mot de passe" id="pass" name="pass" type="password" tabindex="4" required>
     </fieldset>
     <fieldset>
-      <input placeholder="confirmer votre mot de passe" id="pass2" type="password" tabindex="5" required>
+      <input placeholder="confirmer votre mot de passe" id="pass2" name="pass2" type="password" tabindex="5" required>
     </fieldset>
     <fieldset>
       <button name="submit" type="submit" id="contact-submit" value"submit">Submit</button>
     </fieldset>
   </form>
+
+  <?php if ($motDePasseDifférent??0): ?>
+  <h4> <p>Mot de passe différent</p></h4>
+<?php endif; ?>
 </div>
   </article>
-
     <?php include('footer.php') ?>
-
 </body>
 </html>
