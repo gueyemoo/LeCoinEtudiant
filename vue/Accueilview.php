@@ -236,8 +236,8 @@
     });
     </script>
 
-    <!-- <script src="../vue/script/jquery.min.js"></script> -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="../vue/script/jquery.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
     <script src='../vue/script/jquery.flipster.min.js'></script>
     <script>
     var carousel = $('#carousel').flipster({
@@ -255,30 +255,28 @@
 
   <article class="">
     <div class="container">
-  <form id="contact" class="text-center" action="" method="post">
+  <form id="contact" class="text-center" action="<?=$_SERVER['PHP_SELF']?>" method="POST">
     <h3>Inscription</h3>
     <h4>Inscris toi et commence à déposer t'es annonces !</h4>
     <fieldset>
-      <input placeholder="Prenom" type="text" tabindex="1" required>
+      <input placeholder="Prenom" id="prenom" value="<?=$_POST['prenom']??"" ?>" type="text" tabindex="1" required>
     </fieldset>
     <fieldset>
-      <input placeholder="Nom" type="text" tabindex="2" required>
+      <input placeholder="Nom"  id="nom" value="<?=$_POST['nom']??"" ?>" type="text" tabindex="2" required>
     </fieldset>
     <fieldset>
-      <input placeholder="Email" type="email" tabindex="3" required>
+      <input placeholder="Email"  id="email" value="<?=$_POST['email']??"" ?>" type="email" tabindex="3" required>
     </fieldset>
     <fieldset>
-      <input placeholder="mot de passe" type="password" tabindex="4" required>
+      <input placeholder="mot de passe" id="pass" type="password" tabindex="4" required>
     </fieldset>
     <fieldset>
-      <input placeholder="confirmer votre mot de passe" type="password" tabindex="5" required>
+      <input placeholder="confirmer votre mot de passe" id="pass2" type="password" tabindex="5" required>
     </fieldset>
     <fieldset>
-      <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+      <button name="submit" type="submit" id="contact-submit" value"submit">Submit</button>
     </fieldset>
   </form>
-
-
 </div>
   </article>
 
