@@ -5,6 +5,7 @@
   <title>Le Coin Etudiant</title>
   <link rel="stylesheet" href="../vue/css/bootstrap.min.css">
   <link rel="stylesheet" href="../vue/css/Accueilview.css">
+  <link rel="stylesheet" href="../vue/css/Header.css">
   <link rel="stylesheet" href='../vue/css/jquery.flipster.css'>
 
 
