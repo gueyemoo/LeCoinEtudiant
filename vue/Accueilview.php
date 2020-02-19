@@ -278,7 +278,12 @@
         <fieldset>
           <button name="submit" type="submit" id="contact-submit" value"submit">Submit</button>
         </fieldset>
+        <?php if ($mailDejaUtilisé??0): ?>
+          <p id="mailUsed" class="text-center" style="font-size:2em; margin: 0px; color:red;">Email déjà utilisé</p>
+        <?php endif; ?>
       </form>
+
+
       <script type="text/javascript">
       var check = function() {
         var bt = document.getElementById('contact-submit');

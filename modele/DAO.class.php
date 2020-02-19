@@ -13,7 +13,7 @@ class DAO
 
     } catch (Exception $e) {
       die("erreur de connexion:".$e->getMessage());
-      var_dump('EH OH JE LOUVRE PAS');
+      // var_dump('EH OH JE LOUVRE PAS');
     }
   }
   //------------------------------------------------------------------------//
@@ -59,6 +59,54 @@ class DAO
       //insertion du client dans la base
       $requeteSQL = "INSERT INTO client VALUES ($idClient,'$nom','$prenom','$email','$pass',0)";
       $retour=$this->db->query($requeteSQL);
+
+      //AJOUT SESSION
+      // if($retour){
+      //   //si l'ajout c'est bien passé , contrainte email unique
+      //   $Client = $this->getClient($idClient);
+      //   $_SESSION['Client'] = $Client;
+      //   $_SESSION['Connexion'] = true;
+      //   $code=hash('sha256',$Client->id.$Client->email);
+      //
+      //
+      //
+      //   // Mail html
+      //   $headers = 'From: babsyou@gmail.com' . "\r\n" .
+      //   'MIME-Version: 1.0' . "\r\n" .
+      //   'Content-Type: text/html; charset=utf-8';
+      //   $to      = $Client->email;
+      //   $subject = 'Verfication d\'email LeCoinEtudiant';
+      //   $message_html ='<html>
+      //   <body>
+      //   <h1>Bienvenue sur LeCoinEtudiant</h1><br>
+      //   <h2>Bonjour '.$Client->prenom.' , </h2><br>
+      //   <p>Voici ton code <strong>'.$code.'</strong> </p><br>
+      //   </body>
+      //   </html>';
+      //   $message = "Content-Type: text/html; charset=\"iso-8859-1\"\n";
+      //   $message .= "Content-Transfer-Encoding: quoted-printable\n\n";
+      //   $message .= $message_html;
+      //   $message .= "\n\n";
+      $to       = 'lecoinetudiant2020@gmail.com';
+      $subject  = 'Testing sendmail.exe';
+      $message  = 'COUCOU, STP MARCHE ! ';
+      $headers  = 'From: lecoinetudiant2020@gmail.com' . "\r\n" .
+      'MIME-Version: 1.0' . "\r\n" .
+      'Content-type: text/html; charset=utf-8';
+      if(mail($to, $subject, $message, $headers))
+      echo "Email sent";
+      else
+      echo "Email sending failed";
+
+
+
+      // $resultatmail = mail("babsyou@gmail.com", $subject, "je teste", $headers);
+      // $resultatmail  = mail("babsyou@gmail.com", "Hello World", "This is email body", $headers);
+      //
+      // var_dump('retour email:');
+      // var_dump($resultatmail);
+
+      // }
     }
     return (bool)$retour;// renvoi vrai si il est ajouté et faux sinon ( le sinon correspond a la contrainte email unique)
     var_dump($retour);
