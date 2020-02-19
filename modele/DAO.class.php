@@ -250,8 +250,8 @@ class DAO
         																	<table border="0" cellpadding="0" cellspacing="0" width="100%">
         																		<tr>
         																			<td valign="top" class="textContent">
-        																				<h3 mc:edit="header" style="color:#5F5F5F;line-height:125%;font-family:Helvetica,Arial,sans-serif;font-size:20px;font-weight:normal;margin-top:0;margin-bottom:3px;text-align:center;">Vérifier votre compte</h3>
-        																				<div mc:edit="body" style="text-align:left;font-family:Helvetica,Arial,sans-serif;font-size:15px;margin-bottom:0;color:#5F5F5F;line-height:135%;">Afin de verifier votre email et ainsi activité votre compte veuillez copier le code ci-dessous: </div>
+        																				<h3 mc:edit="header" style="color:#5F5F5F;line-height:125%;font-family:Helvetica,Arial,sans-serif;font-size:20px;font-weight:normal;margin-top:0;margin-bottom:3px;text-align:center;">Activer votre compte</h3>
+        																				<div mc:edit="body" style="text-align:left;font-family:Helvetica,Arial,sans-serif;font-size:15px;margin-bottom:0;color:#5F5F5F;line-height:135%;">Afin de verifier votre email et ainsi activiter votre compte veuillez copier le code ci-dessous: </div>
         																			</td>
         																		</tr>
         																	</table>
@@ -326,7 +326,7 @@ class DAO
         																	<table border="0" cellpadding="0" cellspacing="0" width="100%">
         																		<tr>
         																			<td valign="top" class="textContent">
-        																				<div style="text-align:center;font-family:Helvetica,Arial,sans-serif;font-size:15px;margin-bottom:0;margin-top:3px;color:#5F5F5F;line-height:135%;">Ce code est valable pour une durée de 3 jours</div>
+        																				<div style="text-align:center;font-family:Helvetica,Arial,sans-serif;font-size:15px;margin-bottom:0;margin-top:3px;color:#5F5F5F;line-height:135%;">Sans activation votre compte est valable pour une durée de 3 jours</div>
         																			</td>
         																		</tr>
         																	</table>
@@ -355,7 +355,6 @@ class DAO
         															<td valign="top" bgcolor="#E1E1E1">
         																<div style="font-family:Helvetica,Arial,sans-serif;font-size:13px;color:#828282;text-align:center;line-height:120%;">
         																	<div>Copyright &#169; 2020 <a href="http://localhost/lecoinetudiant/" target="_blank" style="text-decoration:none;color:#828282;"><span style="color:#828282;">Le Coin Etudiant</span></a>. All&nbsp;rights&nbsp;reserved.</div>
-        																	<div>If you do not want to receive emails from us, you can <a href="#" target="_blank" style="text-decoration:none;color:#828282;"><span style="color:#828282;">unsubscribe</span></a>.</div>
         																</div>
         															</td>
         														</tr>
@@ -387,10 +386,13 @@ class DAO
       // $headers  = 'From: lecoinetudiant2020@gmail.com' . "\r\n" .
       // 'MIME-Version: 1.0' . "\r\n" .
       // 'Content-type: text/html; charset=utf-8';
-      if(mail($to, $subject, $message, $headers))
-      echo "Email sent";
-      else
-      echo "Email sending failed";
+
+      mail($to, $subject, $message, $headers);
+      // if(mail($to, $subject, $message, $headers))
+      // echo "Email sent";
+      // else
+      // echo "Email sending failed";
+      header("Location:../controleur/VerificationEmail.ctrl.php");
 
 
 
@@ -433,6 +435,8 @@ class DAO
 //POUR TOUS LES CONTROLEURS
 $dao = new DAO();
 session_start();
-// $client=$_SESSION['Client']??0;
+$client=$_SESSION['Client']??0;
+$clientConnecte=$_SESSION['Connexion']??0;
+
 
 ?>
