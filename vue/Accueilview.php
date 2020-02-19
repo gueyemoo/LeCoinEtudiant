@@ -303,6 +303,12 @@
       </script>
     </div>
   </article>
+
+  <!-- cree un espace entre le formulaire et le footer -->
+  <div class="col py-5 px-md-5"></div>
+
+  <footer class="footer">
   <?php include('footer.php') ?>
+  </footer>
 </body>
 </html>

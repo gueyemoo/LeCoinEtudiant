@@ -4,6 +4,20 @@ footer{
   background-color: #222;
   color: #FFF;
 }
+ /* Pour que le footer soit toujours en bas de page */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  background: #000000;
+  color: #FFFFFF;
+}
 </style>
 <!-- Footer -->
 <footer class="page-footer font-small pt-4">
