@@ -39,6 +39,23 @@ supprimer ses annonces
 * Modifier ses informations de compte personnels
 * Modifier une annonces
 
+# Technologie et Logiciel utilisé
+
+#### Developpement
+* Atom (editeur de texte)
+* Bootstrap (framework)
+* JQuery (bibliothéque javascript)
+* Bootbox (libraire javascript)
+* Flipster (laibraire javascript)
+* Sendmail (serveur de messagerie)
+* WAMP (plateforme de développement Web de type WAMP)
+* Language :
+  HTML | CSS | PHP | Javasript | Sqlite | Shell
+
+  #### Documentation
+* A remplir (Merci de le remplir Jerome)
+
+
 # Idees
 * Ajout d'une partie commentaire sous les annonces
 * Créer un systeme de nombre de personnes conviées
