@@ -240,6 +240,9 @@
     <script src="../vue/script/jquery.min.js"></script>
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
     <script src='../vue/script/jquery.flipster.min.js'></script>
+    <script src="../vue/script/bootstrap.min.js"></script>
+    <script src="../vue/script/bootbox.min.js"></script>
+
     <script>
     var carousel = $('#carousel').flipster({
       style: 'carousel',
@@ -280,9 +283,19 @@
         </fieldset>
         <?php if ($mailDejaUtilisé??0): ?>
           <p id="mailUsed" class="text-center" style="font-size:2em; margin: 0px; color:red;">Email déjà utilisé</p>
+          <script type="text/javascript">
+          bootbox.alert({
+            title: "Inscription impossible",
+            message: "L'adresse mail saisie est déja utilisé.",
+            locale: "fr",
+            animate: true,
+            backdrop: true,
+            centerVertical: true
+          });
+          </script>
+
         <?php endif; ?>
       </form>
-
 
       <script type="text/javascript">
       var check = function() {
@@ -308,7 +321,7 @@
   <div class="col py-5 px-md-5"></div>
 
   <footer class="footer">
-  <?php include('footer.php') ?>
+    <?php include('footer.php') ?>
   </footer>
 </body>
 </html>
