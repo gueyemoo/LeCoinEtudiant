@@ -30,14 +30,24 @@
         <p class="h3 mb-4">Code de Verification:</p>
 
         <!-- Email -->
-        <input class="form-control form-control-lg mb-4 text-center" type="text" name="codeValidation" value="<?=$_POST['codeValidation']??"" ?>" placeholder="CODE" minlength="5" maxlength="5" style="font-size: 3em; font-weight: bold;" autofocus required>
+        <input class="form-control form-control-lg mb-4 text-center" type="text" name="codeValidation" autocomplete="off" value="<?=$_POST['codeValidation']??"" ?>" placeholder="CODE" minlength="5" maxlength="5" style="font-size: 3em; font-weight: bold;" autofocus required>
 
         <button name="submit" class="btn btn-dark btn-block" type="submit" value="submit">Valider</button>
-        <?php if ($codeCorrect): ?>
-          <p>Le code est <?= $codeCorrect ?> </p>
-        <?php endif; ?>
+
+        <script src="../vue/script/bootbox.min.js"></script>
         <?php if ($codeIncorrect): ?>
-          <p>Mauvais code</p>
+          <!-- <p>Mauvais code</p> -->
+
+          <script type="text/javascript">
+          bootbox.alert({
+            title: "Activation de votre compte",
+            message: "Veuillez saisir le <strong style=\"color:red;\">code</strong> reçu par mail lors de votre inscription.",
+            locale: "fr",
+            animate: true,
+            backdrop: true,
+            centerVertical: true
+          });
+          </script>
         <?php endif; ?>
       </form>
     </div>

@@ -30,7 +30,7 @@ if ($clientConnecte&&!$clientVerifie){
   include("../vue/VerificationEmailview.php");
 
 }else{
-  $codeIncorrect=1;
+  // $codeIncorrect=1;
   include("../vue/VerificationEmailview.php");
 }
  ?>
