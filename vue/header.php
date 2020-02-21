@@ -3,7 +3,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">Le Coin Etudiant</a>
+  <a class="navbar-brand" href="../controleur/Accueil.ctrl.php">Le Coin Etudiant</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -72,6 +72,7 @@ aria-hidden="true">
 </div>
 
 <!-- ///////////////FIN CONNECTION//////////////// -->
+
 <!-- /////////////////////// -->
 <li class="nav-item dropdown">
   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sportif</a>
@@ -105,9 +106,18 @@ aria-hidden="true">
     <a class="dropdown-item" href="#">Lorem ipsum dolor.</a>
   </div>
 </li>
+
 <li class="nav-item">
   <a class="nav-link" href="#">Autres</a>
 </li>
+<!-- /////////////////////////////// -->
+<?php if ($clientConnecte==1 && $client->emailVerifie==0): ?>
+<!-- Si le client est connecté mais n'a pas vérifié son compte -->
+  <li class="nav-item">
+    <a class="nav-link" href="../controleur/VerificationEmail.ctrl.php">Vérifier son compte</a>
+  </li>
+<?php endif; ?>
+<!-- ////////////////////////////// -->
 </ul>
 <form class="form-inline my-2 my-lg-0">
   <input class="form-control mr-sm-2" type="text" placeholder="Rechercher">
