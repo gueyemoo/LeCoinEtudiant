@@ -44,7 +44,9 @@
 aria-hidden="true">
 <div class="modal-dialog" role="document">
   <div class="modal-content">
+    <form id="form_connexion" action="<?=$_SERVER['PHP_SELF']?>" method="post">
     <div class="modal-header text-center">
+
       <h4 class="modal-title w-100 font-weight-bold">Connexion</h4>
       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
         <span aria-hidden="true">&times;</span>
@@ -54,19 +56,20 @@ aria-hidden="true">
       <div class="md-form mb-5">
         <i class="fas fa-envelope prefix grey-text"></i>
         <label data-error="wrong" data-success="right" for="defaultForm-email">Votre email :</label>
-        <input type="email" id="defaultForm-email" class="form-control validate">
+        <input name="email" type="email" id="defaultForm-email" value="<?=$_POST['email']??"" ?>" class="form-control validate" required>
       </div>
 
       <div class="md-form mb-4">
         <i class="fas fa-lock prefix grey-text"></i>
         <label data-error="wrong" data-success="right" for="defaultForm-pass">Votre mot de passe :</label>
-        <input type="password" id="defaultForm-pass" class="form-control validate">
+        <input name="password" type="password" id="defaultForm-pass" value="<?=$_POST['password']??"" ?>" class="form-control validate" required>
       </div>
 
     </div>
     <div class="modal-footer d-flex justify-content-center">
-      <button class="btn btn-default">Se connecter</button>
+      <button class="btn btn-default" type="submit" value="submit">Se connecter</button>
     </div>
+  </form>
   </div>
 </div>
 </div>

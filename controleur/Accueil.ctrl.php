@@ -23,10 +23,21 @@ if((count($_POST)==6 &&$_POST["nom"] && $_POST["prenom"] && $_POST["mail"] && $_
         }
 }
 else {
+  if (count($_POST)==2 && $_POST["email"] && $_POST["password"]) {
+      if($dao->connexion($_POST["email"], $_POST["password"])) {
+        echo "connecté";
+
+      }
+      else {
+        $echecConnexion=1;
+      }
+  }
   include('../vue/Accueilview.php');
   // var_dump($_POST["nom"]);
   // var_dump($_POST);
   // var_dump(count($_POST));
 
 }
+
+
 ?>

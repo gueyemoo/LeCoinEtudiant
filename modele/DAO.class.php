@@ -27,6 +27,27 @@ class DAO
     return $result[0];
   }
 
+  function connexion($email, $pass) : bool {
+    $pass=hash("sha256", $pass);
+    $requeteSQLmdp = "SELECT motdepasse FROM client WHERE email =\"$email\"";
+    $retour=$this->db->query($requeteSQLmdp);
+    if ($retour) {
+      $mdp = $retour->fetch()[0];
+      if ($pass == $mdp) {
+        $requeteSQLid = "SELECT id FROM client WHERE email =\"$email\"";
+        $retour=$this->db->query($requeteSQLid);
+        $id = $retour->fetch()[0];
+        $Client = $this->getClient($id);
+        $_SESSION['Client'] = $Client;
+        $_SESSION['Connexion'] = true;
+        return true;
+      }
+    }
+    else {
+      return false;
+    }
+  }
+
 
   function getAllClient() : array {
     //   RENVOIES TOUT LES CLIENTS DE LA BASE DE DONNEE   //
