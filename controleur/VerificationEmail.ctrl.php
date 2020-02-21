@@ -2,7 +2,7 @@
 include_once("../modele/DAO.class.php");
 
 $code=$_POST['codeValidation']??0;
-$codeIncorrect=0;//aucun probleme pour le moment
+$codeIncorrect=0;//Signifie qu'il n'y a pas d'erreur
 $codeCorrect_hash=$clientConnecte?(hash('sha256',$client->id.$client->email)):"";
 $codeCorrect= substr($codeCorrect_hash, 0, 5);
 
