@@ -277,7 +277,7 @@ class DAO
         														<table align="center" border="0" cellpadding="0" cellspacing="0" class="flexibleContainer">
         															<tr>
         																<td align="center" valign="top" class="textContent">
-        																	<div style="text-align:left;font-family:Helvetica,Arial,sans-serif;font-size:3em;margin-bottom:0;margin-top:10px;color:#5F5F5F;line-height:135%;">5847</div>
+        																	<div style="text-align:left;font-family:Helvetica,Arial,sans-serif;font-size:3em;margin-bottom:0;margin-top:10px;color:#5F5F5F;line-height:135%;">'.$code.'</div>
         																</td>
         															</tr>
         														</table>
@@ -405,7 +405,7 @@ class DAO
       }
     }
     return (bool)$retour;// renvoi vrai si il est ajouté et faux sinon ( le sinon correspond a la contrainte email unique)
-    var_dump($retour);
+    // var_dump($retour);
   }
 
 
@@ -418,7 +418,10 @@ class DAO
 
         $client=$_SESSION['Client'];
 
-        if($code==substr(hash('sha256',$client->id.$client->email), 0, 5)){   //si c'est le bon code//
+        $codeCorrect_Hash=$clientConnecte?(hash('sha256',$client->id.$client->email)):"";
+        $codeCorrect= substr($codeCorrect_Hash, 0, 5);
+
+        if($code==$codeCorrect){   //si c'est le bon code//
           $requeteSQL = "UPDATE client SET emailVerifie=1 WHERE id=$id"; //update de la base
           $reponseDeRequete=$this->db->query($requeteSQL);
           $_SESSION['Client']->emailVerifie=true;   //update de la session
@@ -437,6 +440,6 @@ $dao = new DAO();
 session_start();
 $client=$_SESSION['Client']??0;
 $clientConnecte=$_SESSION['Connexion']??0;
-
+$clientVerifie=$_SESSION['Client']->emailVerifie??0;
 
 ?>
