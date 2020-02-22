@@ -29,23 +29,21 @@ class DAO
 
   function connexion($email, $pass) : bool {
     $pass=hash("sha256", $pass);
-    $requeteSQLmdp = "SELECT motdepasse FROM client WHERE email =\"$email\"";
+    $requeteSQLmdp = "SELECT motdepasse FROM client WHERE email =\"$email\""; //récupération du mdp avec email
     $retour=$this->db->query($requeteSQLmdp);
-    if ($retour) {
+    if ($retour) {  //si requete a aboutie, alors email existe
       $mdp = $retour->fetch()[0];
-      if ($pass == $mdp) {
-        $requeteSQLid = "SELECT id FROM client WHERE email =\"$email\"";
+      if ($pass == $mdp) {  // vérification du mdp saisie avec celui de la base de données
+        $requeteSQLid = "SELECT id FROM client WHERE email =\"$email\""; //recupération de l'id du client
         $retour=$this->db->query($requeteSQLid);
         $id = $retour->fetch()[0];
         $Client = $this->getClient($id);
-        $_SESSION['Client'] = $Client;
+        $_SESSION['Client'] = $Client;  //ouverture de la session du client
         $_SESSION['Connexion'] = true;
         return true;
       }
     }
-    else {
-      return false;
-    }
+    return false; //la requete n'a pas aboutie, email ou mdp incorrect
   }
 
 

@@ -69,10 +69,28 @@ aria-hidden="true">
     <div class="modal-footer d-flex justify-content-center">
       <button class="btn btn-default" type="submit" value="submit">Se connecter</button>
     </div>
+    <script src="../vue/script/bootbox.min.js"></script>
+    <?php if (isset($echecConnexion)) {
+            if($echecConnexion) { ?>
+      <script type="text/javascript" >
+      bootbox.alert({
+        title: "Echec de connexion",
+        message: "Email ou mot de passe incorrect.",
+        locale: "fr",
+        animate: true,
+        backdrop: true,
+        centerVertical: true
+      });
+      </script>
+
+    <?php }
+   } ?>
   </form>
   </div>
 </div>
 </div>
+
+<!-- ///////////////////////////////// -->
 
 <!-- ///////////////FIN CONNECTION//////////////// -->
 
