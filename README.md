@@ -11,7 +11,7 @@
 
 * faire un diagramme de GANTT (planifier le developpement)
 ```diff
-# C'est fait
+! Possible evolution
 ```
 * faire les maquettes du siteweb
 ```diff
@@ -23,7 +23,7 @@
 ```
 * faire un diagramme de cas d'utilisation
 ```diff
-+ C'est fait
+! A Mettre à jour
 ```
 
 # Developpement
