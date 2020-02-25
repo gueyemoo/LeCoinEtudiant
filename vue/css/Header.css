@@ -6,3 +6,7 @@
 #defaultForm-email, #defaultForm-pass{
   color: black;
 }
+
+.cache {
+  display: none;
+}

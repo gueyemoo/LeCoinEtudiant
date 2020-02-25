@@ -69,6 +69,10 @@ aria-hidden="true">
     <div class="modal-footer d-flex justify-content-center">
       <button class="btn btn-default" type="submit" value="submit">Se connecter</button>
     </div>
+    <div class="" >
+      <p style="float: left; text-align: center; margin-left: 140px">Si tu n'as pas de compte, inscris toi&nbsp</p><a href="../controleur/Inscription.ctrl.php">ici</a>
+    </div>
+
     <script src="../vue/script/bootbox.min.js"></script>
     <?php if (isset($echecConnexion)) {
             if($echecConnexion) { ?>
