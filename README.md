@@ -62,6 +62,9 @@ supprimer ses annonces
 * Créer une sous catégorie "autre" pour les sports
 et faire une recherche type ctrl+F dedans
 
+# Ameliorations
+* Revoir l'issue numero 12
+
 ```diff
 - text in red
 + text in green
