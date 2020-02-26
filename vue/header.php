@@ -142,6 +142,12 @@ aria-hidden="true">
     <a class="nav-link" href="../controleur/VerificationEmail.ctrl.php">Vérifier son compte</a>
   </li>
 <?php endif; ?>
+
+<?php if($clientConnecte==1): ?>
+  <li class="nav-item">
+    <a class="nav-link" href="../controleur/Profil.ctrl.php" >Mon profil</a>
+  </li>
+<?php endif; ?>
 <!-- ////////////////////////////// -->
 </ul>
 <form class="form-inline my-2 my-lg-0">
