@@ -1,5 +1,6 @@
 <?php
 require_once('../modele/Client.class.php');
+require_once('../modele/Annonce.class.php');
 
 class DAO
 {
@@ -15,6 +16,14 @@ class DAO
       die("erreur de connexion:".$e->getMessage());
       // var_dump('EH OH JE LOUVRE PAS');
     }
+
+    // mise en place de la photo par défaut //
+//  NON FONCTIONNEL, METTRE PHOTO PAR DEFAUT LORS DE L'AJOUT DE L'ANNONCE  //
+    // $requeteSQL = 'SELECT id FROM annonce WHERE photo1==\'NULL\'';
+    // $annoncesSansPhoto = $this->db->query($requeteSQL);
+    // $requeteSetPhoto = "UPDATE annonce SET photo1=\"img/icone_sport.jpg\"";
+    // $update = $this->db->query($requeteSetPhoto);
+    
   }
   //------------------------------------------------------------------------//
   //--------------------   FONCTIONS POUR LES CLIENTS   --------------------//
@@ -44,6 +53,66 @@ class DAO
       }
     }
     return false; //la requete n'a pas aboutie, email ou mdp incorrect
+  }
+
+  function getAnnonces(): array {
+    // retourne les annonces postées
+    $tab_retour = array();
+    $requeteSQL = "SELECT * FROM annonce";
+    $retourRequete = $this->db->query($requeteSQL);
+    $tab_retour = $retourRequete->fetchAll(PDO::FETCH_CLASS, "Annonce");
+    return $tab_retour;
+  }
+
+  function getCategorie($idAnnonce): string {
+    // retourne la categorie de l'annonce renseignée en paramètre
+    $requeteSQL = "SELECT C.nom FROM categorie C, annonce A WHERE A.id =$idAnnonce AND A.categorie=C.id";
+    $retour = $this->db->query($requeteSQL);
+    $categorie = $retour->fetch()[0];
+    return $categorie;
+  }
+
+  function getAdresse($idAnnonce): string {
+    // retourne l'adresse de l'annonce renseignée en paramètre
+    $requeteSQL = "SELECT adresse FROM annonce WHERE id =$idAnnonce";
+    $retour = $this->db->query($requeteSQL);
+    $addr = $retour->fetch()[0];
+    return $addr;
+  }
+
+  function getDateAnnonce($idAnnonce): string {
+    // retourne la date de l'annonce renseignée en paramètre
+    $requeteSQL = "SELECT datePrevu FROM annonce WHERE id =$idAnnonce";
+    $retour = $this->db->query($requeteSQL);
+    $date = $retour->fetch()[0];
+    return $date;
+  }
+
+  function getHeure($idAnnonce): string {
+    // retourne l'heure de l'annonce renseignée en paramètre
+    $requeteSQL = "SELECT dateHeure FROM annonce WHERE id =$idAnnonce";
+    $retour = $this->db->query($requeteSQL);
+    $heure = $retour->fetch()[0];
+    return $heure;
+  }
+
+  function getAnnoncesClient($idClient): array {
+    // retourne les annonces postées par le client dont l'id est renseigné en paramètre
+    $id = (int) $idClient;
+    $tab_retour = array();
+    $requeteSQL = "SELECT * FROM annonce WHERE idClient =$id";
+    $retourRequete = $this->db->query($requeteSQL);
+    $tab_retour = $retourRequete->fetchAll(PDO::FETCH_CLASS, "Annonce");
+    return $tab_retour;
+  }
+
+  function getAnnoncesFav(int $idClient): array {
+    // retourne les annonces favoris du client dont l'id est renseigné en paramètre
+    $tab_retour = array();
+    $requeteSQL = "SELECT A.* FROM favoris F, annonce A WHERE F.idClient =$idClient AND F.idAnnonce=A.id";
+    $retourRequete = $this->db->query($requeteSQL);
+    $tab_retour = $retourRequete->fetchAll(PDO::FETCH_CLASS, "Annonce");
+    return $tab_retour;
   }
 
 
@@ -451,8 +520,11 @@ class DAO
     return $retour;
   }
 }
+
+
 }
 //fin de classe
+
 
 //POUR TOUS LES CONTROLEURS
 $dao = new DAO();

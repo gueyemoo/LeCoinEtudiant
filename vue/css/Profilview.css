@@ -15,18 +15,21 @@ body {
 /* Create two unequal columns that floats next to each other */
 .column {
   float: left;
-  padding: 10px;
-  border-right: solid 1px grey;
+  /* border-right: solid 1px grey; */
   }
 
 /* Left and right column */
 #gauche {
   width: 30%;
+  height: 100%;
+  padding: 50px;
+  font-size: 18px;
 }
 
 /* Middle column */
 #droite {
   width: 70%;
+  border-left: solid 5px grey;
 }
 
 /* Clear floats after the columns */
@@ -41,4 +44,53 @@ body {
   .column #gauche, .column #droite {
     width: 100%;
   }
+}
+
+/* AFFICHAGE DES ANNONCES */
+
+#annoncesPub {
+  /* rendre la div scrollable */
+  padding: 20px;
+  overflow-y: auto;
+  height: 350px;
+  border-bottom: solid 3px grey;
+}
+
+#annoncesFav {
+  padding: 20px;
+  overflow-y: auto;
+  height: 800px;
+}
+.annonce {
+  margin: 5px 15px 15px 5px;;
+  float: left;
+  width: 300px;
+  height: 150px;
+  border: solid 3px grey;
+  border-radius: 5px 20px / 5px 24px;
+  padding: 5px;
+}
+
+.image {
+  float: left;
+  margin: 25px 10px 25px 2px;;
+  height: 80px;
+  width: 80px;
+}
+
+.titreDiv {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+#nomPrenom {
+  font-size: 35px;
+}
+
+label {
+  font-weight: bold;
+}
+
+#etat, #mail {
+  margin-bottom: 30px;
 }
