@@ -64,6 +64,7 @@ et faire une recherche type ctrl+F dedans
 
 # Ameliorations
 * Revoir l'issue numero 12
+(il s'agit du problème du double refresh)
 
 ```diff
 - text in red
