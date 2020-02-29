@@ -23,7 +23,7 @@ class DAO
     // $annoncesSansPhoto = $this->db->query($requeteSQL);
     // $requeteSetPhoto = "UPDATE annonce SET photo1=\"img/icone_sport.jpg\"";
     // $update = $this->db->query($requeteSetPhoto);
-    
+
   }
   //------------------------------------------------------------------------//
   //--------------------   FONCTIONS POUR LES CLIENTS   --------------------//
@@ -32,7 +32,6 @@ class DAO
     $requ="SELECT * FROM Client WHERE id='$id'";
     $res = $this->db->query($requ);
     $result = $res->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, "Client");
-
     return $result[0];
   }
 
@@ -59,6 +58,14 @@ class DAO
     // retourne les annonces postées
     $tab_retour = array();
     $requeteSQL = "SELECT * FROM annonce";
+    $retourRequete = $this->db->query($requeteSQL);
+    $tab_retour = $retourRequete->fetchAll(PDO::FETCH_CLASS, "Annonce");
+    return $tab_retour;
+  }
+
+  function getAnnoncesCategorie($idCategorie): array {
+    $tab_retour = array();
+    $requeteSQL = "SELECT * FROM annonce WHERE categorie=$idCategorie";
     $retourRequete = $this->db->query($requeteSQL);
     $tab_retour = $retourRequete->fetchAll(PDO::FETCH_CLASS, "Annonce");
     return $tab_retour;
