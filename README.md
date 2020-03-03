@@ -52,15 +52,20 @@ supprimer ses annonces
 * Language :
   HTML | CSS | PHP | Javasript | Sqlite | Shell
 
-  #### Documentation
-* A remplir (Merci de le remplir Jerome)
-
+#### Documentation
+* google docs (dossier)
+* canva (tableau SWOT)
+* creately.com (use case diagram)
+* lucidchart.com (diagramme de gantt)
+* Balsamiq Mockups 3 (conception maquettes)
 
 # Idees
 * Ajout d'une partie commentaire sous les annonces
 * Créer un systeme de nombre de personnes conviées
 * Créer une sous catégorie "autre" pour les sports
 et faire une recherche type ctrl+F dedans
+* Modification/suppression des annonces possible
+lors du hover des annonces (icone Croix ou Stylo)
 
 # Ameliorations
 * Revoir l'issue numero 12
