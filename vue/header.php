@@ -16,144 +16,144 @@
         <!-- si l'utilisateur est connecter : -->
 
 
-      <?php if ($clientConnecte==1 && $client->emailVerifie==1): ?>
-        <li class="nav-item ">
-          <a class="nav-link active" href="#" style="margin-bottom: 0; padding-bottom: 2px;"> <?=$_SESSION['Client']->prenom?> <?=$_SESSION['Client']->nom?></a>
-          <a class="nav-link" href="../controleur/Deconnexion.ctrl.php" style="margin: 0; padding-top: 0; padding-bottom: 0">Déconnexion </a>
+        <?php if ($clientConnecte==1 && $client->emailVerifie==1): ?>
+          <li class="nav-item ">
+            <a class="nav-link active" href="#" style="margin-bottom: 0; padding-bottom: 2px;"> <?=$_SESSION['Client']->prenom?> <?=$_SESSION['Client']->nom?></a>
+            <a class="nav-link" href="../controleur/Deconnexion.ctrl.php" style="margin: 0; padding-top: 0; padding-bottom: 0">Déconnexion </a>
+          </li>
+        <?php elseif ($clientConnecte==1 && $client->emailVerifie==0): ?>
+          <li class="nav-item ">
+            <a class="nav-link active" href="#" style="margin-bottom: 0; padding-bottom: 2px;"> <?=$_SESSION['Client']->prenom?> <?=$_SESSION['Client']->nom?> (compte non activé)</a>
+            <a class="nav-link" href="../controleur/Deconnexion.ctrl.php" style="margin: 0; padding-top: 0; padding-bottom: 0">Déconnexion </a>
+          </li>
+        <?php else: ?>
+          <li class="nav-item active">
+            <a class="nav-link" href="#contact" data-toggle="modal" data-target="#modalLoginForm">Se connecter <span class="sr-only">(current)</span></a>
+          </li>
+        <?php endif; ?>
+
+
+      <?php else: ?>
+        <!-- si l'utlisateur n'est pas connecter :  -->
+        <li class="nav-item active">
+          <a class="nav-link" href="#contact" data-toggle="modal" data-target="#modalLoginForm">Se connecter <span class="sr-only">(current)</span></a>
         </li>
-    <?php elseif ($clientConnecte==1 && $client->emailVerifie==0): ?>
-    <li class="nav-item ">
-      <a class="nav-link active" href="#" style="margin-bottom: 0; padding-bottom: 2px;"> <?=$_SESSION['Client']->prenom?> <?=$_SESSION['Client']->nom?> (compte non activé)</a>
-      <a class="nav-link" href="../controleur/Deconnexion.ctrl.php" style="margin: 0; padding-top: 0; padding-bottom: 0">Déconnexion </a>
+      <?php endif; ?>
+
+      <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <form id="form_connexion" action="<?=$_SERVER['PHP_SELF']?>" method="post">
+            <div class="modal-header text-center">
+
+              <h4 class="modal-title w-100 font-weight-bold">Connexion</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body mx-3">
+              <div class="md-form mb-5">
+                <i class="fas fa-envelope prefix grey-text"></i>
+                <label data-error="wrong" data-success="right" for="defaultForm-email">Votre email :</label>
+                <input name="email" type="email" id="defaultForm-email" value="<?=$_POST['email']??"" ?>" class="form-control validate" required>
+              </div>
+
+              <div class="md-form mb-4">
+                <i class="fas fa-lock prefix grey-text"></i>
+                <label data-error="wrong" data-success="right" for="defaultForm-pass">Votre mot de passe :</label>
+                <input name="password" type="password" id="defaultForm-pass" value="<?=$_POST['password']??"" ?>" class="form-control validate" required>
+              </div>
+
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+              <button class="btn btn-default" type="submit" value="submit">Se connecter</button>
+            </div>
+            <div class="" >
+              <p style="float: left; text-align: center; margin-left: 140px">Si tu n'as pas de compte, inscris toi&nbsp</p><a href="../controleur/Inscription.ctrl.php">ici</a>
+            </div>
+
+            <script src="../vue/script/bootbox.min.js"></script>
+            <?php if (isset($echecConnexion)) {
+              if($echecConnexion) { ?>
+                <script type="text/javascript" >
+                bootbox.alert({
+                  title: "Echec de connexion",
+                  message: "Email ou mot de passe incorrect.",
+                  locale: "fr",
+                  animate: true,
+                  backdrop: true,
+                  centerVertical: true
+                });
+                </script>
+
+              <?php }
+            } ?>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- ///////////////////////////////// -->
+
+    <!-- ///////////////FIN CONNECTION//////////////// -->
+
+    <!-- /////////////////////// -->
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="../controleur/Annonces.ctrl.php" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sportif</a>
+
+      <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
+        <a class="dropdown-item" href="../controleur/Annonces.ctrl.php">Toutes les annonces</a>
+        <a class="dropdown-item" href="#">Another action</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="#">Something else here</a>
+      </div>
     </li>
-  <?php else: ?>
-  <li class="nav-item active">
-    <a class="nav-link" href="#contact" data-toggle="modal" data-target="#modalLoginForm">Se connecter <span class="sr-only">(current)</span></a>
-  </li>
-<?php endif; ?>
+    <!-- //////////// -->
 
-
-<?php else: ?>
-  <!-- si l'utlisateur n'est pas connecter :  -->
-  <li class="nav-item active">
-    <a class="nav-link" href="#contact" data-toggle="modal" data-target="#modalLoginForm">Se connecter <span class="sr-only">(current)</span></a>
-  </li>
-<?php endif; ?>
-
-<div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-aria-hidden="true">
-<div class="modal-dialog" role="document">
-  <div class="modal-content">
-    <form id="form_connexion" action="<?=$_SERVER['PHP_SELF']?>" method="post">
-    <div class="modal-header text-center">
-
-      <h4 class="modal-title w-100 font-weight-bold">Connexion</h4>
-      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
-    <div class="modal-body mx-3">
-      <div class="md-form mb-5">
-        <i class="fas fa-envelope prefix grey-text"></i>
-        <label data-error="wrong" data-success="right" for="defaultForm-email">Votre email :</label>
-        <input name="email" type="email" id="defaultForm-email" value="<?=$_POST['email']??"" ?>" class="form-control validate" required>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Festif</a>
+      <!-- /////////////////////// -->
+      <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+        <a class="dropdown-item" href="#"> Lorem ipsum dolor.</a>
+        <a class="dropdown-item" href="#">Lorem ipsum dolor.</a>
+        <a class="dropdown-item" href="#">Lorem ipsum dolor.</a>
+        <a class="dropdown-item" href="#">Lorem ipsum dolor.</a>
       </div>
-
-      <div class="md-form mb-4">
-        <i class="fas fa-lock prefix grey-text"></i>
-        <label data-error="wrong" data-success="right" for="defaultForm-pass">Votre mot de passe :</label>
-        <input name="password" type="password" id="defaultForm-pass" value="<?=$_POST['password']??"" ?>" class="form-control validate" required>
+      <!-- ////////////////////// -->
+    </li>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Educatif</a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
+        <a class="dropdown-item" href="#"> Lorem ipsum dolor.</a>
+        <a class="dropdown-item" href="#">Lorem ipsum dolor.</a>
+        <a class="dropdown-item" href="#">Lorem ipsum dolor.</a>
+        <a class="dropdown-item" href="#">Lorem ipsum dolor.</a>
       </div>
+    </li>
 
-    </div>
-    <div class="modal-footer d-flex justify-content-center">
-      <button class="btn btn-default" type="submit" value="submit">Se connecter</button>
-    </div>
-    <div class="" >
-      <p style="float: left; text-align: center; margin-left: 140px">Si tu n'as pas de compte, inscris toi&nbsp</p><a href="../controleur/Inscription.ctrl.php">ici</a>
-    </div>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Autres</a>
+    </li>
+  </ul>
+    <!-- /////////////////////////////// -->
+    <?php if ($clientConnecte==1 && $client->emailVerifie==0): ?>
+      <!-- Si le client est connecté mais n'a pas vérifié son compte -->
+      <li class="nav-item">
+        <a class="nav-link" href="../controleur/VerificationEmail.ctrl.php">Vérifier son compte</a>
+      </li>
+    <?php endif; ?>
 
-    <script src="../vue/script/bootbox.min.js"></script>
-    <?php if (isset($echecConnexion)) {
-            if($echecConnexion) { ?>
-      <script type="text/javascript" >
-      bootbox.alert({
-        title: "Echec de connexion",
-        message: "Email ou mot de passe incorrect.",
-        locale: "fr",
-        animate: true,
-        backdrop: true,
-        centerVertical: true
-      });
-      </script>
+    <?php if($clientConnecte==1): ?>
 
-    <?php }
-   } ?>
-  </form>
-  </div>
-</div>
-</div>
+        <ul class="navbar-nav ml-auto">
 
-<!-- ///////////////////////////////// -->
-
-<!-- ///////////////FIN CONNECTION//////////////// -->
-
-<!-- /////////////////////// -->
-<li class="nav-item dropdown">
-  <a class="nav-link dropdown-toggle" href="../controleur/Annonces.ctrl.php" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sportif</a>
-
-  <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
-    <a class="dropdown-item" href="../controleur/Annonces.ctrl.php">Toutes les annonces</a>
-    <a class="dropdown-item" href="#">Another action</a>
-    <div class="dropdown-divider"></div>
-    <a class="dropdown-item" href="#">Something else here</a>
-  </div>
-</li>
-<!-- //////////// -->
-
-<li class="nav-item dropdown">
-  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Festif</a>
-  <!-- /////////////////////// -->
-  <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
-    <a class="dropdown-item" href="#"> Lorem ipsum dolor.</a>
-    <a class="dropdown-item" href="#">Lorem ipsum dolor.</a>
-    <a class="dropdown-item" href="#">Lorem ipsum dolor.</a>
-    <a class="dropdown-item" href="#">Lorem ipsum dolor.</a>
-  </div>
-  <!-- ////////////////////// -->
-</li>
-<li class="nav-item dropdown">
-  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Educatif</a>
-  <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
-    <a class="dropdown-item" href="#"> Lorem ipsum dolor.</a>
-    <a class="dropdown-item" href="#">Lorem ipsum dolor.</a>
-    <a class="dropdown-item" href="#">Lorem ipsum dolor.</a>
-    <a class="dropdown-item" href="#">Lorem ipsum dolor.</a>
-  </div>
-</li>
-
-<li class="nav-item">
-  <a class="nav-link" href="#">Autres</a>
-</li>
-<!-- /////////////////////////////// -->
-<?php if ($clientConnecte==1 && $client->emailVerifie==0): ?>
-<!-- Si le client est connecté mais n'a pas vérifié son compte -->
-  <li class="nav-item">
-    <a class="nav-link" href="../controleur/VerificationEmail.ctrl.php">Vérifier son compte</a>
-  </li>
-<?php endif; ?>
-
-<?php if($clientConnecte==1): ?>
-  <li class="nav-item">
-    <a class="nav-link" href="../controleur/Profil.ctrl.php" >Mon profil</a>
-  </li>
-<?php endif; ?>
-<!-- ////////////////////////////// -->
-</ul>
-<form class="form-inline my-2 my-lg-0">
-  <input class="form-control mr-sm-2" type="text" placeholder="Rechercher">
-  <button class="btn btn-secondary my-2 my-sm-0" type="submit">Rechercher</button>
-</form>
+          <li class="nav-item ">
+            <a class="nav-link" style="margin-right:2em;" href="../controleur/Profil.ctrl.php" >Mon profil</a>
+          </li>
+        </ul>
+    <?php endif; ?>
+    <!-- ////////////////////////////// -->
 </div>
 </nav>
 

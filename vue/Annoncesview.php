@@ -33,7 +33,7 @@
     <div class="" id="annonces">
       <?php
       foreach ($annoncesPostees as $annonce) { ?>
-        <div class="annonce">
+        <a href="../controleur/AnnonceDetail.ctrl.php" style="text-decoration:none; color: inherit;"> <div class="annonce">
           <img src="../modele/img/icone_sport.jpg" class="image">
           <p class="titre"> <?php echo($annonce->titre); ?></p> <!-- le titre ne doit pas dépasser 65 char -->
           <p class="categorie"><?php
@@ -46,7 +46,7 @@
           $date = getDateAnnonce($annonce->id, $dao);
           $heure = getHeure($annonce->id, $dao);
           echo "$date, $heure"; ?></p>
-        </div>
+        </div> </a>
       <?php } ?>
     </div>
 
@@ -56,7 +56,7 @@
 
 
 
-  <footer>
+  <footer class="footer">
     <?php include('footer.php') ?>
   </footer>
 </body>

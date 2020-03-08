@@ -1,0 +1,17 @@
+.row{
+  margin-top: 2em;
+}
+
+#titreAnnonce{
+  margin-bottom: 2em;
+}
+
+#imgDescription{
+  width: 350px;
+  height: 350px;
+}
+
+.iconeChoix{
+width: 35px;
+height: 35px;
+}

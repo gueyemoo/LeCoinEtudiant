@@ -19,7 +19,7 @@
   padding-top: 60px;
 }
 
-.annonce {
+.annonce { /* Le carré d'une annonce */
   margin: 5px 15px 15px 5px;;
   float: left;
   width: 300px;
@@ -92,4 +92,13 @@
 .dropdown:hover .dropbouton {
   color: #404040;
 }
-</style>
+
+.annonce {
+    transition: transform .2s; /* Animation */
+    margin: 0 auto;
+}
+
+.annonce:hover {
+    transform: scale(1.1); /* (110% zoom -N.B: Si le zoom est trop grand ça va sortir de la vue d'annonce) */
+    border: solid 3px green;
+}

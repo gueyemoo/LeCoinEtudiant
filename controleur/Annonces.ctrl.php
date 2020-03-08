@@ -28,7 +28,6 @@ $annoncesPostees = $dao->getAnnonces();
 
 if (count($_POST)==2 && $_POST["email"] && $_POST["password"]) {
   if($dao->connexion($_POST["email"], $_POST["password"])) {
-    header("Refresh:0");
     include('../vue/Annoncesview.php');
   }
   else {
