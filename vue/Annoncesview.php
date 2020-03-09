@@ -13,22 +13,29 @@
     <?php include('header.php') ?>
   </header>
   <div class="corps">
+
+    <!-- LE BODY DE GAUCHE -->
     <div class="" id="filtres">
       <p>Filtres</p>
     </div>
     <div class="" id="tri">
       <div class="" id="btnTri">
+        <!-- FIN -->
 
-      <label for="tri">Trié par: </label>
-      <div class="dropdown">
-        <button class="dropbouton">Le plus récent</button>
-        <div class="dropdown-content">
-          <a class="i" href="#">Le moinds récent</a>
-          <a class="i" href="#">Le plus populaire</a>
-          <a class="i" href="#">Le moins populaire</a>
+
+
+
+        <!-- LE BODY DE DROITE  -->
+        <label for="tri">Trié par: </label>
+        <div class="dropdown">
+          <button class="dropbouton">Le plus récent</button>
+          <div class="dropdown-content">
+            <a class="i" href="#">Le moinds récent</a>
+            <a class="i" href="#">Le plus populaire</a>
+            <a class="i" href="#">Le moins populaire</a>
+          </div>
         </div>
       </div>
-    </div>
     </div>
     <div class="" id="annonces">
       <?php
@@ -49,6 +56,7 @@
         </div> </a>
       <?php } ?>
     </div>
+    <!-- FIN -->
 
   </div>
 
