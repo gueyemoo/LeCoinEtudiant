@@ -18,17 +18,17 @@
     <div class="row" >
       <div class="d-flex flex-column column col-md-5 img">
         <img id="imgDescription" src="https://via.placeholder.com/350" alt="" class="img-rounded"> <br>
-        <h5><u> <?= $cat->nom ?> </u></h5>
+        <h5><u> <?=$cat->nom?> </u></h5>
         <p style="margin-bottom:0px;"> <?= $annonce->adresse?> </p>
         <p>Prévu le: 11/02 à 17h</p>
 
         <br>
-        <p>Nombre de participants: <strong> XX</strong></p>
-        <p>Nombre d'interessé: <strong>XXX</strong></p>
+        <p>Nombre de participants: <strong> <?=$annonce->nbParticipant?> </strong></p>
+        <p>Nombre d'interessé: <strong> <?=$annonce->nbInteresse?> </strong></p>
 
         <br>
         <h5><u>Contacts</u></h5>
-        <p>Mail: adresse@gmail.com</p>
+        <p>Mail: <?=$user->email?></p>
       </div>
 
 

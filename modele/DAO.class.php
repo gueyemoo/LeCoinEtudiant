@@ -1,6 +1,7 @@
 <?php
 require_once('../modele/Client.class.php');
 require_once('../modele/Annonce.class.php');
+require_once('../modele/Categorie.class.php');
 
 class DAO
 {
@@ -594,23 +595,23 @@ class DAO
     return $tableau_categorie;
   }
 
+  // function getCategorieById($id)  {//Nous avons enlever le typage de retour pour qu'il puisse renvoyé null
+  //   //   RENVOIE LA CATEGORIE AYANT L'ID DEMANDEE   //
+  //   $requeteSQL = "SELECT * FROM categorie WHERE id=$id";
+  //   $reponseDeRequete=$this->db->query($requeteSQL);
+  //   // $categorie=$reponseDeRequete??$reponseDeRequete->fetchAll(PDO::FETCH_CLASS,'Categorie'):null;
+  //   $categorie = $reponseDeRequete->fetchAll(PDO::FETCH_CLASS,'Categorie');
+  //
+  //   return $categorie[0];
+  // }
+
   function getCategorieById($id)  {//Nous avons enlever le typage de retour pour qu'il puisse renvoyé null
-    //   RENVOIE LA CATEGORIE AYANT L'ID DEMANDEE   //
-    $requeteSQL = "SELECT * FROM categorie WHERE id=$id";
-    $reponseDeRequete=$this->db->query($requeteSQL);
-    // $categorie=$reponseDeRequete??$reponseDeRequete->fetchAll(PDO::FETCH_CLASS,'Categorie'):null;
-    $categorie = $reponseDeRequete->fetchAll(PDO::FETCH_CLASS,'Categorie');
-
-    return $categorie[0];
-  }
-
-//   function getCategorieById($id)  {//Nous avons enlever le typage de retour pour qu'il puisse renvoyé null
-//   //   RENVOIE LA CATEGORIE AYANT L'ID DEMANDEE   //
-//   $requeteSQL = "SELECT * FROM categorie WHERE id=$id";
-//   $reponseDeRequete=$this->db->query($requeteSQL);
-//   $categorie=$reponseDeRequete? $reponseDeRequete->fetchAll(PDO::FETCH_CLASS,'Categorie'):null;
-//   return $categorie[0]??null;
-// }
+  //   RENVOIE LA CATEGORIE AYANT L'ID DEMANDEE   //
+  $requeteSQL = "SELECT * FROM categorie WHERE id=$id";
+  $reponseDeRequete=$this->db->query($requeteSQL);
+  $categorie=$reponseDeRequete? $reponseDeRequete->fetchAll(PDO::FETCH_CLASS,'Categorie'):null;
+  return $categorie[0]??null;
+}
 
 }
 //fin de classe
