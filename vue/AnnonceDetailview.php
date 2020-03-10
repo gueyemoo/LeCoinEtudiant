@@ -18,8 +18,8 @@
     <div class="row" >
       <div class="d-flex flex-column column col-md-5 img">
         <img id="imgDescription" src="https://via.placeholder.com/350" alt="" class="img-rounded"> <br>
-        <h5><u> Sous Catégorie </u></h5>
-        <p style="margin-bottom:0px;"> Chicago City </p>
+        <h5><u> <?= $cat->nom ?> </u></h5>
+        <p style="margin-bottom:0px;"> <?= $annonce->adresse?> </p>
         <p>Prévu le: 11/02 à 17h</p>
 
         <br>
@@ -34,11 +34,11 @@
 
 
       <div class="d-flex flex-column col-md-6 details">
-        <h2 id="titreAnnonce">Ceci est un titre de plus ou moins longue taille</h2>
+        <h2 id="titreAnnonce"> <?=$annonce->titre?></h2>
 
         <h4> <u>Description:</u></h4>
 
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere est officiis ipsam consectetur et ducimus tempore minima neque placeat voluptatibus iste quis, harum, praesentium, soluta, sunt saepe cum magni nobis!</p>
+        <p><?= $annonce ->contenu?></p>
         <div class="row">
           <div class="text-center d-flex flex-column column col-md-5">
             <h6>Participe</h6>

@@ -25,6 +25,7 @@ class DAO
     // $update = $this->db->query($requeteSetPhoto);
 
   }
+
   //------------------------------------------------------------------------//
   //--------------------   FONCTIONS POUR LES CLIENTS   --------------------//
   //------------------------------------------------------------------------//
@@ -466,6 +467,14 @@ class DAO
   //--------------------   FONCTIONS POUR LES ANNONCES  --------------------//
   //------------------------------------------------------------------------//
 
+  function getAnnonceById(int $id): Annonce{//On récupere l'identifiant
+    $requ="SELECT * FROM annonce WHERE id='$id'";
+    $res = $this->db->query($requ);
+    $result = $res->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, "Annonce");
+
+    return $result[0];
+  }
+
   function getAnnonces(): array {
     // retourne les annonces postées
     $tab_retour = array();
@@ -473,6 +482,13 @@ class DAO
     $retourRequete = $this->db->query($requeteSQL);
     $tab_retour = $retourRequete->fetchAll(PDO::FETCH_CLASS, "Annonce");
     return $tab_retour;
+  }
+
+  function nbAnnonce():int{//Cette fonction nous permets de compter toute les annonces
+    $requ="SELECT count(*) FROM annonce";
+    $res = $this->db->query($requ);
+    $result = $res->fetch();
+    return $result[0];
   }
 
   function getAnnoncesCategorie($idCategorie): array {
@@ -558,7 +574,43 @@ class DAO
     $departement = $reponseDeRequete->fetchAll(PDO::FETCH_CLASS,'Departement')[0];
     return $departement;
   }
+  //---------------------------------------------------------------------------//
+  //--------------------   FONCTIONS POUR LES CATEGORIES   --------------------//
+  //---------------------------------------------------------------------------//
 
+  function getAllCategorie() : array {
+    //   RENVOIES TOUTES LES CATEGORIES DE A BASE DE DONNEE   //
+    $tableau_retour = array();
+    $requeteSQL = 'SELECT * FROM categorie order by id';
+    $reponseDeRequete=$this->db->query($requeteSQL);
+    $tableau_retour= $reponseDeRequete->fetchAll(PDO::FETCH_CLASS,'Categorie');
+    foreach ($tableau_retour as $key => $value) {
+      //reorganisation du tableau de retour dans le meme esprit que les regions
+      //le tableau_retour contient des tableaux de categorie et la clef de ces tableaux est le nom de la catégorie parente
+      if ($value->idpere!=$value->id){
+        $tableau_categorie[$tableau_retour[($value->idpere)-1]->nom][]=$value;
+      }
+    }
+    return $tableau_categorie;
+  }
+
+  function getCategorieById($id)  {//Nous avons enlever le typage de retour pour qu'il puisse renvoyé null
+    //   RENVOIE LA CATEGORIE AYANT L'ID DEMANDEE   //
+    $requeteSQL = "SELECT * FROM categorie WHERE id=$id";
+    $reponseDeRequete=$this->db->query($requeteSQL);
+    // $categorie=$reponseDeRequete??$reponseDeRequete->fetchAll(PDO::FETCH_CLASS,'Categorie'):null;
+    $categorie = $reponseDeRequete->fetchAll(PDO::FETCH_CLASS,'Categorie');
+
+    return $categorie[0];
+  }
+
+//   function getCategorieById($id)  {//Nous avons enlever le typage de retour pour qu'il puisse renvoyé null
+//   //   RENVOIE LA CATEGORIE AYANT L'ID DEMANDEE   //
+//   $requeteSQL = "SELECT * FROM categorie WHERE id=$id";
+//   $reponseDeRequete=$this->db->query($requeteSQL);
+//   $categorie=$reponseDeRequete? $reponseDeRequete->fetchAll(PDO::FETCH_CLASS,'Categorie'):null;
+//   return $categorie[0]??null;
+// }
 
 }
 //fin de classe

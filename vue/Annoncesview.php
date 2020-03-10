@@ -40,7 +40,7 @@
     <div class="" id="annonces">
       <?php
       foreach ($annoncesPostees as $annonce) { ?>
-        <a href="../controleur/AnnonceDetail.ctrl.php" style="text-decoration:none; color: inherit;"> <div class="annonce">
+        <a href="../controleur/AnnonceDetail.ctrl.php?id=<?=$annonce->id ?>" style="text-decoration:none; color: inherit;"> <div class="annonce">
           <img src="../modele/img/icone_sport.jpg" class="image">
           <p class="titre"> <?php echo($annonce->titre); ?></p> <!-- le titre ne doit pas dépasser 65 char -->
           <p class="categorie"><?php
