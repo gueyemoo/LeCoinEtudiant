@@ -17,7 +17,5 @@ $user = $dao->getClient($annonce->idClient);
 // var_dump($cat->nom);
 
 
-
-
 include('../vue/AnnonceDetailview.php');
 ?>

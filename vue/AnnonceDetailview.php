@@ -20,7 +20,7 @@
         <img id="imgDescription" src="https://via.placeholder.com/350" alt="" class="img-rounded"> <br>
         <h5><u> <?=$cat->nom?> </u></h5>
         <p style="margin-bottom:0px;"> <?= $annonce->adresse?> </p>
-        <p>Prévu le: 11/02 à 17h</p>
+        <p>Prévu le: 11/02 à 17h   </p>
 
         <br>
         <p>Nombre de participants: <strong> <?=$annonce->nbParticipant?> </strong></p>
@@ -51,6 +51,8 @@
         </div>
       </div>
     </div>
+
+    <h6 style="float:right;">Posté le 11/03/2020 à 18h30</h6>
   </div>
 
 
