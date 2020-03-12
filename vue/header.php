@@ -147,11 +147,14 @@
     <?php if($clientConnecte==1): ?>
 
         <ul class="navbar-nav ml-auto">
-
+          <li class="navbar-nav ml-auto">
+            <a class="nav-link" style="margin-right: 4em;" href="../controleur/AjoutAnnonce.ctrl.php">Ajouter une annonce</a>
+          </li>
           <li class="nav-item ">
             <a class="nav-link" style="margin-right:2em;" href="../controleur/Profil.ctrl.php" >Mon profil</a>
           </li>
         </ul>
+
     <?php endif; ?>
     <!-- ////////////////////////////// -->
 </div>
