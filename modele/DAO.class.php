@@ -542,15 +542,6 @@ class DAO
     return $tab_retour;
   }
 
-  function getAnnoncesFav(int $idClient): array {
-    // retourne les annonces favoris du client dont l'id est renseigné en paramètre
-    $tab_retour = array();
-    $requeteSQL = "SELECT A.* FROM favoris F, annonce A WHERE F.idClient =$idClient AND F.idAnnonce=A.id";
-    $retourRequete = $this->db->query($requeteSQL);
-    $tab_retour = $retourRequete->fetchAll(PDO::FETCH_CLASS, "Annonce");
-    return $tab_retour;
-  }
-
   //-----------------------------------------------------------------------------//
   //--------------------   FONCTIONS POUR LES DEPARTEMENTS   --------------------//
   //-----------------------------------------------------------------------------//
@@ -595,23 +586,61 @@ class DAO
     return $tableau_categorie;
   }
 
-  // function getCategorieById($id)  {//Nous avons enlever le typage de retour pour qu'il puisse renvoyé null
-  //   //   RENVOIE LA CATEGORIE AYANT L'ID DEMANDEE   //
-  //   $requeteSQL = "SELECT * FROM categorie WHERE id=$id";
-  //   $reponseDeRequete=$this->db->query($requeteSQL);
-  //   // $categorie=$reponseDeRequete??$reponseDeRequete->fetchAll(PDO::FETCH_CLASS,'Categorie'):null;
-  //   $categorie = $reponseDeRequete->fetchAll(PDO::FETCH_CLASS,'Categorie');
-  //
-  //   return $categorie[0];
-  // }
-
   function getCategorieById($id)  {//Nous avons enlever le typage de retour pour qu'il puisse renvoyé null
-  //   RENVOIE LA CATEGORIE AYANT L'ID DEMANDEE   //
-  $requeteSQL = "SELECT * FROM categorie WHERE id=$id";
-  $reponseDeRequete=$this->db->query($requeteSQL);
-  $categorie=$reponseDeRequete? $reponseDeRequete->fetchAll(PDO::FETCH_CLASS,'Categorie'):null;
-  return $categorie[0]??null;
-}
+    //   RENVOIE LA CATEGORIE AYANT L'ID DEMANDEE   //
+    $requeteSQL = "SELECT * FROM categorie WHERE id=$id";
+    $reponseDeRequete=$this->db->query($requeteSQL);
+    $categorie=$reponseDeRequete? $reponseDeRequete->fetchAll(PDO::FETCH_CLASS,'Categorie'):null;
+    return $categorie[0]??null;
+  }
+
+  //---------------------------------------------------------------------------//
+  //--------------------   FONCTIONS POUR LES FAVORIS      --------------------//
+  //---------------------------------------------------------------------------//
+
+  function getFavoris(int $id):array{//Cette fonction retourne tout les favoris
+    $requ="SELECT * FROM annonce WHERE id in (select idAnnonce from favoris where idClient=$id)";
+    $res = $this->db->query($requ);
+    $result = $res->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, "Annonce");
+    return $result;
+  }
+
+  function ajoutFavoris(int $idClient, int $idAnnonce):bool{//Cette fonction ajoute a la liste des favoris
+    $requ="SELECT count(*) FROM Annonce WHERE id=$idAnnonce";
+    $res = $this->db->query($requ);
+    $result = $res->fetch()['count(*)'];
+    if($result){//Si le produit existe on l'ajoute
+      $requ2="INSERT INTO Favoris VALUES($idClient,$idAnnonce) ";
+      $res2 = $this->db->query($requ2);
+      $result2 = $res->fetch();
+    }
+    return $result2;
+  }
+
+  function deleteFavoris(int $idClient, int $idAnnonce):bool{//Cette fonctionne supprime de la liste des favoris
+    $requ="DELETE FROM Favoris WHERE idAnnonce=$idAnnonce AND idClient=$idClient";
+    $res = $this->db->query($requ);
+    $result = $res->fetch();
+
+    return $result;
+  }
+
+  function isFavoris(int $idClient, int $idAnnonce):bool{//Cette fonction vérifie que l'annonce est dans la liste des Favoris
+    $requ="SELECT count(*) FROM favoris WHERE idClient=$idClient AND idAnnonce=$idAnnonce";
+    $res = $this->db->query($requ);
+    $result = $res->fetch();
+    return $result['count(*)'];
+  }
+
+  function getAnnoncesFav(int $idClient): array {
+    // retourne les annonces favoris du client dont l'id est renseigné en paramètre
+    $tab_retour = array();
+    $requeteSQL = "SELECT A.* FROM favoris F, annonce A WHERE F.idClient =$idClient AND F.idAnnonce=A.id";
+    $retourRequete = $this->db->query($requeteSQL);
+    $tab_retour = $retourRequete->fetchAll(PDO::FETCH_CLASS, "Annonce");
+    return $tab_retour;
+  }
+
 
 }
 //fin de classe
@@ -623,5 +652,7 @@ session_start();
 $client=$_SESSION['Client']??0;
 $clientConnecte=$_SESSION['Connexion']??0;
 $clientVerifie=$_SESSION['Client']->emailVerifie??0;
+$idClient=$_SESSION['Client']->id??0;
+
 
 ?>

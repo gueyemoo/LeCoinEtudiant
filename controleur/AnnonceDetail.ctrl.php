@@ -16,6 +16,9 @@ $user = $dao->getClient($annonce->idClient);
 // var_dump($cat);
 // var_dump($cat->nom);
 
+if($idClient){
+  $Favoris=$dao->isFavoris($idClient,$id);//On verifie que l'annonce est dans la liste des favoris
+}
 
 include('../vue/AnnonceDetailview.php');
 ?>

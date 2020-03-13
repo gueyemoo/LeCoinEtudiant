@@ -42,7 +42,22 @@
         <div class="row">
           <div class="text-center d-flex flex-column column col-md-5">
             <h6>Participe</h6>
-            <p> <a href="#"> <img class="iconeChoix" src="../modele/img/correct_vide.png" alt="correct"> </a> </p>
+
+
+            <?php if ($Favoris??0): ?>
+              <!-- On verifie si le produit est deja en favoris dans ce cas on propose de le retirer -->
+
+              <p> <a href="../controleur/MettreEnFavoris.php?idAnnonce=<?=$annonce->id?>&action=delete"> <img class="iconeChoix" src="../modele/img/correct.png" alt="correct check"> </a> </p>
+
+            <?php elseif($clientConnecte==0): ?>
+              <!-- On verifie que l'utilisateur est connecter pour mettre en favoris ou retirer des favoris sinon on lui propose de se connecter  -->
+              <p> <a href="../controleur/Accueil.ctrl.php">Connectez-vous </a> pour ajouter cette annonce à vos favoris.</p>
+            <?php else: ?>
+              <!-- On verifie que l'utilisateur n'a pas ce produit en favoris dans ce cas on lui propose de l'ajouter à ces favoris -->
+
+              <p> <a href="../controleur/MettreEnFavoris.php?idAnnonce=<?=$annonce->id?>&action=add"> <img class="iconeChoix" src="../modele/img/correct_vide.png" alt="correct check vide"> </a> </p>
+            <?php endif; ?>
+
           </div>
           <div class="text-center d-flex flex-column column col-md-5">
             <h6>Interessé</h6>
