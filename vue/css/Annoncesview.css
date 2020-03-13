@@ -95,7 +95,7 @@
 
 .annonce {
     transition: transform .2s; /* Animation */
-    margin: 0 auto;
+    /* margin: 0 auto; */
 }
 
 .annonce:hover {
