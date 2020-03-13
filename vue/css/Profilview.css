@@ -94,3 +94,12 @@ label {
 #etat, #mail {
   margin-bottom: 30px;
 }
+
+.annonceZoom {
+    transition: transform .2s; /* Animation */
+}
+
+.annonceZoom:hover {
+    transform: scale(1.1); /* (110% zoom -N.B: Si le zoom est trop grand ça va sortir de la vue d'annonce) */
+    border: solid 3px green;
+}

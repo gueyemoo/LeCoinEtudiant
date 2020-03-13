@@ -40,8 +40,6 @@ else {
   // var_dump($_POST["nom"]);
   // var_dump($_POST);
   // var_dump(count($_POST));
-
 }
-
 
 ?>
