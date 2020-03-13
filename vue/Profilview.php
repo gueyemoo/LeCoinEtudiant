@@ -36,7 +36,8 @@
         <p class="titreDiv">Tes annonces :</p>
         <?php
         foreach ($annoncesPostees as $annonce) { ?>
-          <div class="annonce">
+          <a href="../controleur/AnnonceDetail.ctrl.php?id=<?=$annonce->id ?>" style="text-decoration:none; color: inherit;">
+            <div class="annonce annonceZoom">
             <img src="../modele/img/icone_sport.jpg" class="image">
             <p class="titre"> <?php echo($annonce->titre); ?></p> <!-- le titre ne doit pas dépasser 65 char -->
             <p class="categorie"><?php
@@ -49,14 +50,15 @@
             $date = getDateAnnonce($annonce->id, $dao);
             $heure = getHeure($annonce->id, $dao);
             echo "$date, $heure"; ?></p>
-          </div>
+          </div> </a>
         <?php } ?>
       </div>
-      <div id="annoncesFav">
+      <a href="../controleur/AnnonceDetail.ctrl.php?id=<?=$annonce->id ?>" style="text-decoration:none; color: inherit;">
+        <div id="annoncesFav">
         <p class="titreDiv">Les annonces qui t'intéressent :</p>
         <?php
         foreach ($annoncesFavoris as $annonce) { ?>
-          <div class="annonce">
+          <div class="annonce annonceZoom">
             <img src="../modele/img/icone_sport.jpg" class="image">
             <p class="titre"> <?php echo($annonce->titre); ?></p>
             <p class="categorie"><?php
@@ -69,7 +71,7 @@
             $date = getDateAnnonce($annonce->id, $dao);
             $heure = getHeure($annonce->id, $dao);
             echo "$date, $heure"; ?></p>
-          </div>
+          </div> </a>
         <?php } ?>
       </div>
     </div>
