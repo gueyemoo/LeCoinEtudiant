@@ -50,6 +50,15 @@ CREATE TABLE favoris (
   FOREIGN KEY(idAnnonce) REFERENCES annonce(id)
 );
 
+CREATE TABLE interesse (
+  idClient Integer,
+  idAnnonce Integer,
+
+  PRIMARY KEY(idClient,idAnnonce),
+  FOREIGN KEY(idClient) REFERENCES client(id),
+  FOREIGN KEY(idAnnonce) REFERENCES annonce(id)
+);
+
 DROP TABLE if exists departement;
 
 CREATE TABLE departement (
