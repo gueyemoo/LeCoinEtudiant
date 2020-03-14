@@ -614,6 +614,7 @@ class DAO
       $res2 = $this->db->query($requ2);
       $result2 = $res->fetch();
     }
+
     return $result2;
   }
 
@@ -641,6 +642,52 @@ class DAO
     return $tab_retour;
   }
 
+  //---------------------------------------------------------------------------//
+  //--------------------   FONCTIONS POUR LES INTERESSE    --------------------//
+  //---------------------------------------------------------------------------//
+  function getInteresse(int $id):array{//Cette fonction retourne tout les favoris
+    $requ="SELECT * FROM annonce WHERE id in (select idAnnonce from interesse where idClient=$id)";
+    $res = $this->db->query($requ);
+    $result = $res->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, "Annonce");
+    return $result;
+  }
+
+  function ajoutInteresse(int $idClient, int $idAnnonce):bool{//Cette fonction ajoute a la liste des interesses
+    $requ="SELECT count(*) FROM Annonce WHERE id=$idAnnonce";
+    $res = $this->db->query($requ);
+    $result = $res->fetch()['count(*)'];
+    if($result){//Si le produit existe on l'ajoute
+      $requ2="INSERT INTO Interesse VALUES($idClient,$idAnnonce) ";
+      $res2 = $this->db->query($requ2);
+      $result2 = $res->fetch();
+    }
+
+    return $result2;
+  }
+
+  function deleteInteresse(int $idClient, int $idAnnonce):bool{//Cette fonctionne supprime de la liste des interesses
+    $requ="DELETE FROM Interesse WHERE idAnnonce=$idAnnonce AND idClient=$idClient";
+    $res = $this->db->query($requ);
+    $result = $res->fetch();
+
+    return $result;
+  }
+
+  function isInteresse(int $idClient, int $idAnnonce):bool{//Cette fonction vérifie que l'annonce est dans la liste des Favoris
+    $requ="SELECT count(*) FROM interesse WHERE idClient=$idClient AND idAnnonce=$idAnnonce";
+    $res = $this->db->query($requ);
+    $result = $res->fetch();
+    return $result['count(*)'];
+  }
+
+  function getAnnoncesInteresse(int $idClient): array {
+    // retourne les annonces favoris du client dont l'id est renseigné en paramètre
+    $tab_retour = array();
+    $requeteSQL = "SELECT A.* FROM interesse I, annonce A WHERE I.idClient =$idClient AND I.idAnnonce=A.id";
+    $retourRequete = $this->db->query($requeteSQL);
+    $tab_retour = $retourRequete->fetchAll(PDO::FETCH_CLASS, "Annonce");
+    return $tab_retour;
+  }
 
 }
 //fin de classe

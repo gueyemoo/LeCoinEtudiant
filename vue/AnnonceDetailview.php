@@ -61,7 +61,21 @@
           </div>
           <div class="text-center d-flex flex-column column col-md-5">
             <h6>Interessé</h6>
-            <p> <a href="#"> <img class="iconeChoix" src="../modele/img/heart_vide.png" alt="heart"> </a> </p>
+
+            <?php if ($Interesse??0): ?>
+              <!-- On verifie si l'annonce est deja en interesse dans ce cas on propose de le retirer -->
+
+              <p> <a href="../controleur/MettreEnInteresse.php?idAnnonce=<?=$annonce->id?>&action=delete"> <img class="iconeChoix" src="../modele/img/heart.png" alt="heart check"> </a> </p>
+
+            <?php elseif($clientConnecte==0): ?>
+              <!-- On verifie que l'utilisateur est connecter pour mettre en interesse ou retirer des interessé sinon on lui propose de se connecter  -->
+              <p> <a href="../controleur/Accueil.ctrl.php">Connectez-vous </a> pour ajouter cette annonce à votre centre d'intérêt.</p>
+            <?php else: ?>
+              <!-- On verifie que l'utilisateur n'a pas ce produit en interessé dans ce cas on lui propose de l'ajouter à ces interesses -->
+
+              <p> <a href="../controleur/MettreEnInteresse.php?idAnnonce=<?=$annonce->id?>&action=add"> <img class="iconeChoix" src="../modele/img/heart_vide.png" alt="heart check vide"> </a> </p>
+            <?php endif; ?>
+
           </div>
         </div>
       </div>
