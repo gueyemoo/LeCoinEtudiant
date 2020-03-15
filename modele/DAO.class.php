@@ -642,6 +642,25 @@ class DAO
     return $tab_retour;
   }
 
+  function updateAddNbParticipant(int $idAnnonce):bool{
+    $requ="UPDATE annonce SET nbParticipant = nbParticipant+1 WHERE id = $idAnnonce";
+    $res = $this->db->query($requ);
+    $result = $res->fetch();
+
+    return $result;
+
+  }
+
+  function updateDeleteNbParticipant(int $idAnnonce):bool{
+    $requ="UPDATE annonce SET nbParticipant = nbParticipant-1 WHERE id = $idAnnonce";
+    $res = $this->db->query($requ);
+    $result = $res->fetch();
+
+    return $result;
+
+  }
+
+
   //---------------------------------------------------------------------------//
   //--------------------   FONCTIONS POUR LES INTERESSE    --------------------//
   //---------------------------------------------------------------------------//
@@ -665,6 +684,7 @@ class DAO
     return $result2;
   }
 
+
   function deleteInteresse(int $idClient, int $idAnnonce):bool{//Cette fonctionne supprime de la liste des interesses
     $requ="DELETE FROM Interesse WHERE idAnnonce=$idAnnonce AND idClient=$idClient";
     $res = $this->db->query($requ);
@@ -687,6 +707,24 @@ class DAO
     $retourRequete = $this->db->query($requeteSQL);
     $tab_retour = $retourRequete->fetchAll(PDO::FETCH_CLASS, "Annonce");
     return $tab_retour;
+  }
+
+  function updateAddNbInteresse(int $idAnnonce):bool{
+    $requ="UPDATE annonce SET nbInteresse = nbInteresse+1 WHERE id = $idAnnonce";
+    $res = $this->db->query($requ);
+    $result = $res->fetch();
+
+    return $result;
+
+  }
+
+  function updateDeleteNbInteresse(int $idAnnonce):bool{
+    $requ="UPDATE annonce SET nbInteresse = nbInteresse-1 WHERE id = $idAnnonce";
+    $res = $this->db->query($requ);
+    $result = $res->fetch();
+
+    return $result;
+
   }
 
 }
