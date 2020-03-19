@@ -46,6 +46,30 @@ body {
   }
 }
 
+/* LIEN SELECTION AFFICHAGE DES ANNONCES */
+
+.choixAffichage {
+  padding-bottom: 15px;
+}
+
+.lienAffichage {
+  margin: 5px;
+  padding: 3px;
+  border: solid 1px grey;
+  border-radius: 2px;
+  background-color: #ccc;
+  font-size: 18px;
+}
+
+#actif {
+  color: #444;
+}
+
+#non-actif {
+  background-color: #e6e6e6;
+  color: #666;
+}
+
 /* AFFICHAGE DES ANNONCES */
 
 #annoncesPub {

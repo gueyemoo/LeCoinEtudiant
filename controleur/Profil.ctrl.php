@@ -25,6 +25,8 @@ $annoncesPostees = $dao->getAnnoncesClient($_SESSION['Client']->id);
 
 $annoncesFavoris = $dao->getAnnoncesFav($_SESSION['Client']->id);
 
+$annnoncesInteresse = $dao->getAnnoncesInteresse($_SESSION['Client']->id);
+
 if (count($_POST)==2 && $_POST["email"] && $_POST["password"]) {
   if($dao->connexion($_POST["email"], $_POST["password"])) {
     header("Refresh:0");

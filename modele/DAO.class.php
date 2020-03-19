@@ -642,6 +642,8 @@ class DAO
     return $tab_retour;
   }
 
+
+
   function updateAddNbParticipant(int $idAnnonce):bool{
     $requ="UPDATE annonce SET nbParticipant = nbParticipant+1 WHERE id = $idAnnonce";
     $res = $this->db->query($requ);
