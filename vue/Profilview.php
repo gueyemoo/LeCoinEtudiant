@@ -56,8 +56,7 @@
         <div id="annoncesFav">
         <p class="titreDiv">Les annonces qui t'intéressent :</p>
         <div class="choixAffichage">
-          <?php $etatPart =($_GET['annonces']=='part'?'actif':'non-actif'); ?>
-          <?php $etatInt =($_GET['annonces']=='int'?'actif':'non-actif'); ?>
+
           <a class="lienAffichage" id="<?=$etatPart ?>" href="Profil.ctrl.php?annonces=part"> Participe</a>
           <a class="lienAffichage" id="<?=$etatInt ?>"href="Profil.ctrl.php?annonces=int"> Intéressé</a>
         </div>

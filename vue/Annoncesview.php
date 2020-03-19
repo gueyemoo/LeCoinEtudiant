@@ -19,6 +19,7 @@
       <p>Filtres</p>
     </div>
     <div class="" id="tri">
+      <a href="../controleur/AjoutAnnonce.ctrl.php" id="btnAjout">Ajouter une annonce</a>
       <div class="" id="btnTri">
         <!-- FIN -->
 
@@ -30,12 +31,13 @@
         <div class="dropdown">
           <button class="dropbouton">Le plus récent</button>
           <div class="dropdown-content">
-            <a class="i" href="#">Le moinds récent</a>
+            <a class="i" href="#">Le moins récent</a>
             <a class="i" href="#">Le plus populaire</a>
             <a class="i" href="#">Le moins populaire</a>
           </div>
         </div>
       </div>
+
     </div>
     <div class="" id="annonces">
       <?php

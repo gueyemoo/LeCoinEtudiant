@@ -9,6 +9,7 @@
   border: solid 2px grey;
   margin: 100px 20px 100px 5px;
   float: left;
+  border-radius: 5px;
 }
 
 #annonces {
@@ -46,6 +47,21 @@
 #btnTri {
   position: absolute;
   right: 200px;
+}
+
+#btnAjout {
+  position: absolute;
+  left: 350px;
+  top: 35px;
+  padding: 5px;
+  border: solid 1px grey;
+  border-radius: 4px;
+  color: black;
+}
+
+#btnAjout:hover {
+  color: grey;
+  text-decoration: none;
 }
 /* Style The Dropdown Button */
 .dropbouton, #tri{
