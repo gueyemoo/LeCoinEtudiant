@@ -25,6 +25,10 @@ function getHeure($idAnnonce, $dao) {
 
 $annoncesPostees = $dao->getAnnonces();
 
+$categoriesSport = $dao->getCategorieByIdGlobal(83);
+
+$toutesCategories = $dao->getAllCategorie();
+
 
 if (count($_POST)==2 && $_POST["email"] && $_POST["password"]) {
   if($dao->connexion($_POST["email"], $_POST["password"])) {

@@ -594,6 +594,29 @@ class DAO
     return $categorie[0]??null;
   }
 
+  function getCategorieByIdGlobal($idGlobal)  {//Nous avons enlever le typage de retour pour qu'il puisse renvoyé null
+    //   RENVOIE LES CATEGORIES AYANT L'ID PERE DEMANDEE   //
+    $requeteSQL = "SELECT * FROM categorie WHERE idTitreGlobal=$idGlobal";
+    $reponseDeRequete=$this->db->query($requeteSQL);
+    $tableau_retour= $reponseDeRequete->fetchAll(PDO::FETCH_CLASS,'Categorie');
+    foreach ($tableau_retour as $key => $value) {
+      //reorganisation du tableau de retour dans le meme esprit que les regions
+      //le tableau_retour contient des tableaux de categorie et la clef de ces tableaux est le nom de la catégorie parente
+      if ($value->idpere!=$value->id){
+        $tableau_categorie[$tableau_retour[($value->idpere)-1]->nom][]=$value;
+      }
+    }
+    return $tableau_categorie;
+  }
+
+  function getCategorieByIdPere($idPere)  {//Nous avons enlever le typage de retour pour qu'il puisse renvoyé null
+    //   RENVOIE LES CATEGORIES AYANT L'ID PERE DEMANDEE   //
+    $requeteSQL = "SELECT * FROM categorie WHERE idpere=$idPere";
+    $reponseDeRequete=$this->db->query($requeteSQL);
+    $categorie=$reponseDeRequete? $reponseDeRequete->fetchAll(PDO::FETCH_CLASS,'Categorie'):null;
+    return $categorie[0]??null;
+  }
+
   //---------------------------------------------------------------------------//
   //--------------------   FONCTIONS POUR LES FAVORIS      --------------------//
   //---------------------------------------------------------------------------//

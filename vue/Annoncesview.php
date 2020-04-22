@@ -16,7 +16,20 @@
 
     <!-- LE BODY DE GAUCHE -->
     <div class="" id="filtres">
-      <p>Filtres</p>
+      <h3>Filtres</h3>
+      <div class="divFiltres" id="Sport">
+        <label >Categories :</label><br>
+        <select name = "categorie">
+          <option value="0" selected>Toutes les catégories</option>
+          <?php foreach ($toutesCategories as $categorie) { ?>
+            <?php foreach ($categorie as $sousCat): ?>
+              <?php var_dump($sousCat); ?>
+            <option value="<?=$sousCat->nom?>"><?=$sousCat->nom?></option>
+          <?php endforeach; ?>
+          <?php } ?>
+        </select>
+      </div>
+      <button type="submit" name="button">Filtrer !</button>
     </div>
     <div class="" id="tri">
       <a href="../controleur/AjoutAnnonce.ctrl.php" id="btnAjout">Ajouter une annonce</a>
