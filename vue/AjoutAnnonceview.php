@@ -35,8 +35,6 @@
 
           <div class="row">
 
-
-
             <div class="form-group" style="margin-left:15px;">
               <label for="type">Type *</label>
               <select class="form-control" id="categorieAnnonce" name="type" onChange="checkInputSelectedType(this);">
@@ -140,8 +138,13 @@
 
           </div>
 
+          <div class="form-group">
+            <label for="DepartementInput"> Choisir un département </label>
+            <input type="text" class="form-control" placeholder="Commencer à écrire pour avoir des propositions">
+          </div>
+
         </div>
-        
+
       </form>
     </fieldset>
 

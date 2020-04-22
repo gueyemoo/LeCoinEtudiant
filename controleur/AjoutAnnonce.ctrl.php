@@ -18,6 +18,9 @@ $SportCombats = $dao->getSousCategoriesSportCombat();
 $SportRaquette = $dao->getSousCategoriesSportRaquette();
 $SportAutre = $dao->getSousCategoriesAutres();
 
+//Recupere les départements de France
+$departements = $dao->getAllNomDepartement();
+
 if (count($_POST)==2 && $_POST["email"] && $_POST["password"]) {
   if($dao->connexion($_POST["email"], $_POST["password"])) {
     include('../vue/AjoutAnnonceview.php');
