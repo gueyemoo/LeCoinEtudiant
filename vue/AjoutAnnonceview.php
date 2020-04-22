@@ -138,12 +138,22 @@
 
           </div>
 
-          <div class="form-group">
-            <label for="DepartementInput"> Choisir un département </label>
-            <input type="text" class="form-control" placeholder="Commencer à écrire pour avoir des propositions">
+          <div class="row">
+
+            <div class="form-group" style="margin-right:10em; margin-left:10px;">
+              <label for="DepartementInput"> Choisir un département * </label>
+              <input type="text" class="form-control" placeholder="Commencer à écrire pour avoir des propositions" >
+            </div>
+
+            <div class="form-group">
+              <label for="DepartementInput"> Adresse * </label>
+              <input type="text" class="form-control" placeholder="Saisissez votre adresse" style="width:150%;">
+            </div>
+
           </div>
 
         </div>
+
 
       </form>
     </fieldset>
