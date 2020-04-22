@@ -542,6 +542,105 @@ class DAO
     return $tab_retour;
   }
 
+  function getTypes():array {
+    //   ON RECUPERE lES DIFFERENTS TYPES D'ANNONCE POSSIBLE  //
+    $requ = 'SELECT DISTINCT * FROM categorie WHERE idTitreGlobal = id ORDER BY idTitreGlobal ASC';
+    $res = $this->db->query($requ);
+    $result = $res->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, "Categorie");
+
+    return $result;
+  }
+
+  function getCategoriesSports():array {
+    //   ON RECUPERE lES DIFFERENTES CATEGORIES D'ANNONCE POSSIBLE POUR UN TYPE  //
+    $requ = "SELECT * FROM categorie  WHERE idTitreGlobal = 83 AND NOT idTitreGlobal = id GROUP BY idpere ORDER BY idTitreGlobal ASC ";
+    $res = $this->db->query($requ);
+    $result = $res->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, "Categorie");
+
+    return $result;
+  }
+
+  function getSousCategoriesAthletisme():array {
+    //   ON RECUPERE lES DIFFERENTES OPTIONS D'ATHLETISME POSSIBLE  //
+    $requ = "SELECT * FROM categorie  WHERE idpere = 1 AND NOT idpere = id  ORDER BY nom ASC";
+    $res = $this->db->query($requ);
+    $result = $res->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, "Categorie");
+
+    return $result;
+  }
+
+  function getSousCategoriesSportCollectif():array{
+    //   ON RECUPERE lES DIFFERENTES OPTIONS DE SPORT COLLECTIF  //
+    $requ = "SELECT * FROM categorie  WHERE idpere = 22 AND NOT idpere = id  ORDER BY nom ASC";
+    $res = $this->db->query($requ);
+    $result = $res->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, "Categorie");
+
+    return $result;
+  }
+
+  function getSousCategoriesCyclisme():array{
+    //   ON RECUPERE lES DIFFERENTES OPTIONS DE CYCLISME  //
+    $requ = "SELECT * FROM categorie  WHERE idpere = 43 AND NOT idpere = id  ORDER BY nom ASC";
+    $res = $this->db->query($requ);
+    $result = $res->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, "Categorie");
+
+    return $result;
+  }
+
+  function getSousCategoriesSportCible():array{
+    //   ON RECUPERE lES DIFFERENTES OPTIONS DE SPORT DE CIBLE  //
+    $requ = "SELECT * FROM categorie  WHERE idpere = 47 AND NOT idpere = id  ORDER BY nom ASC";
+    $res = $this->db->query($requ);
+    $result = $res->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, "Categorie");
+
+    return $result;
+  }
+
+  function getSousCategoriesSportGlisse():array{
+    //   ON RECUPERE lES DIFFERENTES OPTIONS DE SPORT DE GLISSE  //
+    $requ = "SELECT * FROM categorie  WHERE idpere = 56 AND NOT idpere = id  ORDER BY nom ASC";
+    $res = $this->db->query($requ);
+    $result = $res->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, "Categorie");
+
+    return $result;
+  }
+
+  function getSousCategoriesSportNautique():array{
+    //   ON RECUPERE lES DIFFERENTES OPTIONS DE SPORT NAUTIQUE  //
+    $requ = "SELECT * FROM categorie  WHERE idpere = 59 AND NOT idpere = id  ORDER BY nom ASC";
+    $res = $this->db->query($requ);
+    $result = $res->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, "Categorie");
+
+    return $result;
+  }
+
+  function getSousCategoriesSportCombat():array{
+    //   ON RECUPERE lES DIFFERENTES OPTIONS DE SPORT DE COMBAT  //
+    $requ = "SELECT * FROM categorie  WHERE idpere = 69 AND NOT idpere = id  ORDER BY nom ASC";
+    $res = $this->db->query($requ);
+    $result = $res->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, "Categorie");
+
+    return $result;
+  }
+
+  function getSousCategoriesSportRaquette():array{
+    //   ON RECUPERE lES DIFFERENTES OPTIONS DE SPORT DE RAQUETTE  //
+    $requ = "SELECT * FROM categorie  WHERE idpere = 75 AND NOT idpere = id  ORDER BY nom ASC";
+    $res = $this->db->query($requ);
+    $result = $res->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, "Categorie");
+
+    return $result;
+  }
+
+  function getSousCategoriesAutres():array{
+    //   ON RECUPERE lES DIFFERENTES OPTIONS DES AUTRES SOUS CATEGORIE  //
+    $requ = "SELECT * FROM categorie  WHERE idpere = 79 AND NOT nom = 'Autres'   ORDER BY nom ASC";
+    $res = $this->db->query($requ);
+    $result = $res->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, "Categorie");
+
+    return $result;
+  }
+
   //-----------------------------------------------------------------------------//
   //--------------------   FONCTIONS POUR LES DEPARTEMENTS   --------------------//
   //-----------------------------------------------------------------------------//
