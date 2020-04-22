@@ -51,7 +51,6 @@
             <?php } ?>
           </select>
         </div>
-
         <div class="form-group" id="div-sous-categorie1" style="display:none;">
           <label for="sousCategorie1"> Sous Categorie </label>
           <select class="form-control" id="sousCategorieAnnonce1" name="sousCategorie1">

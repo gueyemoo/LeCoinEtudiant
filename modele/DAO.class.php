@@ -553,7 +553,7 @@ class DAO
 
   function getCategoriesSports():array {
     //   ON RECUPERE lES DIFFERENTES CATEGORIES D'ANNONCE POSSIBLE POUR UN TYPE  //
-    $requ = "SELECT * FROM categorie  WHERE idTitreGlobal = 83 AND NOT idTitreGlobal = id GROUP BY idpere ORDER BY idTitreGlobal ASC ";
+    $requ = "SELECT * FROM categorie  WHERE idTitreGlobal = 83 AND idpere = id AND NOT idTitreGlobal = id GROUP BY idpere ORDER BY idTitreGlobal ASC";
     $res = $this->db->query($requ);
     $result = $res->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, "Categorie");
 
