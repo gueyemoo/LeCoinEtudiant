@@ -570,7 +570,7 @@ class DAO
   }
 
   function getSousCategoriesSportCollectif():array{
-    //   ON RECUPERE lES DIFFERENTES OPTIONS DE SPORT COLLECTIF  //
+    //   ON RECUPERE lES DIFFERENTES OPTIONS DE SPORT COLLECTIFS  //
     $requ = "SELECT * FROM categorie  WHERE idpere = 22 AND NOT idpere = id  ORDER BY nom ASC";
     $res = $this->db->query($requ);
     $result = $res->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, "Categorie");

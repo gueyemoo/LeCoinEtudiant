@@ -1,7 +1,7 @@
 <?php
 include_once("../modele/DAO.class.php");
 
-//Recupere les types d'annonce possible
+//Recupere les types d'annonces possibles
 $types = $dao->getTypes();
 
 //Recupere les catégories d'annonces possible d'un types
