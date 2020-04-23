@@ -24,10 +24,31 @@ function getHeure($idAnnonce, $dao) {
 }
 
 $annoncesPostees = $dao->getAnnonces();
+//
+// // tout les sports:
+// $sports = $dao->getCategorieByIdGlobal(83);
+//
+// // tout les idpere de sport:
+// $categoriesSports = $dao->getCategoriesSports();
+//
+// // array comportant un array de chaque categories:
+// $toutesCategories = $dao->getAllCategorie();
 
-$categoriesSport = $dao->getCategorieByIdGlobal(83);
+$types = $dao->getTypes();
 
-$toutesCategories = $dao->getAllCategorie();
+//Recupere les catégories d'annonces possible d'un types
+$categoriesSports = $dao->getCategoriesSports();
+
+//Recupere les sous catégorie du Sports
+$athletismes = $dao->getSousCategoriesAthletisme();
+$SportCollectifs = $dao->getSousCategoriesSportCollectif();
+$Cyclisme = $dao->getSousCategoriesCyclisme();
+$SportCible = $dao->getSousCategoriesSportCible();
+$SportGlisse = $dao->getSousCategoriesSportGlisse();
+$SportNautique = $dao->getSousCategoriesSportNautique();
+$SportCombats = $dao->getSousCategoriesSportCombat();
+$SportRaquette = $dao->getSousCategoriesSportRaquette();
+$SportAutre = $dao->getSousCategoriesAutres();
 
 
 if (count($_POST)==2 && $_POST["email"] && $_POST["password"]) {
