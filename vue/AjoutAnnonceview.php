@@ -26,7 +26,7 @@
 
           <div class="form-group">
             <label for="titreAnnonce">Titre de l'annonces *</label>
-            <input type="email" class="form-control" id="titreAnnonce" placeholder="Saisissez un titre clair pour votre annonce.">
+            <input type="text" class="form-control" id="titreAnnonce" placeholder="Saisissez un titre clair pour votre annonce.">
           </div>
 
           <div class="form-group">
