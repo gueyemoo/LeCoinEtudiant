@@ -2,6 +2,7 @@
 require_once('../modele/Client.class.php');
 require_once('../modele/Annonce.class.php');
 require_once('../modele/Categorie.class.php');
+require_once('../modele/Departement.class.php');
 
 class DAO
 {
@@ -648,14 +649,23 @@ class DAO
     //   RENVOIES TOUT LES DEPARTEMENTS DE LA BASE DE DONNEE   //
     $tableau_retour = array();
     $tableau_region_dep= array();
-    $requeteSQL = 'select * from departement order by region_nom';
+    $requeteSQL = "select * from departement order by region_nom";
     $reponseDeRequete=$this->db->query($requeteSQL);
-    $tableau_retour= $reponseDeRequete->fetchAll(PDO::FETCH_CLASS,'Departement');
+    $tableau_retour= $reponseDeRequete->fetchAll(PDO::FETCH_CLASS,"Departement");
     foreach ($tableau_retour as $key => $value) {
       //reorganisation du tableau pour qu'il contiennent des tableaux de departement dont les clefs sont le nom de leur region
       $tableau_region_dep[$value->region_nom][]=$value;
     }
     return $tableau_region_dep;
+  }
+
+  function getAllNomDepartement() : array {
+
+    $requeteSQL = "select departement_nom from departement order by departement_nom asc";
+    $reponseDeRequete = $this->db->query($requeteSQL);
+    $result = $reponseDeRequete->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, "Departement");
+
+    return $result;
   }
 
   function getDepartement($code)  { //Nous avons enlevé le typage de retour pour qu'il puisse renvoyé null si le departement n'existe pas

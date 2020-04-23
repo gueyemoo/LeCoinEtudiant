@@ -3,7 +3,7 @@
 /**
  *
  */
-class departement
+class Departement
 {
 
   function __construct()
