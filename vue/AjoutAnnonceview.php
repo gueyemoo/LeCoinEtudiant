@@ -8,6 +8,9 @@
   <link rel="stylesheet" href="../vue/css/AjoutAnnonceview.css">
   <link rel="stylesheet" href="../vue/css/Header.css">
   <link rel="stylesheet" href='../vue/css/jquery.flipster.css'>
+  <link rel="stylesheet" href="../vue/css/bootstrap-imageupload.css">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
 </head>
 <body>
   <header>
@@ -15,7 +18,7 @@
   </header>
 
   <body>
-    <fieldset class="container border-10 rounded" style="width:90%">
+    <fieldset class="container border-10 rounded" style="width:90%;margin-bottom:7em;">
       <legend  class="w-auto">Ajoutez votre annonce</legend>
 
       <form class="container" style="width:80%; margin-top:10px">
@@ -140,32 +143,63 @@
 
           <div class="row">
 
-            <div class="form-group" style="margin-right:10em; margin-left:10px;">
+            <div class="form-group" style="margin-right:10em; margin-left:15px;">
               <label for="DepartementInput"> Choisir un département * </label>
               <input type="text" class="form-control" placeholder="Commencer à écrire pour avoir des propositions" >
             </div>
 
             <div class="form-group">
               <label for="DepartementInput"> Adresse * </label>
-              <input type="text" class="form-control" placeholder="Saisissez votre adresse" style="width:150%;">
+              <input type="text" class="form-control" placeholder="Saisissez l'adresse de l'évenement" style="width:150%;">
             </div>
 
           </div>
 
-        </div>
+          <div class="form-group">
+            <label for="example-date-input"> Date de l'évenement *</label>
+            <input class="form-control" type="date" style="width:20%;">
+          </div>
 
 
-      </form>
-    </fieldset>
+          <!-- bootstrap-imageupload. -->
+          <div class="imageupload panel panel-default">
+            <div class="panel-heading clearfix">
+              <h3 class="panel-title pull-left">Ajouter une image</h3>
+            </div>
+            <div class="file-tab panel-body">
+              <label class="btn btn-default btn-file">
+                <span>Browse</span>
+                <!-- The file is stored here. -->
+                <input type="file" name="image-file">
+              </label>
+              <button type="button" class="btn btn-default">Remove</button>
+            </div>
+          </div>
 
-    <script type="text/javascript" src="../vue/script/checkInputSelectedType.js"></script>
-    <script type="text/javascript" src="../vue/script/checkInputSelectedSportsCategorie.js"></script>
+          <div class="text-center" style="margin-bottom:1em;">
+            <button class="btn btn-light" style="width:50%;"name="submit" type="submit" id="contact-submit" value"submit">Valider</button>
+          </div>
+
+
+        </form>
+      </fieldset>
+
+      <script type="text/javascript" src="../vue/script/checkInputSelectedType.js"></script>
+      <script type="text/javascript" src="../vue/script/checkInputSelectedSportsCategorie.js"></script>
+      <script type="text/javascript" src="../vue/script/bootstrap-imageupload.js"></script>
+
+      <script>
+      var $imageupload = $('.imageupload');
+      $imageupload.imageupload();
+
+      </script>
+
+    </body>
+
+    <footer class="footer">
+      <?php include('footer.php') ?>
+    </footer>
+
+
   </body>
-
-  <footer class="footer">
-    <?php include('footer.php') ?>
-  </footer>
-
-
-</body>
-</html>
+  </html>
