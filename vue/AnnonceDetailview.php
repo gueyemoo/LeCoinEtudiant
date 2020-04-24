@@ -13,12 +13,7 @@
     <?php include('header.php') ?>
   </header>
 
-<?php if($client->id==$annonce->idClient): ?> <!-- Si c'est le propriétaire de l'annonce -->
-  <div class="">
-    <img href="" src="../modele/img/pencil32.png" alt="" style="position:absolute; right:80px; top:100px; width:50px;height:50px;">
-    <img src="../modele/img/delete.png" alt="" style="position:absolute; right:20px; top:100px; width:50px;height:50px;">
-  </div>
-<?php endif; ?>
+
 
   <div class="container">
     <div class="row" >
@@ -46,44 +41,56 @@
 
         <p><?= $annonce ->contenu?></p>
         <div class="row">
-          <div class="text-center d-flex flex-column column col-md-5">
-            <h6>Participe</h6>
+          <?php if($client->id==$annonce->idClient): ?> <!-- Si c'est le propriétaire de l'annonce -->
+            <div class="text-center d-flex flex-column column col-md-5">
+              <h6>Modifier</h6>
+              <p> <a href="#"> <img src="../modele/img/pencil32.png" alt="logo de modification"> </a> </p>
+            </div>
 
+            <div class="text-center d-flex flex-column column col-md-5">
+              <h6>Supprimer</h6>
+              <p> <a href="#"> <img src="../modele/img/delete.png" alt="logo de suppression"> </a> </p>
+            </div>
+          <?php else: ?>
 
-            <?php if ($Favoris??0): ?>
-              <!-- On verifie si le produit est deja en favoris dans ce cas on propose de le retirer -->
+            <div class="text-center d-flex flex-column column col-md-5">
+              <h6>Participe</h6>
 
-              <p> <a href="../controleur/MettreEnFavoris.php?idAnnonce=<?=$annonce->id?>&action=delete"> <img class="iconeChoix" src="../modele/img/correct.png" alt="correct check"> </a> </p>
+              <?php if ($Favoris??0): ?>
+                <!-- On verifie si le produit est deja en favoris dans ce cas on propose de le retirer -->
 
-            <?php elseif($clientConnecte==0): ?>
-              <!-- On verifie que l'utilisateur est connecter pour mettre en favoris ou retirer des favoris sinon on lui propose de se connecter  -->
-              <p> <a href="../controleur/Accueil.ctrl.php">Connectez-vous </a> pour ajouter cette annonce à vos favoris.</p>
-            <?php else: ?>
-              <!-- On verifie que l'utilisateur n'a pas ce produit en favoris dans ce cas on lui propose de l'ajouter à ces favoris -->
+                <p> <a href="../controleur/MettreEnFavoris.php?idAnnonce=<?=$annonce->id?>&action=delete"> <img class="iconeChoix" src="../modele/img/correct.png" alt="correct check"> </a> </p>
 
-              <p> <a href="../controleur/MettreEnFavoris.php?idAnnonce=<?=$annonce->id?>&action=add"> <img class="iconeChoix" src="../modele/img/correct_vide.png" alt="correct check vide"> </a> </p>
-            <?php endif; ?>
+              <?php elseif($clientConnecte==0): ?>
+                <!-- On verifie que l'utilisateur est connecter pour mettre en favoris ou retirer des favoris sinon on lui propose de se connecter  -->
+                <p> <a href="../controleur/Accueil.ctrl.php">Connectez-vous </a> pour ajouter cette annonce à vos favoris.</p>
+              <?php else: ?>
+                <!-- On verifie que l'utilisateur n'a pas ce produit en favoris dans ce cas on lui propose de l'ajouter à ces favoris -->
 
+                <p> <a href="../controleur/MettreEnFavoris.php?idAnnonce=<?=$annonce->id?>&action=add"> <img class="iconeChoix" src="../modele/img/correct_vide.png" alt="correct check vide"> </a> </p>
+              <?php endif; ?>
+
+            </div>
+            <div class="text-center d-flex flex-column column col-md-5">
+              <h6>Interessé</h6>
+
+              <?php if ($Interesse??0): ?>
+                <!-- On verifie si l'annonce est deja en interesse dans ce cas on propose de le retirer -->
+
+                <p> <a href="../controleur/MettreEnInteresse.php?idAnnonce=<?=$annonce->id?>&action=delete"> <img class="iconeChoix" src="../modele/img/heart.png" alt="heart check"> </a> </p>
+
+              <?php elseif($clientConnecte==0): ?>
+                <!-- On verifie que l'utilisateur est connecter pour mettre en interesse ou retirer des interessé sinon on lui propose de se connecter  -->
+                <p> <a href="../controleur/Accueil.ctrl.php">Connectez-vous </a> pour ajouter cette annonce à votre centre d'intérêt.</p>
+              <?php else: ?>
+                <!-- On verifie que l'utilisateur n'a pas ce produit en interessé dans ce cas on lui propose de l'ajouter à ces interesses -->
+
+                <p> <a href="../controleur/MettreEnInteresse.php?idAnnonce=<?=$annonce->id?>&action=add"> <img class="iconeChoix" src="../modele/img/heart_vide.png" alt="heart check vide"> </a> </p>
+              <?php endif; ?>
+
+            </div>
+          <?php endif; ?>
           </div>
-          <div class="text-center d-flex flex-column column col-md-5">
-            <h6>Interessé</h6>
-
-            <?php if ($Interesse??0): ?>
-              <!-- On verifie si l'annonce est deja en interesse dans ce cas on propose de le retirer -->
-
-              <p> <a href="../controleur/MettreEnInteresse.php?idAnnonce=<?=$annonce->id?>&action=delete"> <img class="iconeChoix" src="../modele/img/heart.png" alt="heart check"> </a> </p>
-
-            <?php elseif($clientConnecte==0): ?>
-              <!-- On verifie que l'utilisateur est connecter pour mettre en interesse ou retirer des interessé sinon on lui propose de se connecter  -->
-              <p> <a href="../controleur/Accueil.ctrl.php">Connectez-vous </a> pour ajouter cette annonce à votre centre d'intérêt.</p>
-            <?php else: ?>
-              <!-- On verifie que l'utilisateur n'a pas ce produit en interessé dans ce cas on lui propose de l'ajouter à ces interesses -->
-
-              <p> <a href="../controleur/MettreEnInteresse.php?idAnnonce=<?=$annonce->id?>&action=add"> <img class="iconeChoix" src="../modele/img/heart_vide.png" alt="heart check vide"> </a> </p>
-            <?php endif; ?>
-
-          </div>
-        </div>
       </div>
     </div>
 
