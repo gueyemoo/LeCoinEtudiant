@@ -503,7 +503,7 @@ class DAO
 
   function getCategorie($idAnnonce): string { //renomme la getCategorieAnnonce sinon on s'y retrouve plus avec le getCategorie des catégories..
     // retourne la categorie de l'annonce renseignée en paramètre
-    $requeteSQL = "SELECT C.nom FROM categorie C, annonce A WHERE A.id =$idAnnonce AND A.categorie=C.id";
+    $requeteSQL = "SELECT categorie FROM annonce WHERE id = $idAnnonce";
     $retour = $this->db->query($requeteSQL);
     $categorie = $retour->fetch()[0];
     return $categorie;

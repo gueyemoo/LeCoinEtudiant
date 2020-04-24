@@ -81,7 +81,7 @@
       </div>
     </div>
 
-    <h6 style="float:right;">Posté le 11/03/2020 à 18h30</h6>
+    <h6 style="float:right;">Posté le <?=$annonce->dateHeure?></h6>
   </div>
 
 
