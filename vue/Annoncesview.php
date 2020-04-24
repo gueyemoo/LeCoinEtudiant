@@ -194,11 +194,12 @@
       <?php
       foreach ($annoncesPostees as $annonce) { ?>
         <a href="../controleur/AnnonceDetail.ctrl.php?id=<?=$annonce->id ?>" style="text-decoration:none; color: inherit;"> <div class="annonce">
-          <img src="../modele/img/icone_sport.jpg" class="image">
+          <img src="../modele/data/upload/<?=$annonce->id?>.jpg" class="image">
           <p class="titre"> <?php echo($annonce->titre); ?></p> <!-- le titre ne doit pas dépasser 65 char -->
           <p class="categorie"><?php
-          $cat = getCategorie($annonce->id, $dao);
-          echo "$cat"; ?></p>
+          // $cat = getCategorie($annonce->id, $dao);
+          echo($annonce->sousCategorie);
+          ?></p>
           <p class="adresse"> <?php
           $addr = getAdresse($annonce->id, $dao);
           echo "$addr"; ?></p>

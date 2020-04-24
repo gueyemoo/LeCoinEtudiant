@@ -21,17 +21,17 @@
     <fieldset class="container border-10 rounded" style="width:90%;margin-bottom:7em;">
       <legend  class="w-auto">Ajoutez votre annonce</legend>
 
-      <form class="container" style="width:80%; margin-top:10px">
+      <form class="container" style="width:80%; margin-top:10px" action="<?=$_SERVER['PHP_SELF']?>" method="POST" enctype="multipart/form-data" >
         <div class="justify-content-center">
 
           <div class="form-group">
             <label for="titreAnnonce">Titre de l'annonces *</label>
-            <input type="text" class="form-control" id="titreAnnonce" placeholder="Saisissez un titre clair pour votre annonce.">
+            <input type="text" class="form-control" name="titre" id="titreAnnonce" placeholder="Saisissez un titre clair pour votre annonce.">
           </div>
 
           <div class="form-group">
             <label for="descriptionTextArea">Description de l'annonce * </label>
-            <textarea class="form-control" id="descritionAnnonce" rows="5" placeholder="Saississez une description précise afin de mettre en valeur votre annonce."></textarea>
+            <textarea class="form-control" name="contenu" id="descritionAnnonce" rows="5" placeholder="Saississez une description précise afin de mettre en valeur votre annonce."></textarea>
           </div>
 
 
@@ -72,13 +72,13 @@
               <label for="DepartementInput"> Choisir un département * </label>
               <div class="autocomplete">
 
-                <input type="text" class="form-control inputFiltre" id="myInput" placeholder="Commencer à écrire pour avoir des propositions" >
+                <input type="text" class="form-control inputFiltre" id="myInput" name="departement" placeholder="Commencer à écrire pour avoir des propositions" >
               </div>
             </div>
 
             <div class="form-group">
               <label for="DepartementInput"> Adresse * </label>
-              <input type="text" class="form-control" placeholder="Saisissez l'adresse de l'évenement" style="width:150%;">
+              <input type="text" class="form-control" name="adresse" placeholder="Saisissez l'adresse de l'évenement" style="width:150%;">
             </div>
 
           </div>
@@ -87,12 +87,12 @@
 
             <div class="form-group" style="margin-right:12em; margin-left:15px;">
               <label for="example-date-input"> Date de l'évenement *</label>
-              <input class="form-control" type="date" name="dateEvenement">
+              <input class="form-control" type="date" name="datePrevu">
             </div>
 
             <div class="form-group">
               <label for="example-date-input"> Heure de l'évenement *</label>
-              <input class="form-control" type="time" name="heureEvenement" >
+              <input class="form-control" type="time" name="heurePrevu" >
             </div>
 
           </div>
@@ -106,14 +106,14 @@
               <label class="btn btn-default btn-file">
                 <span>Browse</span>
                 <!-- The file is stored here. -->
-                <input type="file" name="image-file">
+                <input name="image" type="file" id="file">
               </label>
               <button type="button" class="btn btn-default">Remove</button>
             </div>
           </div>
 
           <div class="text-center" style="margin-bottom:1em;">
-            <button class="btn btn-light" style="width:50%;"name="submit" type="submit" id="contact-submit" value"submit">Valider</button>
+            <button class="btn btn-light" style="width:50%;" name="submit" type="submit" id="contact-submit" value"submit">Valider</button>
           </div>
 
 

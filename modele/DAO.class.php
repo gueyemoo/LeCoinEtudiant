@@ -642,22 +642,22 @@ class DAO
     return $result;
   }
 
-  function addAnnonce(int $idClient, int $idCategorie, string $titre, string $contenu, string $adresse, int $nbParticipant, int $nbInteresse, string $departement, string $datePrevu, string $heurePrevu, string $dateHeure) : int{
-    //   AJOUTE UNE RANDONNEE DANS LA BASE DE DONNEE   //
+  function addAnnonce(int $idClient,string $type, string $categorie, string $sousCategorie, string $titre, string $contenu, string $adresse, int $nbParticipant, int $nbInteresse, string $departement, string $datePrevu, string $heurePrevu, string $dateHeure) : int{
+    //   AJOUTE UNE ANNONCE DANS LA BASE DE DONNEE   //
     $idAnnonce=null;
-    if($nom&&$lieu&&$durees&&$difficultes){
+    if($titre&&$contenu&&$adresse){
       //recupere le prochain id pour la randonnee à ajouter
-      $requeteSQL = "SELECT MAX(id) FROM randonnees";
+      $requeteSQL = "SELECT MAX(id) FROM annonce";
       $reponseDeRequete=$this->db->query($requeteSQL);
       $max= $reponseDeRequete->fetch()[0];
-      $idRandonnee= intval($max)+1;
+      $idAnnonce = intval($max)+1;
 
 
       //ajout de l'annonce
-      $requeteSQL = "INSERT INTO randonnees VALUES (\"$nom\",$idRandonnee,\"$lieu\",\"$durees\",\"$description\",\"$difficultes\")";
+      $requeteSQL = "INSERT INTO annonce VALUES ($idAnnonce,$idClient,\"$type\",\"$categorie\",\"$sousCategorie\",\"$titre\",\"$contenu\",\"$adresse\",$nbParticipant,$nbInteresse,\"$departement\",\"$datePrevu\",\"$heurePrevu\",\"$dateHeure\")";
       $retour=$this->db->query($requeteSQL);
     }
-    return $idRandonnee; //retourne l'id de la randonnee ajouter
+    return $idAnnonce; //retourne l'id de l'annonce ajouter
   }
 
   //-----------------------------------------------------------------------------//

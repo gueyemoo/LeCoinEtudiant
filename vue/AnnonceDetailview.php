@@ -17,10 +17,10 @@
   <div class="container">
     <div class="row" >
       <div class="d-flex flex-column column col-md-5 img">
-        <img id="imgDescription" src="https://via.placeholder.com/350" alt="" class="img-rounded"> <br>
-        <h5><u> <?=$cat->nom?> </u></h5>
+        <img id="imgDescription" src="../modele/data/upload/<?=$annonce->id?>.jpg" alt="" class="img-rounded"> <br>
+        <h5><u> <?=$annonce->categorie?> :</u> <?=$annonce->sousCategorie?> </h5>
         <p style="margin-bottom:0px;"> <?= $annonce->adresse?> </p>
-        <p>Prévu le: 11/02 à 17h   </p>
+        <p>Prévu le: <?=$annonce->datePrevu?> à <?=$annonce->heurePrevu?>   </p>
 
         <br>
         <p>Nombre de participants: <strong> <?=$annonce->nbParticipant?> </strong></p>
