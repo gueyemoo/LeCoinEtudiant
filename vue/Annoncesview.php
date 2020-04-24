@@ -21,7 +21,11 @@
     <form class="" action="index.html" method="get">
 
     <div class="" id="filtres">
-      <h3>Filtres</h3>
+      <div class="alignFiltre">
+        <p>
+          <h3 id="h3Filtres">Filtres</h3>
+        </p>
+      </div>
 
       <div class="form-group">
         <label for="type">Type d'annonces : </label>
@@ -35,7 +39,6 @@
 
       <div class="form-group" id="div-categorie" style="display:none;">
         <label for="Categorie">Categorie :</label>
-
         <select class="form-control" id="categorieAnnonce" name="categorie" onChange="addSelectedSportFiltre(this)">
           <option selected style="font-weight: bold;">Choisir une sous categorie</option>
           <?php foreach ($categoriesSports as $categories) { ?>
@@ -43,18 +46,32 @@
           <?php } ?>
         </select>
       </div>
+
       <!-- div qui contient les sports de la categorie choisie -->
       <div class="" id="sousCat">
       </div>
 
-      <div class="">
-
+      <div class="form-group">
+        <label for="departement">Département :</label>
+        <div class="autocomplete">
+          <input type="text" class="form-control inputFiltre" id="myInput" placeholder="Commencer à écrire pour avoir des propositions" >
+        </div>
       </div>
 
-      <button type="submit" name="filtrer">Filtrer !</button>
+      <div class="form-group">
+        <label for="date">Date de l'évenement :</label>
+        <input class="form-group" type="date" name="date" value="">
+      </div>
+
+      <div class="alignFiltre">
+        <p>
+          <button class="btn btn-light" id="sub" type="submit" name="">Filtrer !</button>
+        </p>
+      </div>
 
     </div>
   </form>
+
   <!-- div cachee qui contient les options des differentes categories -->
   <div class="" id="sousCatCache" style="display: none;">
     <div class="form-group" id="div-sous-categorie1" >
@@ -193,5 +210,14 @@
   </footer>
   <script type="text/javascript" src="../vue/script/checkInputSelectedType.js"></script>
   <script type="text/javascript" src="../vue/script/addSelectedSportFiltre.js"></script>
+  <script type="text/javascript" src="../vue/script/autocompletion.js"></script>
+  <script type="text/javascript">
+  <?php
+  $php_array = $departements;
+  $js_array = json_encode($php_array);
+  echo "var javascript_array = ". $js_array . ";\n";
+  ?>
+  autocomplete(document.getElementById("myInput"), javascript_array);
+  </script>
 </body>
 </html>

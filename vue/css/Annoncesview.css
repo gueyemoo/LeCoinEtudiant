@@ -5,11 +5,23 @@
 
 #filtres {
   width: 300px;
-  height: 500px;
+  height: auto;
   border: solid 3px grey;
   margin: 100px 20px 100px 5px;
   float: left;
   border-radius: 5px;
+}
+
+.alignFiltre  {
+  text-align: center;
+}
+
+label {
+  margin-left: 5px;
+}
+
+#sub {
+  margin: 5px;
 }
 
 #annonces {
@@ -117,4 +129,37 @@
 .annonce:hover {
     transform: scale(1.1); /* (110% zoom -N.B: Si le zoom est trop grand ça va sortir de la vue d'annonce) */
     border: solid 3px green;
+}
+
+
+.autocomplete {
+  /*the container must be positioned relative:*/
+  position: relative;
+  padding-bottom: 10px;
+}
+.autocomplete-items {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  /*position the autocomplete items to be the same width as the container:*/
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+.autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #fff;
+  border-bottom: 1px solid #d4d4d4;
+}
+.autocomplete-items div:hover {
+  /*when hovering an item:*/
+  background-color: #e9e9e9;
+}
+.autocomplete-active {
+  /*when navigating through the items using the arrow keys:*/
+  background-color: DodgerBlue !important;
+  color: #ffffff;
 }

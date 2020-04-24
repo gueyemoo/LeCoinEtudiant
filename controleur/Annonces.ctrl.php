@@ -23,6 +23,9 @@ function getHeure($idAnnonce, $dao) {
   return $heure;
 }
 
+//Recupere les départements de France
+$departements = $dao->getAllNomDepartement();
+
 $annoncesPostees = $dao->getAnnonces();
 //
 // // tout les sports:

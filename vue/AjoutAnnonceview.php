@@ -202,7 +202,6 @@
       </div>
 
 
-
       <script type="text/javascript" src="../vue/script/addSelectedSportFiltre.js"></script>
       <script type="text/javascript" src="../vue/script/checkInputSelectedType.js"></script>
       <script type="text/javascript" src="../vue/script/checkInputSelectedSportsCategorie.js"></script>
