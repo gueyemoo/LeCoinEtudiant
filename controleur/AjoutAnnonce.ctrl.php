@@ -20,7 +20,6 @@ $SportAutre = $dao->getSousCategoriesAutres();
 
 //Recupere les départements de France
 $departements = $dao->getAllNomDepartement();
-var_dump($departements);
 
 if (count($_POST)==2 && $_POST["email"] && $_POST["password"]) {
   if($dao->connexion($_POST["email"], $_POST["password"])) {
