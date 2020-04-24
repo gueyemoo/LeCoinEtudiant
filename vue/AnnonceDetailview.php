@@ -13,6 +13,12 @@
     <?php include('header.php') ?>
   </header>
 
+<?php if($client->id==$annonce->idClient): ?> <!-- Si c'est le propriétaire de l'annonce -->
+  <div class="">
+    <img href="" src="../modele/img/pencil32.png" alt="" style="position:absolute; right:80px; top:100px; width:50px;height:50px;">
+    <img src="../modele/img/delete.png" alt="" style="position:absolute; right:20px; top:100px; width:50px;height:50px;">
+  </div>
+<?php endif; ?>
 
   <div class="container">
     <div class="row" >
@@ -89,6 +95,6 @@
   <footer class="footer">
     <?php include('footer.php') ?>
   </footer>
-  
+
 </body>
 </html>
