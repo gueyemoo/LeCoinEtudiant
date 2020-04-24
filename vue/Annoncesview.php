@@ -30,7 +30,7 @@
       <div class="form-group">
         <label for="type">Type d'annonces : </label>
         <select class="form-control" id="categorieAnnonce" name="type" onChange="checkInputSelectedType(this);">
-          <option selected style="font-weight: bold;">Choisir un type</option>
+          <option selected value="0" style="font-weight: bold;">Tout types</option>
           <?php foreach ($types as $type) { ?>
             <option value="<?=$type->nom?>"><?=$type->nom?></option>
           <?php } ?>
@@ -40,7 +40,7 @@
       <div class="form-group" id="div-categorie" style="display:none;">
         <label for="Categorie">Categorie :</label>
         <select class="form-control" id="categorieAnnonce" name="categorie" onChange="addSelectedSportFiltre(this)">
-          <option selected style="font-weight: bold;">Choisir une sous categorie</option>
+          <option selected value="0" style="font-weight: bold;">Toutes categories</option>
           <?php foreach ($categoriesSports as $categories) { ?>
             <option value="<?=$categories->nom?>"><?=$categories->nom?></option>
           <?php } ?>
@@ -75,8 +75,9 @@
   <!-- div cachee qui contient les options des differentes categories -->
   <div class="" id="sousCatCache" style="display: none;">
     <div class="form-group" id="div-sous-categorie1" >
-      <label for="sousCategorie1"> Sous-Categorie : </label>
+      <label for="sousCategorie1"> Sous-Catégorie : </label>
       <select class="form-control" id="sousCategorieAnnonce1" name="sousCategorie">
+        <option value="0">Toutes sous-catégories</option>
         <?php foreach ($athletismes as $athletisme) { ?>
           <option value="<?=$athletisme->nom?>"><?=$athletisme->nom?></option>
         <?php } ?>
@@ -85,6 +86,7 @@
     <div class="form-group" id="div-sous-categorie2">
       <label for="sousCategorie2"> Sous Categorie </label>
       <select class="form-control" id="sousCategorieAnnonce2" name="sousCategorie">
+        <option value="0">Toutes sous-catégories</option>
         <?php foreach ($SportCollectifs as $SportCo) { ?>
           <option value="<?=$SportCo->nom?>"><?=$SportCo->nom?></option>
         <?php } ?>
@@ -94,6 +96,7 @@
     <div class="form-group" id="div-sous-categorie3">
       <label for="sousCategorie3"> Sous Categorie </label>
       <select class="form-control" id="sousCategorieAnnonce3" name="sousCategorie">
+        <option value="0">Toutes sous-catégories</option>
         <?php foreach ($Cyclisme as $Cyc) { ?>
           <option value="<?=$Cyc->nom?>"><?=$Cyc->nom?></option>
         <?php } ?>
@@ -103,6 +106,7 @@
     <div class="form-group" id="div-sous-categorie4">
       <label for="sousCategorie4"> Sous Categorie </label>
       <select class="form-control" id="sousCategorieAnnonce4" name="sousCategorie">
+        <option value="0">Toutes sous-catégories</option>
         <?php foreach ($SportCible as $SportCi) { ?>
           <option value="<?=$SportCi->nom?>"><?=$SportCi->nom?></option>
         <?php } ?>
@@ -112,6 +116,7 @@
     <div class="form-group" id="div-sous-categorie5">
       <label for="sousCategorie5"> Sous Categorie </label>
       <select class="form-control" id="sousCategorieAnnonce5" name="sousCategorie">
+        <option value="0">Toutes sous-catégories</option>
         <?php foreach ($SportGlisse as $SportGl) { ?>
           <option value="<?=$SportGl->nom?>"><?=$SportGl->nom?></option>
         <?php } ?>
@@ -121,6 +126,7 @@
     <div class="form-group" id="div-sous-categorie6">
       <label for="sousCategorie6"> Sous Categorie </label>
       <select class="form-control" id="sousCategorieAnnonce6" name="sousCategorie">
+        <option value="0">Toutes sous-catégories</option>
         <?php foreach ($SportNautique as $SportNau) { ?>
           <option value="<?=$SportNau->nom?>"><?=$SportNau->nom?></option>
         <?php } ?>
@@ -130,6 +136,7 @@
     <div class="form-group" id="div-sous-categorie7">
       <label for="sousCategorie7"> Sous Categorie </label>
       <select class="form-control" id="sousCategorieAnnonce7" name="sousCategorie">
+        <option value="0">Toutes sous-catégories</option>
         <?php foreach ($SportCombats as $SportCombat) { ?>
           <option value="<?=$SportCombat->nom?>"><?=$SportCombat->nom?></option>
         <?php } ?>
@@ -139,6 +146,7 @@
     <div class="form-group" id="div-sous-categorie8">
       <label for="sousCategorie8"> Sous Categorie </label>
       <select class="form-control" id="sousCategorieAnnonce8" name="sousCategorie">
+        <option value="0">Toutes sous-catégories</option>
         <?php foreach ($SportRaquette as $SportRa) { ?>
           <option value="<?=$SportRa->nom?>"><?=$SportRa->nom?></option>
         <?php } ?>
@@ -148,10 +156,14 @@
     <div class="form-group" id="div-sous-categorie9">
       <label for="sousCategorie9"> Sous Categorie </label>
       <select class="form-control" id="sousCategorieAnnonce9" name="sousCategorie">
+        <option value="0">Toutes sous-catégories</option>
         <?php foreach ($SportAutre as $SportAu) { ?>
           <option value="<?=$SportAu->nom?>"><?=$SportAu->nom?></option>
         <?php } ?>
       </select>
+    </div>
+
+    <div class="form-group" id="div-toutes-cat">
     </div>
   </div>
 

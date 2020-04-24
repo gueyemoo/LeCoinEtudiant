@@ -52,7 +52,7 @@
               <label for="Categorie">Categorie *</label>
 
               <select class="form-control" id="categorieAnnonce" name="categorie" onChange="addSelectedSportFiltre(this)">
-                <option selected style="font-weight: bold;">Choisir une sous categorie</option>
+                <option selected value="0" style="font-weight: bold;">Choisir une sous categorie</option>
                 <?php foreach ($categoriesSports as $categories) { ?>
                   <option value="<?=$categories->nom?>"><?=$categories->nom?></option>
                 <?php } ?>
@@ -205,6 +205,9 @@
               <option value="<?=$SportAu->nom?>"><?=$SportAu->nom?></option>
             <?php } ?>
           </select>
+        </div>
+
+        <div class="form-group" id="div-toutes-cat">
         </div>
 
       </div>
