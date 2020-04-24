@@ -145,7 +145,10 @@
 
             <div class="form-group" style="margin-right:10em; margin-left:15px;">
               <label for="DepartementInput"> Choisir un département * </label>
-              <input type="text" class="form-control" placeholder="Commencer à écrire pour avoir des propositions" >
+              <div class="autocomplete">
+
+                <input type="text" class="form-control inputFiltre" id="myInput" placeholder="Commencer à écrire pour avoir des propositions" >
+              </div>
             </div>
 
             <div class="form-group">
@@ -187,6 +190,15 @@
       <script type="text/javascript" src="../vue/script/checkInputSelectedType.js"></script>
       <script type="text/javascript" src="../vue/script/checkInputSelectedSportsCategorie.js"></script>
       <script type="text/javascript" src="../vue/script/bootstrap-imageupload.js"></script>
+      <script type="text/javascript" src="../vue/script/autocompletion.js"></script>
+      <script type="text/javascript">
+      <?php
+      $php_array = $departements;
+      $js_array = json_encode($php_array);
+      echo "var javascript_array = ". $js_array . ";\n";
+      ?>
+      autocomplete(document.getElementById("myInput"), javascript_array);
+      </script>
 
       <script>
       var $imageupload = $('.imageupload');

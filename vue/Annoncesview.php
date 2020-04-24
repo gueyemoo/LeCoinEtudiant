@@ -11,6 +11,7 @@
   <link rel="stylesheet" href='../vue/css/jquery.flipster.css'>
 </head>
 <body>
+
   <header>
     <?php include('header.php') ?>
   </header>
@@ -21,26 +22,7 @@
 
     <div class="" id="filtres">
       <h3>Filtres</h3>
-      <!-- <div class="divFiltres" id="Sport">
-        <label >Categories :</label><br>
-        <select name = "categorie">
-          <option value="0" selected>Toutes les catégories</option>
-          <?php foreach ($categoriesSports as $categorie) { ?>
-            <option value="<?=$categorie->nom?>"><?=$categorie->nom?></option>
-          <?php } ?>
-        </select>
-      </div>
-      <div class="divFiltres" id="Sport">
-        <label >Sous-Categories :</label><br>
-        <select name = "categorie">
-          <option value="0" selected>Toutes les catégories</option>
-          <?php foreach ($toutesCategories as $categorie) { ?>
-            <?php foreach ($categorie as $sousCat): ?>
-            <option value="<?=$sousCat->nom?>"><?=$sousCat->nom?></option>
-          <?php endforeach; ?>
-          <?php } ?>
-        </select>
-      </div> -->
+
       <div class="form-group">
         <label for="type">Type d'annonces : </label>
         <select class="form-control" id="categorieAnnonce" name="type" onChange="checkInputSelectedType(this);">
@@ -50,6 +32,7 @@
           <?php } ?>
         </select>
       </div>
+
       <div class="form-group" id="div-categorie" style="display:none;">
         <label for="Categorie">Categorie :</label>
 
@@ -60,7 +43,11 @@
           <?php } ?>
         </select>
       </div>
+      <!-- div qui contient les sports de la categorie choisie -->
       <div class="" id="sousCat">
+      </div>
+
+      <div class="">
 
       </div>
 
@@ -68,10 +55,11 @@
 
     </div>
   </form>
+  <!-- div cachee qui contient les options des differentes categories -->
   <div class="" id="sousCatCache" style="display: none;">
     <div class="form-group" id="div-sous-categorie1" >
       <label for="sousCategorie1"> Sous-Categorie : </label>
-      <select class="form-control" id="sousCategorieAnnonce1" name="sousCategorie1">
+      <select class="form-control" id="sousCategorieAnnonce1" name="sousCategorie">
         <?php foreach ($athletismes as $athletisme) { ?>
           <option value="<?=$athletisme->nom?>"><?=$athletisme->nom?></option>
         <?php } ?>
@@ -79,7 +67,7 @@
     </div>
     <div class="form-group" id="div-sous-categorie2">
       <label for="sousCategorie2"> Sous Categorie </label>
-      <select class="form-control" id="sousCategorieAnnonce2" name="sousCategorie2">
+      <select class="form-control" id="sousCategorieAnnonce2" name="sousCategorie">
         <?php foreach ($SportCollectifs as $SportCo) { ?>
           <option value="<?=$SportCo->nom?>"><?=$SportCo->nom?></option>
         <?php } ?>
@@ -88,7 +76,7 @@
 
     <div class="form-group" id="div-sous-categorie3">
       <label for="sousCategorie3"> Sous Categorie </label>
-      <select class="form-control" id="sousCategorieAnnonce3" name="sousCategorie3">
+      <select class="form-control" id="sousCategorieAnnonce3" name="sousCategorie">
         <?php foreach ($Cyclisme as $Cyc) { ?>
           <option value="<?=$Cyc->nom?>"><?=$Cyc->nom?></option>
         <?php } ?>
@@ -97,7 +85,7 @@
 
     <div class="form-group" id="div-sous-categorie4">
       <label for="sousCategorie4"> Sous Categorie </label>
-      <select class="form-control" id="sousCategorieAnnonce4" name="sousCategorie4">
+      <select class="form-control" id="sousCategorieAnnonce4" name="sousCategorie">
         <?php foreach ($SportCible as $SportCi) { ?>
           <option value="<?=$SportCi->nom?>"><?=$SportCi->nom?></option>
         <?php } ?>
@@ -106,7 +94,7 @@
 
     <div class="form-group" id="div-sous-categorie5">
       <label for="sousCategorie5"> Sous Categorie </label>
-      <select class="form-control" id="sousCategorieAnnonce5" name="sousCategorie5">
+      <select class="form-control" id="sousCategorieAnnonce5" name="sousCategorie">
         <?php foreach ($SportGlisse as $SportGl) { ?>
           <option value="<?=$SportGl->nom?>"><?=$SportGl->nom?></option>
         <?php } ?>
@@ -115,7 +103,7 @@
 
     <div class="form-group" id="div-sous-categorie6">
       <label for="sousCategorie6"> Sous Categorie </label>
-      <select class="form-control" id="sousCategorieAnnonce6" name="sousCategorie6">
+      <select class="form-control" id="sousCategorieAnnonce6" name="sousCategorie">
         <?php foreach ($SportNautique as $SportNau) { ?>
           <option value="<?=$SportNau->nom?>"><?=$SportNau->nom?></option>
         <?php } ?>
@@ -124,7 +112,7 @@
 
     <div class="form-group" id="div-sous-categorie7">
       <label for="sousCategorie7"> Sous Categorie </label>
-      <select class="form-control" id="sousCategorieAnnonce7" name="sousCategorie7">
+      <select class="form-control" id="sousCategorieAnnonce7" name="sousCategorie">
         <?php foreach ($SportCombats as $SportCombat) { ?>
           <option value="<?=$SportCombat->nom?>"><?=$SportCombat->nom?></option>
         <?php } ?>
@@ -133,7 +121,7 @@
 
     <div class="form-group" id="div-sous-categorie8">
       <label for="sousCategorie8"> Sous Categorie </label>
-      <select class="form-control" id="sousCategorieAnnonce8" name="sousCategorie8">
+      <select class="form-control" id="sousCategorieAnnonce8" name="sousCategorie">
         <?php foreach ($SportRaquette as $SportRa) { ?>
           <option value="<?=$SportRa->nom?>"><?=$SportRa->nom?></option>
         <?php } ?>
@@ -142,15 +130,14 @@
 
     <div class="form-group" id="div-sous-categorie9">
       <label for="sousCategorie9"> Sous Categorie </label>
-      <select class="form-control" id="sousCategorieAnnonce9" name="sousCategorie9">
+      <select class="form-control" id="sousCategorieAnnonce9" name="sousCategorie">
         <?php foreach ($SportAutre as $SportAu) { ?>
           <option value="<?=$SportAu->nom?>"><?=$SportAu->nom?></option>
         <?php } ?>
       </select>
     </div>
   </div>
-  <script type="text/javascript" src="../vue/script/checkInputSelectedType.js"></script>
-  <script type="text/javascript" src="../vue/script/addSelectedSportFiltre.js"></script>
+
 
 
     <div class="" id="tri">
@@ -204,5 +191,7 @@
   <footer class="footer">
     <?php include('footer.php') ?>
   </footer>
+  <script type="text/javascript" src="../vue/script/checkInputSelectedType.js"></script>
+  <script type="text/javascript" src="../vue/script/addSelectedSportFiltre.js"></script>
 </body>
 </html>

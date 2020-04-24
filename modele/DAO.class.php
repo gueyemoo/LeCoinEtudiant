@@ -663,9 +663,12 @@ class DAO
 
     $requeteSQL = "select departement_nom from departement order by departement_nom asc";
     $reponseDeRequete = $this->db->query($requeteSQL);
-    $result = $reponseDeRequete->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, "Departement");
-
-    return $result;
+    $result = $reponseDeRequete->fetchAll();
+    $retour = array();
+    foreach ($result as $key => $value) { //Permet que l'array retourné contienne des string
+      $retour[]=$value['departement_nom'];
+    }
+    return $retour;
   }
 
   function getDepartement($code)  { //Nous avons enlevé le typage de retour pour qu'il puisse renvoyé null si le departement n'existe pas
