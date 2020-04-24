@@ -26,12 +26,12 @@
 
           <div class="form-group">
             <label for="titreAnnonce">Titre de l'annonces *</label>
-            <input type="text" class="form-control" name="titre" id="titreAnnonce" placeholder="Saisissez un titre clair pour votre annonce.">
+            <input type="text" class="form-control" name="titre" id="titreAnnonce" placeholder="Saisissez un titre clair pour votre annonce." maxlength="60" required>
           </div>
 
           <div class="form-group">
             <label for="descriptionTextArea">Description de l'annonce * </label>
-            <textarea class="form-control" name="contenu" id="descritionAnnonce" rows="5" placeholder="Saississez une description précise afin de mettre en valeur votre annonce."></textarea>
+            <textarea class="form-control" name="contenu" id="descritionAnnonce" rows="5" placeholder="Saississez une description précise afin de mettre en valeur votre annonce." minlength="10" maxlength="500" required></textarea>
           </div>
 
 
@@ -40,7 +40,7 @@
 
             <div class="form-group" style="margin-left:15px;">
               <label for="type">Type *</label>
-              <select class="form-control" id="categorieAnnonce" name="type" onChange="checkInputSelectedType(this);">
+              <select class="form-control" id="categorieAnnonce" name="type" onChange="checkInputSelectedType(this);" required>
                 <option selected style="font-weight: bold;">Choisir un type </option>
                 <?php foreach ($types as $type) { ?>
                   <option value="<?=$type->nom?>"><?=$type->nom?></option>
@@ -51,7 +51,7 @@
             <div class="form-group" id="div-categorie" style="display:none;margin-left:30px;">
               <label for="Categorie">Categorie *</label>
 
-              <select class="form-control" id="categorieAnnonce" name="categorie" onChange="addSelectedSportFiltre(this)">
+              <select class="form-control" id="categorieAnnonce" name="categorie" onChange="addSelectedSportFiltre(this)" required>
                 <option selected value="0" style="font-weight: bold;">Choisir une sous categorie</option>
                 <?php foreach ($categoriesSports as $categories) { ?>
                   <option value="<?=$categories->nom?>"><?=$categories->nom?></option>
@@ -72,13 +72,13 @@
               <label for="DepartementInput"> Choisir un département * </label>
               <div class="autocomplete">
 
-                <input type="text" class="form-control inputFiltre" id="myInput" name="departement" placeholder="Commencer à écrire pour avoir des propositions" >
+                <input type="text" class="form-control inputFiltre" id="myInput" name="departement" placeholder="Commencer à écrire pour avoir des propositions" required maxlength="35">
               </div>
             </div>
 
             <div class="form-group">
               <label for="DepartementInput"> Adresse * </label>
-              <input type="text" class="form-control" name="adresse" placeholder="Saisissez l'adresse de l'évenement" style="width:150%;">
+              <input type="text" class="form-control" name="adresse" placeholder="Saisissez l'adresse de l'évenement" style="width:150%;" required>
             </div>
 
           </div>
@@ -87,12 +87,12 @@
 
             <div class="form-group" style="margin-right:12em; margin-left:15px;">
               <label for="example-date-input"> Date de l'évenement *</label>
-              <input class="form-control" type="date" name="datePrevu">
+              <input class="form-control" type="date" name="datePrevu" required>
             </div>
 
             <div class="form-group">
               <label for="example-date-input"> Heure de l'évenement *</label>
-              <input class="form-control" type="time" name="heurePrevu" >
+              <input class="form-control" type="time" name="heurePrevu" required>
             </div>
 
           </div>
@@ -106,7 +106,7 @@
               <label class="btn btn-default btn-file">
                 <span>Browse</span>
                 <!-- The file is stored here. -->
-                <input name="image" type="file" id="file">
+                <input name="image" type="file" id="file" required>
               </label>
               <button type="button" class="btn btn-default">Remove</button>
             </div>
