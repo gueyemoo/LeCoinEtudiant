@@ -1,6 +1,5 @@
 function addSelectedSportFiltre(elem) {
-    // use one of possible conditions
-    // if (elem.value == 'Other')
+
     if (elem.value == "Athlétisme") { //Sport
       // On commence par enlever la sous-categorie deja existante (si elle existe)
         if(document.getElementById('sousCat').lastChild) {
@@ -94,5 +93,15 @@ function addSelectedSportFiltre(elem) {
       // puis on ajouter la sous-categorie selectionnee
         var elemAjout = document.getElementById('div-sous-categorie9');
         document.getElementById('sousCat').appendChild(elemAjout);
+
+    } else if(elem.value == 0){
+      // On commence par enlever la sous-categorie deja existante (si elle existe)
+        if(document.getElementById('sousCat').lastChild) {
+          var elemSup = document.getElementById('sousCat').lastChild;
+          document.getElementById('sousCatCache').appendChild(elemSup);
+        }
+        // puis on ajouter la sous-categorie selectionnee
+          var elemAjout = document.getElementById('div-toutes-cat');
+          document.getElementById('sousCat').appendChild(elemAjout);
     }
 }
