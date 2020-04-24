@@ -83,11 +83,19 @@
 
           </div>
 
-          <div class="form-group">
-            <label for="example-date-input"> Date de l'évenement *</label>
-            <input class="form-control" type="date" style="width:20%;">
-          </div>
+          <div class="row">
 
+            <div class="form-group" style="margin-right:12em; margin-left:15px;">
+              <label for="example-date-input"> Date de l'évenement *</label>
+              <input class="form-control" type="date" name="dateEvenement">
+            </div>
+
+            <div class="form-group">
+              <label for="example-date-input"> Heure de l'évenement *</label>
+              <input class="form-control" type="time" name="heureEvenement" >
+            </div>
+
+          </div>
 
           <!-- bootstrap-imageupload. -->
           <div class="imageupload panel panel-default">

@@ -642,6 +642,24 @@ class DAO
     return $result;
   }
 
+  function addAnnonce(int $idClient, int $idCategorie, string $titre, string $contenu, string $adresse, int $nbParticipant, int $nbInteresse, string $departement, string $datePrevu, string $heurePrevu, string $dateHeure) : int{
+    //   AJOUTE UNE RANDONNEE DANS LA BASE DE DONNEE   //
+    $idAnnonce=null;
+    if($nom&&$lieu&&$durees&&$difficultes){
+      //recupere le prochain id pour la randonnee à ajouter
+      $requeteSQL = "SELECT MAX(id) FROM randonnees";
+      $reponseDeRequete=$this->db->query($requeteSQL);
+      $max= $reponseDeRequete->fetch()[0];
+      $idRandonnee= intval($max)+1;
+
+
+      //ajout de l'annonce
+      $requeteSQL = "INSERT INTO randonnees VALUES (\"$nom\",$idRandonnee,\"$lieu\",\"$durees\",\"$description\",\"$difficultes\")";
+      $retour=$this->db->query($requeteSQL);
+    }
+    return $idRandonnee; //retourne l'id de la randonnee ajouter
+  }
+
   //-----------------------------------------------------------------------------//
   //--------------------   FONCTIONS POUR LES DEPARTEMENTS   --------------------//
   //-----------------------------------------------------------------------------//
