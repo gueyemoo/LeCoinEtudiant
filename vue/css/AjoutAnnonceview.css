@@ -1,3 +1,7 @@
+html body{
+  background-color: #DDDDDD;
+}
+
 .border-10{ /*C'est une classse que je vais utiliser pour changer les bordures des fieldsets */
 border-style:solid;
  border-width: 1px;

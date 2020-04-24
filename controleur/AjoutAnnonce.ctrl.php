@@ -21,13 +21,10 @@ $SportAutre = $dao->getSousCategoriesAutres();
 //Recupere les départements de France
 $departements = $dao->getAllNomDepartement();
 
-var_dump($client);
 $date1 = date('Y-m-d h:i:s a'); // Date du jour
 setlocale(LC_TIME, "fr_FR", "French");
 $dateHeuredajout = strftime("%A %d %B %G %T", strtotime($date1));
 
-var_dump($dateHeuredajout);
-var_dump($_POST);
 
 //Verifie que les champs de $_POST sont bien rempli
 if((count($_POST)>=6 &&$_POST["titre"] && $_POST["contenu"] && $_POST["adresse"])){
