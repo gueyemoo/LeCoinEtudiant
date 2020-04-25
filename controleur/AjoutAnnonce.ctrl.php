@@ -61,12 +61,6 @@ if((count($_POST)>=6 &&$_POST["titre"] && $_POST["contenu"] && $_POST["adresse"]
 
 
 
-
-
-
-
-
-
 if (count($_POST)==2 && $_POST["email"] && $_POST["password"]) {
   if($dao->connexion($_POST["email"], $_POST["password"])) {
     include('../vue/AjoutAnnonceview.php');

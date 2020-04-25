@@ -54,7 +54,6 @@
               <h6>Supprimer</h6>
               <p> <a href="#"> <img src="../modele/img/delete.png" alt="logo de suppression"> </a> </p>
             </div>
-          <?php endif; ?>
 
           <?php else: ?>
 
@@ -95,7 +94,9 @@
 
             </div>
           <?php endif; ?>
-          </div>
+        <?php endif; ?>
+      </div>
+
       </div>
     </div>
 
