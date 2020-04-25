@@ -48,8 +48,7 @@
             echo "$addr"; ?></p>
             <p class="horraire"><?php
             $date = getDateAnnonce($annonce->id, $dao);
-            $heure = getHeure($annonce->id, $dao);
-            echo "$date, $heure"; ?></p>
+            echo "$date"; ?></p>
           </div> </a>
         <?php } ?>
       </div>
