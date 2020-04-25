@@ -47,6 +47,10 @@ label {
   padding: 5px;
 }
 
+.titre {
+  font-weight: bold;
+}
+
 .image {
   float: left;
   margin: 25px 10px 25px 2px;;
