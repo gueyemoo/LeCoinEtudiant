@@ -18,7 +18,7 @@
   <div class="corps">
 
     <!-- LE BODY DE GAUCHE -->
-    <form class="" action="index.html" method="get">
+    <form class="" action="Annonces.ctrl.php" method="get">
 
       <div class="" id="filtres">
         <div class="alignFiltre">
@@ -54,7 +54,7 @@
         <div class="form-group">
           <label for="departement">Département :</label>
           <div class="autocomplete">
-            <input type="text" class="form-control inputFiltre" id="myInput" placeholder="Commencer à écrire pour avoir des propositions" >
+            <input type="text" class="form-control inputFiltre" name="dep" id="myInput" placeholder="Commencer à écrire pour avoir des propositions" >
           </div>
         </div>
 
@@ -65,7 +65,7 @@
 
         <div class="alignFiltre">
           <p>
-            <button class="btn btn-light" id="sub" type="submit" name="">Filtrer !</button>
+            <button class="btn btn-light" id="sub" type="submit" >Filtrer !</button>
           </p>
         </div>
 
@@ -206,8 +206,7 @@
           echo "$addr"; ?></p>
           <p class="horraire"><?php
           $date = getDateAnnonce($annonce->id, $dao);
-          $heure = getHeure($annonce->id, $dao);
-          echo "$date, $heure"; ?></p>
+          echo "$date"; ?></p>
         </div> </a>
       <?php } ?>
     </div>

@@ -486,6 +486,39 @@ class DAO
     return $tab_retour;
   }
 
+  function getAnnoncesFiltre($type, $cat, $sousCat, $dep, $date) {
+    if ($type == "0") {
+      $reqType = " ";
+    } else {
+      $reqType = " and type= \"$type\" ";
+    }
+    if ($cat == "0") {
+      $reqCat = " ";
+    } else {
+      $reqCat = " and categorie = \"$cat\" ";
+    }
+    if ($sousCat == "0") {
+      $reqSousCat = " ";
+    } else {
+      $reqSousCat = " and sousCategorie = \"$sousCat\" ";
+    }
+    if ($dep == "") {
+      $reqDep = " ";
+    } else {
+      $reqDep = " and departement = \"$dep\" ";
+    }
+    if ($date == "") {
+      $reqDate = " ";
+    } else {
+      $reqDate = " and datePrevu = \"$date\" ";
+    }
+
+    $requete = "SELECT * FROM annonce WHERE 1".$reqType.$reqCat.$reqSousCat.$reqDep.$reqDate;
+    $res = $this->db->query($requete);
+    $resultat = $res->fetchAll(PDO::FETCH_CLASS, "Annonce");
+    return $resultat;
+  }
+
   function nbAnnonce():int{//Cette fonction nous permets de compter toute les annonces
     $requ="SELECT count(*) FROM annonce";
     $res = $this->db->query($requ);
