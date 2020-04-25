@@ -21,6 +21,7 @@ $SportAutre = $dao->getSousCategoriesAutres();
 //Recupere les départements de France
 $departements = $dao->getAllNomDepartement();
 
+date_default_timezone_set("Europe/Paris");
 $date1 = date('Y-m-d h:i:s a'); // Date du jour
 setlocale(LC_TIME, "fr_FR", "French");
 $dateHeuredajout = strftime("%A %d %B %G %T", strtotime($date1));
@@ -31,8 +32,10 @@ if((count($_POST)>=6 &&$_POST["titre"] && $_POST["contenu"] && $_POST["adresse"]
   //Affecte à $id un identifiant unique après l'ajout de la randonnées, permettant d'identifier la randonnée ajouté.
   //et ajoute une randonnee
 
+$datePrevu = $_POST['datePrevu'];
+$newDate = date("d-m-Y", strtotime($datePrevu));
 
-  $id = $dao->addAnnonce($client->id,$_POST["type"],$_POST["categorie"],$_POST["sousCategorie"],$_POST['titre'],$_POST["contenu"],$_POST['adresse'],0,0,$_POST['departement'],$_POST['datePrevu'],$_POST['heurePrevu'],$dateHeuredajout);
+  $id = $dao->addAnnonce($client->id,$_POST["type"],$_POST["categorie"],$_POST["sousCategorie"],$_POST['titre'],$_POST["contenu"],$_POST['adresse'],0,0,$_POST['departement'],$newDate,$_POST['heurePrevu'],$dateHeuredajout);
 
   //Verifie qu'il y a bien eu envoie du formulaire
   if(isset($_POST['submit'])){
