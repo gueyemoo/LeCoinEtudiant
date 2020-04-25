@@ -693,6 +693,13 @@ class DAO
     return $idAnnonce; //retourne l'id de l'annonce ajouter
   }
 
+  function updateAnnonce(int $idAnnonce, string $type, string $categorie, string $sousCategorie, string $titre, string $contenu, string $adresse, string $departement, string $datePrevu, string $heurePrevu){
+    //   MODIFIE UNE ANNONCE DANS LA BASE DE DONNEE   //
+    $requeteSQL = "UPDATE annonce SET type=\"$type\",categorie=\"$categorie\",sousCategorie=\"$sousCategorie\",titre=\"$titre\",contenu=\"$contenu\",adresse=\"$adresse\",departement=\"$departement\",datePrevu=\"$datePrevu\",heurePrevu=\"$heurePrevu\" WHERE id = $idAnnonce";
+    $reponseDeRequete=$this->db->query($requeteSQL);
+  }
+
+
   //-----------------------------------------------------------------------------//
   //--------------------   FONCTIONS POUR LES DEPARTEMENTS   --------------------//
   //-----------------------------------------------------------------------------//
