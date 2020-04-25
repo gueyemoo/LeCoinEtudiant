@@ -170,25 +170,26 @@
 
 
     <div class="" id="tri">
-      <a href="../controleur/AjoutAnnonce.ctrl.php" id="btnAjout">Ajouter une annonce</a>
+      <?php if($clientConnecte!=0): ?> <!-- Si le client est connecté -->
+        <a href="../controleur/AjoutAnnonce.ctrl.php" id="btnAjout">Ajouter une annonce</a>
+      <?php endif; ?>
 
 
-
-        <div class="" id="btnTri">
-          <label for="tri">Trié par: </label>
-          <div class="dropdown">
-            <button class="dropbouton">Le plus récent</button>
-            <div class="dropdown-content">
-              <a class="i" href="#">Le moins récent</a>
-              <a class="i" href="#">Le plus populaire</a>
-              <a class="i" href="#">Le moins populaire</a>
-            </div>
+      <div class="" id="btnTri">
+        <label for="tri">Trié par: </label>
+        <div class="dropdown">
+          <button class="dropbouton">Le plus récent</button>
+          <div class="dropdown-content">
+            <a class="i" href="#">Le moins récent</a>
+            <a class="i" href="#">Le plus populaire</a>
+            <a class="i" href="#">Le moins populaire</a>
           </div>
         </div>
       </div>
+    </div>
 
 
-      <div class="" id="annonces" draggable="true" ondragstart="drag(event)">
+    <div class="" id="annonces" draggable="true" ondragstart="drag(event)">
 
 
       <?php
