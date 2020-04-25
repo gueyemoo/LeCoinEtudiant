@@ -41,6 +41,9 @@
 
         <p><?= $annonce ->contenu?></p>
         <div class="row">
+        <?php if($clientConnecte!=0): ?> <!-- Si le client est connecté -->
+
+
           <?php if($client->id==$annonce->idClient): ?> <!-- Si c'est le propriétaire de l'annonce -->
             <div class="text-center d-flex flex-column column col-md-5">
               <h6>Modifier</h6>
@@ -51,6 +54,8 @@
               <h6>Supprimer</h6>
               <p> <a href="#"> <img src="../modele/img/delete.png" alt="logo de suppression"> </a> </p>
             </div>
+          <?php endif; ?>
+
           <?php else: ?>
 
             <div class="text-center d-flex flex-column column col-md-5">
