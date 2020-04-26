@@ -52,7 +52,7 @@
 
             <div class="text-center d-flex flex-column column col-md-5">
               <h6>Supprimer</h6>
-              <p> <a href="#"> <img src="../modele/img/delete.png" alt="logo de suppression"> </a> </p>
+              <p> <a href="../controleur/SupprimerAnnonce.ctrl.php?id=<?php echo $annonce->id ?>&actionAnn=delete" onclick="return confirm('Êtes-vous sur de vouloir supprimer cette annonce ?');"> <img src="../modele/img/delete.png" alt="logo de suppression"> </a> </p>
             </div>
 
           <?php else: ?>

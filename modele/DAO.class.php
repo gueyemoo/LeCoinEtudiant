@@ -699,6 +699,18 @@ class DAO
     $reponseDeRequete=$this->db->query($requeteSQL);
   }
 
+  function deleteAnnonce(int $idAnnonce):bool{
+    //   SUPPRIME UNE ANNONCE DANS LA BASE DE DONNEE   //
+    $requ="DELETE FROM annonce WHERE id=$idAnnonce";
+    $res = $this->db->query($requ);
+    $result = $res->fetch();
+
+    //supprime l'image associer
+    $imageToDelete = "../modele/data/upload/".$idAnnonce.".jpg";
+    unlink($imageToDelete);
+    return $result;
+  }
+
 
   //-----------------------------------------------------------------------------//
   //--------------------   FONCTIONS POUR LES DEPARTEMENTS   --------------------//
