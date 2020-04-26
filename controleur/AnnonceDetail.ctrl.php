@@ -22,5 +22,17 @@ if($idClient){
   $Interesse=$dao->isInteresse($idClient,$id); // On verifie que l'annonce est dans la liste des interesses
 }
 
-include('../vue/AnnonceDetailview.php');
+if (count($_POST)==2 && $_POST["email"] && $_POST["password"]) {
+  if($dao->connexion($_POST["email"], $_POST["password"])) {
+    header("Refresh:0");
+    include('../vue/AnnonceDetailview.php');
+  }
+  else {
+    $echecConnexion=1;
+    include('../vue/AnnonceDetailview.php');
+  }
+}
+else {
+  include('../vue/AnnonceDetailview.php');
+}
 ?>

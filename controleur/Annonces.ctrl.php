@@ -41,16 +41,6 @@ if(!isset($_GET["type"])) {
 }
 
 
-//
-// // tout les sports:
-// $sports = $dao->getCategorieByIdGlobal(83);
-//
-// // tout les idpere de sport:
-// $categoriesSports = $dao->getCategoriesSports();
-//
-// // array comportant un array de chaque categories:
-// $toutesCategories = $dao->getAllCategorie();
-
 $types = $dao->getTypes();
 
 //Recupere les catégories d'annonces possible d'un types
@@ -70,6 +60,7 @@ $SportAutre = $dao->getSousCategoriesAutres();
 
 if (count($_POST)==2 && $_POST["email"] && $_POST["password"]) {
   if($dao->connexion($_POST["email"], $_POST["password"])) {
+    header("Refresh:0");
     include('../vue/Annoncesview.php');
   }
   else {
@@ -79,9 +70,6 @@ if (count($_POST)==2 && $_POST["email"] && $_POST["password"]) {
 }
 else {
   include('../vue/Annoncesview.php');
-  // var_dump($_POST["nom"]);
-  // var_dump($_POST);
-  // var_dump(count($_POST));
 }
 
 ?>
