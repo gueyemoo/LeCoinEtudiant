@@ -65,7 +65,6 @@
         $cat = getCategorie($annonce->id, $dao);
         $addr = getAdresse($annonce->id, $dao);
         $date = getDateAnnonce($annonce->id, $dao);
-        $heure = getHeure($annonce->id, $dao);
         ?>
         <a href="../controleur/AnnonceDetail.ctrl.php?id=<?=$annonce->id ?>" style="text-decoration:none; color: inherit;">
         <div class="annonce annonceZoom">
@@ -73,7 +72,7 @@
           <p class="titre"> <?=$annonce->titre ?></p>
         <p class="categorie"><?=$cat?></p>
           <p class="adresse"><?=$addr?></p>
-          <p class="horraire"><?=$date, $heure?></p>
+          <p class="horraire"><?=$date?></p>
         </div> </a>
         <?php
        }
@@ -92,8 +91,7 @@
           echo "$addr"; ?></p>
           <p class="horraire"><?php
           $date = getDateAnnonce($annonce->id, $dao);
-          $heure = getHeure($annonce->id, $dao);
-          echo "$date, $heure"; ?></p>
+          echo "$date"; ?></p>
         </div> </a>
         <?php
        }

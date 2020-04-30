@@ -594,6 +594,24 @@ class DAO
     return $result;
   }
 
+  function getCategoriesFestif(): array {
+    //   ON RECUPERE lES DIFFERENTES CATEGORIES D'ANNONCE POSSIBLE POUR UN TYPE  //
+    $requ = "SELECT * FROM categorie  WHERE idTitreGlobal = 84 AND idpere = id AND NOT idTitreGlobal = id GROUP BY idpere ORDER BY idTitreGlobal ASC";
+    $res = $this->db->query($requ);
+    $result = $res->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, "Categorie");
+
+    return $result;
+  }
+
+  function getCategoriesEducatif(): array {
+    //   ON RECUPERE lES DIFFERENTES CATEGORIES D'ANNONCE POSSIBLE POUR UN TYPE  //
+    $requ = "SELECT * FROM categorie  WHERE idTitreGlobal = 91 AND idpere = id AND NOT idTitreGlobal = id GROUP BY idpere ORDER BY idTitreGlobal ASC";
+    $res = $this->db->query($requ);
+    $result = $res->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, "Categorie");
+
+    return $result;
+  }
+
   function getSousCategoriesAthletisme():array {
     //   ON RECUPERE lES DIFFERENTES OPTIONS D'ATHLETISME POSSIBLE  //
     $requ = "SELECT * FROM categorie  WHERE idpere = 1 AND NOT idpere = id  ORDER BY nom ASC";

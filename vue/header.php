@@ -100,35 +100,45 @@
 
     <!-- /////////////////////// -->
     <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="../controleur/Annonces.ctrl.php" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sportif</a>
-
+      <a class="nav-link dropdown-toggle" href="../controleur/Annonces.ctrl.php?type=Sports&categorie=0&dep=&date=" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sportif</a>
+      <!-- On récupère les categories de sport -->
+<?php $categoriesSports = $dao->getCategoriesSports(); ?>
       <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
-        <a class="dropdown-item" href="../controleur/Annonces.ctrl.php">Toutes les annonces</a>
-        <a class="dropdown-item" href="#">Another action</a>
+        <a class="dropdown-item" href="../controleur/Annonces.ctrl.php?type=Sports&categorie=0&dep=&date=">Annonces de sports</a>
         <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="#">Something else here</a>
+        <?php foreach ($categoriesSports as $categories) { ?>
+          <a class="dropdown-item" href="../controleur/Annonces.ctrl.php?type=Sports&categorie=<?=$categories->nom?>&sousCategorie=0&dep=&date=" value="<?=$categories->nom?>"><?=$categories->nom?></a>
+        <?php } ?>
       </div>
     </li>
     <!-- //////////// -->
 
     <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Festif</a>
+      <a class="nav-link dropdown-toggle" href="../controleur/Annonces.ctrl.php?type=Festif&categorie=0&dep=&date=" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Festif</a>
+      <!-- On récupère les categories de festif -->
+<?php $categoriesFestif = $dao->getCategoriesFestif(); ?>
       <!-- /////////////////////// -->
       <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
-        <a class="dropdown-item" href="#"> Lorem ipsum dolor.</a>
-        <a class="dropdown-item" href="#">Lorem ipsum dolor.</a>
-        <a class="dropdown-item" href="#">Lorem ipsum dolor.</a>
-        <a class="dropdown-item" href="#">Lorem ipsum dolor.</a>
+        <a class="dropdown-item" href="../controleur/Annonces.ctrl.php?type=Festif&categorie=0&dep=&date=">Annonces de festivités</a>
+        <div class="dropdown-divider"></div>
+        <?php foreach ($categoriesFestif as $categories) { ?>
+          <a class="dropdown-item" href="../controleur/Annonces.ctrl.php?type=Festif&categorie=<?=$categories->nom?>&sousCategorie=0&dep=&date=" value="<?=$categories->nom?>"><?=$categories->nom?></a>
+        <?php } ?>
       </div>
-      <!-- ////////////////////// -->
+      <!-- //////////// -->
+
     </li>
     <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Educatif</a>
+      <a class="nav-link dropdown-toggle" href="../controleur/Annonces.ctrl.php?type=Educatif&categorie=0&dep=&date=" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Educatif</a>
+      <!-- On récupère les categories de educatif -->
+<?php $categoriesEducatif = $dao->getCategoriesEducatif(); ?>
+      <!-- ////////////////////// -->
       <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
-        <a class="dropdown-item" href="#"> Lorem ipsum dolor.</a>
-        <a class="dropdown-item" href="#">Lorem ipsum dolor.</a>
-        <a class="dropdown-item" href="#">Lorem ipsum dolor.</a>
-        <a class="dropdown-item" href="#">Lorem ipsum dolor.</a>
+        <a class="dropdown-item" href="../controleur/Annonces.ctrl.php?type=Educatif&categorie=0&dep=&date=">Annonces d'éducation</a>
+        <div class="dropdown-divider"></div>
+        <?php foreach ($categoriesEducatif as $categories) { ?>
+          <a class="dropdown-item" href="../controleur/Annonces.ctrl.php?type=Educatif&categorie=<?=$categories->nom?>&sousCategorie=0&dep=&date=" value="<?=$categories->nom?>"><?=$categories->nom?></a>
+        <?php } ?>
       </div>
     </li>
 

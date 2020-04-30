@@ -26,6 +26,7 @@ function getHeure($idAnnonce, $dao) {
 //Recupere les départements de France
 $departements = $dao->getAllNomDepartement();
 
+
 if(!isset($_GET["type"])) {
   //premier acces a la page : 0 filtre
   $annoncesPostees = $dao->getAnnonces();
@@ -33,13 +34,26 @@ if(!isset($_GET["type"])) {
 } else if (isset($_GET["sousCategorie"])) {
   //applications de filtres, on regarde si une sousCat est choisie
   //appel fonction DAO filtres, ici une categorie et/ou une souscat est choisie
-  $annoncesPostees = $dao->getAnnoncesFiltre($_GET["type"], $_GET["categorie"], $_GET["sousCategorie"], $_GET["dep"], $_GET["date"]);
+  if ($_GET["date"]!="") {
+    // code...
+  $datePrevu = $_GET['date'];
+  $newDate = date("d-m-Y", strtotime($datePrevu));
+} else {
+  $newDate = "";
+}
+  $annoncesPostees = $dao->getAnnoncesFiltre($_GET["type"], $_GET["categorie"], $_GET["sousCategorie"], $_GET["dep"], $newDate);
 } else {
   //appel fonction filtres avec valeur par defaut en param sousCat
   //ici pas de categorie et donc aucune sousCat n'est choisie
-  $annoncesPostees = $dao->getAnnoncesFiltre($_GET["type"], $_GET["categorie"], 0, $_GET["dep"], $_GET["date"]);
+  if ($_GET["date"]!="") {
+    // code...
+  $datePrevu = $_GET['date'];
+  $newDate = date("d-m-Y", strtotime($datePrevu));
+} else {
+  $newDate = "";
 }
-
+  $annoncesPostees = $dao->getAnnoncesFiltre($_GET["type"], $_GET["categorie"], 0, $_GET["dep"], $newDate);
+}
 
 //
 // // tout les sports:
