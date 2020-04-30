@@ -19,29 +19,31 @@
 
   <body>
     <fieldset class="container border-10 rounded" style="width:90%;margin-bottom:7em;">
-      <legend  class="w-auto">Ajoutez votre annonce</legend>
+      <legend  class="w-auto">Modifier votre annonce</legend>
 
-      <form class="container" style="width:80%; margin-top:10px" action="<?=$_SERVER['PHP_SELF']?>" method="POST" enctype="multipart/form-data" >
+      <form class="container" style="width:80%; margin-top:10px" action="../controleur/ModifAnnonce.ctrl.php?id=<?=$annonce->id?>" method="POST" enctype="multipart/form-data" >
         <div class="justify-content-center">
 
           <div class="form-group">
             <label for="titreAnnonce">Titre de l'annonces *</label>
-            <input type="text" class="form-control" name="titre" id="titreAnnonce" placeholder="Saisissez un titre clair pour votre annonce." maxlength="60" required>
+            <input type="text" class="form-control" name="titre" id="titreAnnonce" placeholder="Saisissez un titre clair pour votre annonce." maxlength="60" value="<?= $annonce->titre ?>" required>
           </div>
 
           <div class="form-group">
             <label for="descriptionTextArea">Description de l'annonce * </label>
-            <textarea class="form-control" name="contenu" id="descritionAnnonce" rows="5" placeholder="Saississez une description précise afin de mettre en valeur votre annonce." minlength="10" maxlength="500" required></textarea>
+            <textarea class="form-control" name="contenu" id="descritionAnnonce" rows="5" placeholder="Saississez une description précise afin de mettre en valeur votre annonce." minlength="10" maxlength="500" required><?= $annonce->contenu ?> </textarea>
           </div>
 
 
 
           <div class="row">
 
-            <div class="form-group" style="margin-left:15px; margin-right:30px;">
+            <div class="form-group" style="margin-left:15px;margin-right:30px;">
               <label for="type">Type *</label>
               <select class="form-control" id="categorieAnnonce" name="type" onChange="checkInputSelectedType(this);" style="width:150%;" required>
                 <option value=""></option>
+                <option value="<?=$annonce->type?>"> <?= ucfirst($annonce->type) ?> </option>
+                <option disabled>─────</option>
                 <?php foreach ($types as $type) { ?>
                   <option value="<?=$type->nom?>"><?=$type->nom?></option>
                 <?php } ?>
@@ -53,6 +55,8 @@
 
               <select class="form-control" id="categorieAnnonce" name="categorie" onChange="addSelectedSportFiltre(this)" required>
                 <option value=""></option>
+                <option value="<?=$annonce->categorie?>"> <?= ucfirst($annonce->categorie) ?> </option>
+                <option disabled>─────</option>
                 <?php foreach ($categoriesSports as $categories) { ?>
                   <option value="<?=$categories->nom?>"><?=$categories->nom?></option>
                 <?php } ?>
@@ -72,13 +76,13 @@
               <label for="DepartementInput"> Choisir un département * </label>
               <div class="autocomplete">
 
-                <input type="text" class="form-control inputFiltre" id="myInput" name="departement" autocomplete="off" placeholder="Commencer à écrire pour avoir des propositions" required maxlength="35">
+                <input type="text" class="form-control inputFiltre" id="myInput" name="departement" value="<?= $annonce->departement ?>" autocomplete="off" placeholder="Commencer à écrire pour avoir des propositions" required maxlength="35">
               </div>
             </div>
 
             <div class="form-group">
               <label for="DepartementInput"> Adresse * </label>
-              <input type="text" class="form-control" name="adresse" placeholder="Saisissez l'adresse de l'évenement" style="width:150%;" required>
+              <input type="text" class="form-control" name="adresse" value="<?=$annonce->adresse?>" placeholder="Saisissez l'adresse de l'évenement" style="width:200%;" required>
             </div>
 
           </div>
@@ -86,13 +90,13 @@
           <div class="row">
 
             <div class="form-group" style="margin-right:12em; margin-left:15px;">
-              <label for="example-date-input"> Date de l'évenement *</label>
-              <input class="form-control" type="date" name="datePrevu" required>
+              <label for="date-input"> Date de l'évenement *</label>
+              <input class="form-control" type="date" name="datePrevu" value="<?=$Date?>" required>
             </div>
 
             <div class="form-group">
-              <label for="example-date-input"> Heure de l'évenement *</label>
-              <input class="form-control" type="time" name="heurePrevu" required>
+              <label for="heure-input"> Heure de l'évenement *</label>
+              <input class="form-control" type="time" name="heurePrevu" value="<?=$annonce->heurePrevu?>" required>
             </div>
 
           </div>
@@ -106,14 +110,14 @@
               <label class="btn btn-default btn-file">
                 <span>Browse</span>
                 <!-- The file is stored here. -->
-                <input name="image" type="file" id="file" required>
+                <input name="image" type="file" id="file">
               </label>
-              <button type="button" class="btn btn-default">Remove</button>
+              <button type="button" class="btn btn-default">Retirer</button>
             </div>
           </div>
 
           <div class="text-center" style="margin-bottom:1em;">
-            <button class="btn btn-light" style="width:50%;" name="submit" type="submit" id="contact-submit" value"submit">Valider</button>
+            <button class="btn btn-light" style="width:50%;" name="updatesubmit" type="submit" id="contact-submit" value"submit">Valider</button>
           </div>
 
 
