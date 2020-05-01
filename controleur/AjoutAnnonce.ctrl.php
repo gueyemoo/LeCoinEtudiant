@@ -34,10 +34,14 @@ if((count($_POST)>=6 &&$_POST["titre"] && $_POST["contenu"] && $_POST["adresse"]
   //Affecte à $id un identifiant unique après l'ajout de la randonnées, permettant d'identifier la randonnée ajouté.
   //et ajoute une randonnee
 
+$sousCategorie = $_POST['sousCategorie']??" ";
+
 $datePrevu = $_POST['datePrevu'];
+
 $newDate = date("d-m-Y", strtotime($datePrevu));
 
-  $id = $dao->addAnnonce($client->id,$_POST["type"],$_POST["categorie"],$_POST["sousCategorie"],$_POST['titre'],$_POST["contenu"],$_POST['adresse'],0,0,$_POST['departement'],$newDate,$_POST['heurePrevu'],$dateHeuredajout);
+$id = $dao->addAnnonce($client->id,$_POST["type"],$_POST["categorie"],$sousCategorie,$_POST['titre'],$_POST["contenu"],$_POST['adresse'],0,0,$_POST['departement'],$newDate,$_POST['heurePrevu'],$dateHeuredajout);
+
 
   //Verifie qu'il y a bien eu envoie du formulaire
   if(isset($_POST['submit'])){
