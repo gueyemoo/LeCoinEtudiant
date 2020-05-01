@@ -26,7 +26,7 @@ function getHeure($idAnnonce, $dao) {
 //Recupere les départements de France
 $departements = $dao->getAllNomDepartement();
 
-if ($_GET["date"]!="") {
+if (isset($_GET["date"])) {
   // code...
 $datePrevu = $_GET['date'];
 $newDate = date("d-m-Y", strtotime($datePrevu));
