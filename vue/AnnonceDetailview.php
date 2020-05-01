@@ -21,6 +21,7 @@
         <img id="imgDescription" src="../modele/data/upload/<?=$annonce->id?>.jpg" alt="" class="img-rounded"> <br>
         <h5><u> <?=$annonce->categorie?> :</u> <?=$annonce->sousCategorie?> </h5>
         <p style="margin-bottom:0px;"> <?= $annonce->adresse?> </p>
+        <p style="margin-bottom: 0px;"> <?= $annonce->departement?> </p>
         <p>Prévu le: <?=$annonce->datePrevu?> à <?=$annonce->heurePrevu?>   </p>
 
         <br>
