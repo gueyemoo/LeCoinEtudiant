@@ -27,11 +27,14 @@ function getHeure($idAnnonce, $dao) {
 $departements = $dao->getAllNomDepartement();
 
 if (isset($_GET["date"])) {
+
+if ($_GET["date"]!="") {
   // code...
 $datePrevu = $_GET['date'];
 $newDate = date("d-m-Y", strtotime($datePrevu));
 } else {
 $newDate = "";
+}
 }
 
 if(!isset($_GET["type"])) {
