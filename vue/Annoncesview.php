@@ -29,7 +29,7 @@
 
         <div class="form-group">
           <label for="type">Type d'annonces : </label>
-          <select class="form-control" id="categorieAnnonce" name="type" onChange="checkInputSelectedType(this);">
+          <select class="form-control" id="categorieAnnonce" name="type" onChange="addSelectedCat(this);">
             <option selected value="0" style="font-weight: bold;">Tout types</option>
             <?php foreach ($types as $type) { ?>
               <option value="<?=$type->nom?>"><?=$type->nom?></option>
@@ -37,14 +37,8 @@
           </select>
         </div>
 
-        <div class="form-group" id="div-categorie" style="display:none;">
-          <label for="Categorie">Categorie :</label>
-          <select class="form-control" id="categorieAnnonce" name="categorie" onChange="addSelectedSportFiltre(this)">
-            <option selected value="0" style="font-weight: bold;">Toutes categories</option>
-            <?php foreach ($categoriesSports as $categories) { ?>
-              <option value="<?=$categories->nom?>"><?=$categories->nom?></option>
-            <?php } ?>
-          </select>
+        <!-- div qui contient les categories du type d'annonce choisie -->
+        <div class="" id="cat">
         </div>
 
         <!-- div qui contient les sports de la categorie choisie -->
@@ -73,6 +67,43 @@
     </form>
 
     <!-- div cachee qui contient les options des differentes categories -->
+    <div id="catCache" style="display: none;">
+    <div class="form-group" id="div-categorieSport">
+      <label for="Categorie">Categorie :</label>
+      <select class="form-control" id="categorieAnnonce" name="categorie" onChange="addSelectedSportFiltre(this)">
+        <option selected value="0" style="font-weight: bold;">Toutes categories</option>
+        <?php foreach ($categoriesSports as $categories) { ?>
+          <option value="<?=$categories->nom?>"><?=$categories->nom?></option>
+        <?php } ?>
+      </select>
+    </div>
+
+    <div class="form-group" id="div-categorieFestif">
+      <label for="Categorie">Categorie :</label>
+      <select class="form-control" id="categorieAnnonce" name="categorie" onChange="addSelectedSportFiltre(this)">
+        <option selected value="0" style="font-weight: bold;">Toutes categories</option>
+        <?php foreach ($categoriesFestif as $categories) { ?>
+          <option value="<?=$categories->nom?>"><?=$categories->nom?></option>
+        <?php } ?>
+      </select>
+    </div>
+
+    <div class="form-group" id="div-categorieEducatif">
+      <label for="Categorie">Categorie :</label>
+      <select class="form-control" id="categorieAnnonce" name="categorie" onChange="addSelectedSportFiltre(this)">
+        <option selected value="0" style="font-weight: bold;">Toutes categories</option>
+        <?php foreach ($categoriesEducatif as $categories) { ?>
+          <option value="<?=$categories->nom?>"><?=$categories->nom?></option>
+        <?php } ?>
+      </select>
+    </div>
+
+    <!-- div vide pour option Tout types -->
+    <div class="" id="div-catVide">
+    </div>
+  </div>
+
+    <!-- div cachee qui contient les options des differentes sous-categories -->
     <div class="" id="sousCatCache" style="display: none;">
       <div class="form-group" id="div-sous-categorie1" >
         <label for="sousCategorie1"> Sous-Catégorie : </label>
@@ -226,6 +257,7 @@
 
   <script type="text/javascript" src="../vue/script/checkInputSelectedType.js"></script>
   <script type="text/javascript" src="../vue/script/addSelectedSportFiltre.js"></script>
+  <script type="text/javascript" src="../vue/script/addSelectedCat.js"></script>
   <script type="text/javascript" src="../vue/script/autocompletion.js"></script>
   <script type="text/javascript">
   <?php

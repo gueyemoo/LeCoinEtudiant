@@ -26,39 +26,46 @@ function getHeure($idAnnonce, $dao) {
 //Recupere les départements de France
 $departements = $dao->getAllNomDepartement();
 
+if ($_GET["date"]!="") {
+  // code...
+$datePrevu = $_GET['date'];
+$newDate = date("d-m-Y", strtotime($datePrevu));
+} else {
+$newDate = "";
+}
 
 if(!isset($_GET["type"])) {
   //premier acces a la page : 0 filtre
   $annoncesPostees = $dao->getAnnonces();
 
-} else if (isset($_GET["sousCategorie"])) {
+
+} else if (($_GET["type"] == "Festif") || $_GET["type"] == "Educatif") {
+  $souscat = $_GET["categorie"];
+  $annoncesPostees = $dao->getAnnoncesFiltre($_GET["type"], 0, $souscat, $_GET["dep"], $newDate);
+
+}
+
+ else if (isset($_GET["sousCategorie"])) {
   //applications de filtres, on regarde si une sousCat est choisie
   //appel fonction DAO filtres, ici une categorie et/ou une souscat est choisie
-  if ($_GET["date"]!="") {
-    // code...
-  $datePrevu = $_GET['date'];
-  $newDate = date("d-m-Y", strtotime($datePrevu));
-} else {
-  $newDate = "";
-}
-  $annoncesPostees = $dao->getAnnoncesFiltre($_GET["type"], $_GET["categorie"], $_GET["sousCategorie"], $_GET["dep"], $newDate);
+  $filtreCat = $_GET['categorie'];
+
+
+  $annoncesPostees = $dao->getAnnoncesFiltre($_GET["type"], $filtreCat, $_GET["sousCategorie"], $_GET["dep"], $newDate);
 } else {
   //appel fonction filtres avec valeur par defaut en param sousCat
   //ici pas de categorie et donc aucune sousCat n'est choisie
-  if ($_GET["date"]!="") {
-    // code...
-  $datePrevu = $_GET['date'];
-  $newDate = date("d-m-Y", strtotime($datePrevu));
-} else {
-  $newDate = "";
-}
-  $annoncesPostees = $dao->getAnnoncesFiltre($_GET["type"], $_GET["categorie"], 0, $_GET["dep"], $newDate);
+    $filtreCat = 0;
+
+  $annoncesPostees = $dao->getAnnoncesFiltre($_GET["type"], $filtreCat, 0, $_GET["dep"], $newDate);
 }
 
 $types = $dao->getTypes();
 
 //Recupere les catégories d'annonces possible d'un types
 $categoriesSports = $dao->getCategoriesSports();
+$categoriesFestif = $dao->getCategoriesFestif();
+$categoriesEducatif = $dao->getCategoriesEducatif();
 
 //Recupere les sous catégorie du Sports
 $athletismes = $dao->getSousCategoriesAthletisme();
