@@ -6,6 +6,8 @@ $types = $dao->getTypes();
 
 //Recupere les catégories d'annonces possible d'un types
 $categoriesSports = $dao->getCategoriesSports();
+$categoriesFestif = $dao->getCategoriesFestif();
+$categoriesEducatif = $dao->getCategoriesEducatif();
 
 //Recupere les sous catégorie du Sports
 $athletismes = $dao->getSousCategoriesAthletisme();

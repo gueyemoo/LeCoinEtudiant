@@ -126,6 +126,26 @@
           <?php } ?>
         </select>
       </div>
+      
+      <div class="form-group" id="div-categorieFestif">
+        <label for="Categorie">Categorie :</label>
+        <select class="form-control" id="categorieAnnonce" name="categorie" onChange="addSelectedSportFiltre(this)">
+          <option selected value="0" style="font-weight: bold;">Toutes categories</option>
+          <?php foreach ($categoriesFestif as $categories) { ?>
+            <option value="<?=$categories->nom?>"><?=$categories->nom?></option>
+          <?php } ?>
+        </select>
+      </div>
+
+      <div class="form-group" id="div-categorieEducatif">
+        <label for="Categorie">Categorie :</label>
+        <select class="form-control" id="categorieAnnonce" name="categorie" onChange="addSelectedSportFiltre(this)">
+          <option selected value="0" style="font-weight: bold;">Toutes categories</option>
+          <?php foreach ($categoriesEducatif as $categories) { ?>
+            <option value="<?=$categories->nom?>"><?=$categories->nom?></option>
+          <?php } ?>
+        </select>
+      </div>
 
 
 
