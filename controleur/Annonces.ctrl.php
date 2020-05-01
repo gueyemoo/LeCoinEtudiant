@@ -43,8 +43,7 @@ if(!isset($_GET["type"])) {
 
 
 } else if (($_GET["type"] == "Festif") || $_GET["type"] == "Educatif") {
-  $souscat = $_GET["categorie"];
-  $annoncesPostees = $dao->getAnnoncesFiltre($_GET["type"], 0, $souscat, $_GET["dep"], $newDate);
+  $annoncesPostees = $dao->getAnnoncesFiltre($_GET["type"], $_GET["categorie"], 0, $_GET["dep"], $newDate);
 
 }
 
