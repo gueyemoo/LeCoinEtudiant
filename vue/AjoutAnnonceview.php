@@ -40,7 +40,7 @@
 
             <div class="form-group" style="margin-left:15px; margin-right:30px;">
               <label for="type">Type *</label>
-              <select class="form-control" id="categorieAnnonce" name="type" onChange="checkInputSelectedType(this);" style="width:150%;" required>
+              <select class="form-control" id="categorieAnnonce" name="type" onChange="addSelectedCat(this);" style="width:150%;" required>
                 <option value=""></option>
                 <?php foreach ($types as $type) { ?>
                   <option value="<?=$type->nom?>"><?=$type->nom?></option>
@@ -48,15 +48,10 @@
               </select>
             </div>
 
-            <div class="form-group" id="div-categorie" style="display:none;margin-left:30px;">
-              <label for="Categorie">Categorie *</label>
 
-              <select class="form-control" id="categorieAnnonce" name="categorie" onChange="addSelectedSportFiltre(this)" required>
-                <option value=""></option>
-                <?php foreach ($categoriesSports as $categories) { ?>
-                  <option value="<?=$categories->nom?>"><?=$categories->nom?></option>
-                <?php } ?>
-              </select>
+
+            <!-- div qui contient les categories du type d'annonce choisie -->
+            <div class="" id="cat">
             </div>
 
             <div class="" id="sousCat">
@@ -120,9 +115,23 @@
         </form>
       </fieldset>
 
+      <!-- div cachee qui contient les options des differentes categories -->
+      <div id="catCache" style="display: none;">
+      <div class="form-group" id="div-categorieSport">
+        <label for="Categorie">Categorie :</label>
+        <select class="form-control" id="categorieAnnonce" name="categorie" onChange="addSelectedSportFiltre(this)">
+          <option selected value="0" style="font-weight: bold;">Toutes categories</option>
+          <?php foreach ($categoriesSports as $categories) { ?>
+            <option value="<?=$categories->nom?>"><?=$categories->nom?></option>
+          <?php } ?>
+        </select>
+      </div>
 
 
 
+      <!-- div vide pour option Tout types -->
+      <div class="" id="div-catVide">
+      </div>
 
       <div class="" id="sousCatCache" style="display: none;">
 
@@ -227,6 +236,7 @@
       <script type="text/javascript" src="../vue/script/checkInputSelectedSportsCategorie.js"></script>
       <script type="text/javascript" src="../vue/script/bootstrap-imageupload.js"></script>
       <script type="text/javascript" src="../vue/script/autocompletion.js"></script>
+      <script type="text/javascript" src="../vue/script/addSelectedCat.js"></script>
       <script type="text/javascript">
       <?php
       $php_array = $departements;
