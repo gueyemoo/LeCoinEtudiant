@@ -63,7 +63,7 @@ if((count($_POST)>=6 &&$_POST["titre"] && $_POST["contenu"] && $_POST["adresse"]
     }
   }
   //Renvoie vers la page de la randonnee concerner après la mise à jour de ces informations
-  // header("Location: ../controleur/AnnonceDetail.ctrl.php?id=$annnonce->id");
+  header("Location: ../controleur/AnnonceDetail.ctrl.php?id=$annonce->id");
 }
 include('../vue/ModifAnnonceview.php');
 ?>

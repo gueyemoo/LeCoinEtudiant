@@ -42,6 +42,9 @@ $newDate = date("d-m-Y", strtotime($datePrevu));
 
 $id = $dao->addAnnonce($client->id,$_POST["type"],$_POST["categorie"],$sousCategorie,$_POST['titre'],$_POST["contenu"],$_POST['adresse'],0,0,$_POST['departement'],$newDate,$_POST['heurePrevu'],$dateHeuredajout);
 
+if(isset($id)){
+  $annonceajoute = 1;
+}
 
   //Verifie qu'il y a bien eu envoie du formulaire
   if(isset($_POST['submit'])){
@@ -64,8 +67,8 @@ $id = $dao->addAnnonce($client->id,$_POST["type"],$_POST["categorie"],$sousCateg
       // echo 'Selectionner un fichier dabord !!';
     }
   }
-  //Renvoie vers la page des randonnees après l'ajout
-  // header('Location: randonnees.ctrl.php?duree=toutesDurees&diff=toutesDiff&lieu=toutLieux');
+  //Renvoie vers la page de profil d l'utilisateur après l'ajout
+  header('Location: profil.ctrl.php?annonces=part');
 }
 
 

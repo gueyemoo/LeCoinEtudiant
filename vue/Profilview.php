@@ -22,12 +22,17 @@
         <p id="mail"> <?=$_SESSION['Client']->email?> </p>
       </div>
       <div class="afficheEtat">
-        <label for="etat">Etat du compte: :</label>
+        <label for="etat">Etat du compte :</label>
         <?php if ($_SESSION['Client']->emailVerifie) { ?>
           <p id="etat">Votre compte est activé</p>
         <?php } else { ?>
           <p id="etat">Votre compte n'est pas activé, vérifiez vore email pour l'activer</p>
         <?php } ?>
+      </div>
+
+      <div class="afficheNbAnnonce">
+        <label for="nbAnnonce">Nombre d'annonce active :</label>
+        <p id="nbAnnonce"> <?=$nbAnnonceClient[0];?> </p>
       </div>
     </div>
 
