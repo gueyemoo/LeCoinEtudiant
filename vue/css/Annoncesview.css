@@ -38,6 +38,7 @@ label {
 }
 
 .annonce { /* Le carré d'une annonce */
+background-color: white;
   margin: 5px 15px 15px 5px;;
   float: left;
   width: 300px;
