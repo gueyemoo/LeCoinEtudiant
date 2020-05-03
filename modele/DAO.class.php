@@ -12,19 +12,10 @@ class DAO
   {
     try {
       $this->db = new PDO('sqlite:../modele/data/data.db');
-      // $this->db->exec("INSERT INTO client(id,nom,prenom,email,motdepasse,emailVerifie) VALUES(1,t,g,g@gmail,ee,ee,1);");
-
     } catch (Exception $e) {
       die("erreur de connexion:".$e->getMessage());
-      // var_dump('EH OH JE LOUVRE PAS');
     }
 
-    // mise en place de la photo par défaut //
-    //  NON FONCTIONNEL, METTRE PHOTO PAR DEFAUT LORS DE L'AJOUT DE L'ANNONCE  //
-    // $requeteSQL = 'SELECT id FROM annonce WHERE photo1==\'NULL\'';
-    // $annoncesSansPhoto = $this->db->query($requeteSQL);
-    // $requeteSetPhoto = "UPDATE annonce SET photo1=\"img/icone_sport.jpg\"";
-    // $update = $this->db->query($requeteSetPhoto);
 
   }
 
