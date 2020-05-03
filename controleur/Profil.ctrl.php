@@ -20,6 +20,10 @@ function getHeure($idAnnonce, $dao) {
   $heure = $dao->getHeure($idAnnonce);
   return $heure;
 }
+
+
+$nbAnnonceClient = $dao->nombreAnnonce($_SESSION['Client']->id);
+
 // var_dump($_SESSION['Client']->id);
 $annoncesPostees = $dao->getAnnoncesClient($_SESSION['Client']->id);
 
@@ -28,7 +32,7 @@ $annoncesFavoris = $dao->getAnnoncesFav($_SESSION['Client']->id);
 $annnoncesInteresse = $dao->getAnnoncesInteresse($_SESSION['Client']->id);
 
 $etatPart =($_GET['annonces']=='part'?'actif':'non-actif');
-$etatInt =($_GET['annonces']=='int'?'actif':'non-actif'); 
+$etatInt =($_GET['annonces']=='int'?'actif':'non-actif');
 
 if (count($_POST)==2 && $_POST["email"] && $_POST["password"]) {
   if($dao->connexion($_POST["email"], $_POST["password"])) {

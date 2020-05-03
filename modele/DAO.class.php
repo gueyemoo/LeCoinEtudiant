@@ -729,6 +729,15 @@ class DAO
     return $result;
   }
 
+  function nombreAnnonce(int $idClient):array{
+    //   Compte le nombre d'annonce qu'un client à poster  //
+    $requ="SELECT Count(*) FROM annonce WHERE idClient=$idClient";
+    $res = $this->db->query($requ);
+    $result = $res->fetch();
+
+    return $result;
+  }
+
 
   //-----------------------------------------------------------------------------//
   //--------------------   FONCTIONS POUR LES DEPARTEMENTS   --------------------//
