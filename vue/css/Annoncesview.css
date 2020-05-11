@@ -33,7 +33,7 @@ label {
   /* rendre la div scrollable */
   overflow-y: auto;
   padding: 20px;
-  height: 100%;
+  height: 90%;
   padding-top: 60px;
 }
 
