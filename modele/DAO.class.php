@@ -477,6 +477,16 @@ class DAO
     return $tab_retour;
   }
 
+  function getLast14Annonces():array {
+    // retourne les 14 derières annonces postée
+    $tab_retour = array();
+    $requeteSQL = "SELECT * FROM annonce ORDER BY dateHeure DESC LIMIT 14;";
+    $retourRequete = $this->db->query($requeteSQL);
+    $tab_retour = $retourRequete->fetchAll(PDO::FETCH_CLASS, "Annonce");
+    return $tab_retour;
+  }
+
+
   function getAnnoncesFiltre($type, $cat, $sousCat, $dep, $date) {
     if ($type == "0") {
       $reqType = " ";
@@ -524,6 +534,7 @@ class DAO
     $tab_retour = $retourRequete->fetchAll(PDO::FETCH_CLASS, "Annonce");
     return $tab_retour;
   }
+
 
   function getCategorie($idAnnonce): string { //renomme la getCategorieAnnonce sinon on s'y retrouve plus avec le getCategorie des catégories..
     // retourne la categorie de l'annonce renseignée en paramètre

@@ -206,7 +206,7 @@
       <?php endif; ?>
 
 
-      <div class="" id="btnTri" style="display: none;">
+      <!-- <div class="" id="btnTri" style="display: none;">
         <label for="tri">Trié par: </label>
         <div class="dropdown">
           <button class="dropbouton">Le plus récent</button>
@@ -216,7 +216,7 @@
             <a class="i" href="#">Le moins populaire</a>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
 
 

@@ -142,9 +142,9 @@
       </div>
     </li>
 
-    <li class="nav-item">
+    <!-- <li class="nav-item">
       <a class="nav-link" href="#">Autres</a>
-    </li>
+    </li> -->
   </ul>
     <!-- /////////////////////////////// -->
     <?php if ($clientConnecte==1 && $client->emailVerifie==0): ?>

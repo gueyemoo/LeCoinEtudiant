@@ -2,6 +2,7 @@
 // require_once('../modele/ProduitclassDAO.php');// inclus la class Produit DAO
 include_once("../modele/DAO.class.php");
 
+$les14annonces = $dao->getLast14Annonces();
 
 if((count($_POST)==6 &&$_POST["nom"] && $_POST["prenom"] && $_POST["mail"] && $_POST["pass"] && $_POST["pass2"])){
 //   On verifie que les deux mots de passes sont bien les meme   //
