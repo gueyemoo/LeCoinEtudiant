@@ -230,7 +230,12 @@
           <p class="titre"> <?php echo($annonce->titre); ?></p> <!-- le titre ne doit pas dépasser 65 char -->
           <p class="categorie"><?php
           // $cat = getCategorie($annonce->id, $dao);
+          if ($annonce->sousCategorie == '' || $annonce->sousCategorie == ' ') {
+            echo($annonce->categorie);
+          } else {
           echo($annonce->sousCategorie);
+        }
+
           ?></p>
           <p class="adresse"> <?php
           $addr = getAdresse($annonce->id, $dao);
