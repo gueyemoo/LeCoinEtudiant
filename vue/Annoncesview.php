@@ -206,17 +206,30 @@
       <?php endif; ?>
 
 
-      <!-- <div class="" id="btnTri" style="display: none;">
-        <label for="tri">Trié par: </label>
+      <div class="" id="btnTri" >
+        <!-- <label for="tri">Trié par: </label> -->
         <div class="dropdown">
-          <button class="dropbouton">Le plus récent</button>
+          <button class="dropbouton">Trié par : </button>
           <div class="dropdown-content">
-            <a class="i" href="#">Le moins récent</a>
-            <a class="i" href="#">Le plus populaire</a>
-            <a class="i" href="#">Le moins populaire</a>
+            <?php if (!isset($_GET["categorie"])) { ?>
+            <a class="i" href="../controleur/Annonces.ctrl.php?type=<?php echo($_GET["type"]); ?>&dep=<?php echo($_GET["dep"]); ?>&date=<?php $_GET["date"] ?>&ordre=plusD">Le plus récent</a>
+            <a class="i" href="../controleur/Annonces.ctrl.php?type=<?php echo($_GET["type"]); ?>&dep=<?php echo($_GET["dep"]); ?>&date=<?php $_GET["date"] ?>&ordre=moinsD">Le moins récent</a>
+            <a class="i" href="../controleur/Annonces.ctrl.php?type=<?php echo($_GET["type"]); ?>&dep=<?php echo($_GET["dep"]); ?>&date=<?php $_GET["date"] ?>&ordre=plusP">Le plus populaire</a>
+            <a class="i" href="../controleur/Annonces.ctrl.php?type=<?php echo($_GET["type"]); ?>&dep=<?php echo($_GET["dep"]); ?>&date=<?php $_GET["date"] ?>&ordre=moinsP">Le moins populaire</a>
+          <?php  } else if (!isset($_GET["sousCategorie"])) { ?>
+            <a class="i" href="../controleur/Annonces.ctrl.php?type=<?php echo($_GET["type"]); ?>&categorie=<?php echo($_GET["categorie"]) ?>&dep=<?php echo($_GET["dep"]); ?>&date=<?php $_GET["date"] ?>&ordre=plusD">Le plus récent</a>
+            <a class="i" href="../controleur/Annonces.ctrl.php?type=<?php echo($_GET["type"]); ?>&categorie=<?php echo($_GET["categorie"]) ?>&dep=<?php echo($_GET["dep"]); ?>&date=<?php $_GET["date"] ?>&ordre=moinsD">Le moins récent</a>
+            <a class="i" href="../controleur/Annonces.ctrl.php?type=<?php echo($_GET["type"]); ?>&categorie=<?php echo($_GET["categorie"]) ?>&dep=<?php echo($_GET["dep"]); ?>&date=<?php $_GET["date"] ?>&ordre=plusP">Le plus populaire</a>
+            <a class="i" href="../controleur/Annonces.ctrl.php?type=<?php echo($_GET["type"]); ?>&categorie=<?php echo($_GET["categorie"]) ?>&dep=<?php echo($_GET["dep"]); ?>&date=<?php $_GET["date"] ?>&ordre=moinsP">Le moins populaire</a>
+          <?php } else { ?>
+            <a class="i" href="../controleur/Annonces.ctrl.php?type=<?php echo($_GET["type"]); ?>&categorie=<?php echo($_GET["categorie"]) ?>&sousCategorie=<?php echo($_GET["sousCategorie"]) ?>&dep=<?php echo($_GET["dep"]); ?>&date=<?php $_GET["date"] ?>&ordre=plusD">Le plus récent</a>
+            <a class="i" href="../controleur/Annonces.ctrl.php?type=<?php echo($_GET["type"]); ?>&categorie=<?php echo($_GET["categorie"]) ?>&sousCategorie=<?php echo($_GET["sousCategorie"]) ?>&dep=<?php echo($_GET["dep"]); ?>&date=<?php $_GET["date"] ?>&ordre=moinsD">Le moins récent</a>
+            <a class="i" href="../controleur/Annonces.ctrl.php?type=<?php echo($_GET["type"]); ?>&categorie=<?php echo($_GET["categorie"]) ?>&sousCategorie=<?php echo($_GET["sousCategorie"]) ?>&dep=<?php echo($_GET["dep"]); ?>&date=<?php $_GET["date"] ?>&ordre=plusP">Le plus populaire</a>
+            <a class="i" href="../controleur/Annonces.ctrl.php?type=<?php echo($_GET["type"]); ?>&categorie=<?php echo($_GET["categorie"]) ?>&sousCategorie=<?php echo($_GET["sousCategorie"]) ?>&dep=<?php echo($_GET["dep"]); ?>&date=<?php $_GET["date"] ?>&ordre=moinsP">Le moins populaire</a>
+          <?php } ?>
           </div>
         </div>
-      </div> -->
+      </div>
     </div>
 
 

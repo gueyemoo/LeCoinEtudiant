@@ -37,13 +37,20 @@ $newDate = "";
 }
 }
 
+if (isset($_GET["ordre"])) {
+  $ordre = $_GET["ordre"];
+}
+else {
+  $ordre = "moinsD";
+}
+
 if(!isset($_GET["type"])) {
   //premier acces a la page : 0 filtre
   $annoncesPostees = $dao->getAnnonces();
 
 
 } else if (($_GET["type"] == "Festif") || $_GET["type"] == "Educatif") {
-  $annoncesPostees = $dao->getAnnoncesFiltre($_GET["type"], $_GET["categorie"], 0, $_GET["dep"], $newDate);
+  $annoncesPostees = $dao->getAnnoncesFiltre($_GET["type"], $_GET["categorie"], 0, $_GET["dep"], $newDate, $ordre);
 
 }
 
@@ -53,15 +60,16 @@ if(!isset($_GET["type"])) {
   $filtreCat = $_GET['categorie'];
 
 
-  $annoncesPostees = $dao->getAnnoncesFiltre($_GET["type"], $filtreCat, $_GET["sousCategorie"], $_GET["dep"], $newDate);
+  $annoncesPostees = $dao->getAnnoncesFiltre($_GET["type"], $filtreCat, $_GET["sousCategorie"], $_GET["dep"], $newDate, $ordre);
 } else {
   //appel fonction filtres avec valeur par defaut en param sousCat
   //ici pas de categorie et donc aucune sousCat n'est choisie
     $filtreCat = 0;
 
-  $annoncesPostees = $dao->getAnnoncesFiltre($_GET["type"], $filtreCat, 0, $_GET["dep"], $newDate);
+  $annoncesPostees = $dao->getAnnoncesFiltre($_GET["type"], $filtreCat, 0, $_GET["dep"], $newDate, $ordre);
 }
 
+// var_dump($annoncesPostees);
 $types = $dao->getTypes();
 
 //Recupere les catégories d'annonces possible d'un types

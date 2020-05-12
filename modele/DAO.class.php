@@ -487,7 +487,7 @@ class DAO
   }
 
 
-  function getAnnoncesFiltre($type, $cat, $sousCat, $dep, $date) {
+  function getAnnoncesFiltre($type, $cat, $sousCat, $dep, $date, $ordre) {
     if ($type == "0") {
       $reqType = " ";
     } else {
@@ -513,8 +513,17 @@ class DAO
     } else {
       $reqDate = " and datePrevu = \"$date\" ";
     }
+    if ($ordre == "moinsD") {
+      $reqOrdre = " ORDER BY dateHeure ASC";
+    } else if ($ordre == "plusD") {
+      $reqOrdre = " ORDER BY dateHeure DESC";
+    } else if ($ordre == "moinsP") {
+      $reqOrdre = " ORDER BY nbParticipant ASC, nbInteresse ASC";
+    } else if ($ordre == "plusP") {
+      $reqOrdre = " ORDER BY nbParticipant DESC, nbInteresse DESC";
+    }
 
-    $requete = "SELECT * FROM annonce WHERE 1".$reqType.$reqCat.$reqSousCat.$reqDep.$reqDate;
+    $requete = "SELECT * FROM annonce WHERE 1".$reqType.$reqCat.$reqSousCat.$reqDep.$reqDate.$reqOrdre;
     $res = $this->db->query($requete);
     $resultat = $res->fetchAll(PDO::FETCH_CLASS, "Annonce");
     return $resultat;
