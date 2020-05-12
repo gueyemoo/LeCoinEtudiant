@@ -1,43 +1,16 @@
 # ProjetWebS2
 
-# TODO List
+# Installation et accès au projet
 
-# Conception
+##### I- Installer WampServer
+  - Pour naviguer en local sur le site, il faut installer WampServer, téléchargeable depuis ce lien : https://sourceforge.net/projects/wampserver/
+  - Une fois WampServer installé sur votre machine, il faut placer le dossier clone du projet dans le dossier "**www**" se trouvant dans le dossier "**wamp**"
+  - Le site est maintenant accessible depuis votre localhost (un lien vers votre localhost est disponible directement depuis WampServer)
 
-* Analyse de l'existant
-```diff
--A commencer
-```
+#### II- Se connecter en tant qu'utilisateur
+  - le système de vérification de comptes est complexe à mettre en place en local, nous avons donc créé un compte déjà vérifié pour que vous puissiez naviguer sur le site en testant l'entièreté des fonctionnalités.
+  - Connectez vous en cliquant le bouton "Se connecter" en haut a gauche de la page, puis saisissez l'email "**adresse@test.com**" et le mot de passe "**test123**".
 
-* faire un diagramme de GANTT (planifier le developpement)
-```diff
-! Possible evolution
-```
-* faire les maquettes du siteweb
-```diff
-! Possible evolution
-```
-* Conception base de donnée (yes)
-```diff
-+ C'est fait
-```
-* faire un diagramme de cas d'utilisation
-```diff
-! A Mettre à jour
-```
-
-# Developpement
-* Systeme utilisateur client, créer un compter
-* Ajouter une annonce quand on est connecter et
-supprimer ses annonces
-* Consulter des annonces
-* Filtrer les annonces et les trier par dates
-* Rechercher une annnonce par mot clé
-* Ajouter des annonces en favoris
-* Mode administrateur du siteweb
-* Voir ses annonces quand Connecter
-* Modifier ses informations de compte personnels
-* Modifier une annonces
 
 # Technologie et Logiciel utilisé
 

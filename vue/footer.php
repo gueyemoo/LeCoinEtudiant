@@ -47,10 +47,10 @@ html {
 
         <ul class="list-unstyled">
           <li>
-            <a href="#!">Qui sommes nous ?</a>
+            <a href="https://github.com/gueyemoo/LeCoinEtudiant">Qui sommes nous ?</a>
           </li>
           <li>
-            <a href="#!">Aide</a>
+            <a href="https://github.com/gueyemoo/LeCoinEtudiant">Aide</a>
           </li>
         </ul>
 
