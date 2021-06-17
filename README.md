@@ -18,8 +18,8 @@
 * Atom (editeur de texte)
 * Bootstrap (framework)
 * JQuery (bibliothéque javascript)
-* Bootbox (libraire javascript)
-* Flipster (laibraire javascript)
+* Bootbox (librairie javascript)
+* Flipster (librairie javascript)
 * Sendmail (serveur de messagerie)
 * WAMP (plateforme de développement Web de type WAMP)
 * Language :
