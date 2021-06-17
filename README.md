@@ -32,5 +32,16 @@
 * lucidchart.com (diagramme de gantt)
 * Balsamiq Mockups 3 (conception maquettes)
 
+#### Screenshots
 
+##### Accueil
+![Accueil](https://user-images.githubusercontent.com/39363844/122483005-ee6a7200-cfd1-11eb-8102-c430c2bce83c.png)
+##### Les Annonces
+![Les Annonces](https://user-images.githubusercontent.com/39363844/122483025-f62a1680-cfd1-11eb-9fe7-643d90365397.png)
+##### Ajouter une annonce
+![Ajout d'annonce](https://user-images.githubusercontent.com/39363844/122483037-fb876100-cfd1-11eb-8337-8b7968788196.png)
+##### Participe à des annonces
+!["Liker"/Participer à des annonces](https://user-images.githubusercontent.com/39363844/122483092-1954c600-cfd2-11eb-8ef0-d93920e85635.png)
+##### Surveille tes annonces
+![Surveillez ses annonces et les événements qui nous intéresse](https://user-images.githubusercontent.com/39363844/122483143-38ebee80-cfd2-11eb-8ea2-cc38982159d2.png)
 
